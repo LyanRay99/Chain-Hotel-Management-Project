@@ -1,0 +1,107 @@
+[
+  {
+    "id": 1,
+    "fullname": "Nguyen Van A",
+    "Date": "01-10-1991",
+    "sex": "male",
+    "avatar": "URL",
+    "identityCard": "201793356",
+    "nationality": "Viet Nam",
+    "phone": "0905.234.234",
+    "email": "nva@gmail.com",
+    "address": "abc strees",
+    "dateCreated": "13h30 23-02-2022",
+    "dateUpdated": "13h30 23-02-2022",
+    "rented": [
+      {
+        "id": 1,
+        "branch": "Da Nang",
+        "room": 324,
+        "roomType": "Vip",
+        "typeR": "single bed room",
+        "checkIn": "13h30 23-02-2022",
+        "checkOut": "13h30 23-05-2022",
+        "dateCreated": "13h30 23-02-2022",
+        "dateUpdated": "13h30 23-02-2022",
+        "bill": {
+          "roomPrice": "3150$",
+          "servicePrice": "1000$"
+        }
+      },
+      {
+        "id": 2,
+        "branch": "Da Lat",
+        "room": 224,
+        "roomType": "Luxury",
+        "typeR": "single bed room",
+        "checkIn": "13h30 23-06-2022",
+        "checkOut": "13h30 29-06-2022",
+        "dateCreated": "13h30 23-02-2022",
+        "dateUpdated": "13h30 23-02-2022",
+        "bill": {
+          "roomPrice": "3150$",
+          "servicePrice": "1000$"
+        }
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "fullname": "Nguyen Van B",
+    "Date": "01-10-1991",
+    "sex": "male",
+    "avatar": "URL",
+    "identityCard": "201793356",
+    "nationality": "Viet Nam",
+    "phone": "0905.234.234",
+    "email": "nvb@gmail.com",
+    "address": "abc strees",
+    "dateCreated": "13h30 23-06-2022",
+    "dateUpdated": "13h30 23-06-2022",
+    "rented": [
+      {
+        "id": 1,
+        "branch": "Da Lat",
+        "room": 234,
+        "roomType": "Vip",
+        "typeR": "single bed room",
+        "checkIn": "13h30 23-06-2022",
+        "checkOut": "13h30 29-06-2022",
+        "dateCreated": "13h30 23-02-2022",
+        "dateUpdated": "13h30 23-02-2022",
+        "bill": {
+          "roomPrice": "3150$",
+          "servicePrice": "1000$"
+        }
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "fullname": "Nguyen Thi C",
+    "Date": "01-10-1991",
+    "sex": "female",
+    "avatar": "URL",
+    "identityCard": "201793356",
+    "nationality": "Viet Nam",
+    "phone": "0905.234.234",
+    "email": "ntc@gmail.com",
+    "address": "abc strees",
+    "dateCreated": "13h30 23-06-2022",
+    "dateUpdated": "13h30 23-06-2022",
+    "rented": [
+      {
+        "id": 1,
+        "branch": "Da Lat",
+        "room": 201,
+        "roomType": "Normal",
+        "typeR": "single bed room",
+        "checkIn": "13h30 23-06-2022",
+        "checkOut": "13h30 29-06-2022",
+        "dateCreated": "13h30 23-02-2022",
+        "dateUpdated": "13h30 23-02-2022",
+        "bill": "3150$"
+      }
+    ]
+  }
+]

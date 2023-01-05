@@ -1,0 +1,321 @@
+@import "../settings/mixin.scss";
+@import "../settings/reset.scss";
+@import "../settings/variable.scss";
+
+.section {
+  @include size(1200px, auto);
+  margin: auto auto 50px auto;
+  //   background-color: red;
+
+  //TODO: OUR ROOMS
+  .ourRooms {
+    @include size(100%, auto);
+    padding: 50px 20px 70px 20px;
+    text-align: center;
+    border-bottom: 20px dotted $colorPrimary;
+    // background-color: red;
+
+    &__title {
+      display: inline-block;
+      padding: 0px 0px 20px 0px;
+      font-family: $mainFont;
+      font-size: 2.5em;
+      border-bottom: 4px solid $colorPrimary;
+      border-radius: 50%;
+    }
+
+    &__content {
+      color: rgba(128, 128, 128, 0.7);
+      margin: 20px 200px;
+    }
+
+    &__roomType {
+      @include size(100%, auto);
+
+      .ourRooms__box {
+        @include size(80%, auto);
+        padding: 20px;
+
+        &__image {
+          @include size(100%, 350px);
+          overflow: hidden;
+          border-radius: 20px;
+          position: relative;
+
+          img {
+            @include size(100%, auto);
+            border-radius: 20px;
+            object-fit: cover;
+            transition: all 0.5s linear;
+
+            &:hover {
+              transform: scale(1.2);
+            }
+          }
+
+          .roomType {
+            @include size(100%, auto);
+            color: white;
+            font-size: 1.5em;
+            font-weight: bold;
+            font-family: $mainFont;
+            position: absolute;
+            top: 75%;
+            background-color: rgba(0, 0, 0, 0.2);
+
+            &__name {
+              font-family: $mainFont;
+            }
+
+            &__price {
+              font-size: 0.7em;
+              margin: -10px 0px 0px 0px;
+            }
+          }
+        }
+
+        &__info {
+          @include size(100%, auto);
+
+          .info__description {
+            margin: 20px;
+          }
+
+          .info__other {
+            @include size(100%, auto);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+
+            span {
+              @include size(49%, auto);
+              padding: 10px 0px;
+              border: 1px solid grey;
+              border-radius: 20px;
+              margin: 10px 0px 0px 0px;
+
+              .icon {
+                color: $colorPrimary;
+                margin-right: 10px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  //TODO: ABOUT US
+  .aboutUs {
+    border-bottom: none;
+
+    .aboutUs__image {
+      @include size(100%, auto);
+      padding: 0px 20px 150px 20px;
+      position: relative;
+      // background-color: red;
+
+      &__1 {
+        text-align: left;
+      }
+
+      &__2 {
+        position: absolute;
+        top: 50px;
+        right: 50px;
+      }
+    }
+
+    .aboutUs__service {
+      @include size(100%, auto);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+
+      span {
+        @include size(22%, auto);
+        box-shadow: 0px 0px 10px 2px rgba(157, 156, 156, 0.5);
+        margin-top: 30px;
+        padding: 10px 0px;
+        border-radius: 10px;
+
+        p {
+          margin: 10px 0px 0px 0px;
+          font-size: 0.8em;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+
+  //TODO: OUR EVENT
+  .ourEvent {
+    @include size(100%, auto);
+    margin: 50px 0px 0px 0px;
+    display: flex;
+    justify-content: space-between;
+
+    &__box {
+      @include size(30%, auto);
+      position: relative;
+
+      &__image {
+        @include size(100%, auto);
+        border-radius: 20px;
+        overflow: hidden;
+        transition: all 0.5s linear;
+
+        img {
+          @include size(100%, auto);
+          border-radius: 20px;
+          transition: all 0.5s linear;
+        }
+
+        &:hover {
+          border-radius: 10% 90% 10% 90% / 88% 15% 85% 12%;
+        }
+
+        &:hover img {
+          transform: scale(1.2);
+        }
+
+        &:hover + .ourEvent__box__name {
+          @include size(80%, auto);
+          border-radius: 50%;
+          // right: 18%;
+        }
+      }
+
+      &__name {
+        @include size(100%, auto);
+        background-color: rgba(0, 0, 0, 0.2);
+        color: white;
+        transition: all 0.5s linear;
+        position: absolute;
+        top: 80%;
+
+        p {
+          font-family: $mainFont;
+          font-size: 2em;
+          padding: 10px 0px 0px 0px;
+        }
+      }
+    }
+  }
+
+  //TODO: NEWS
+  .news {
+    @include size(100%, auto);
+    padding: 50px 0px 0px 0px;
+    display: flex;
+    justify-content: space-between;
+
+    &__box {
+      @include size(31%, auto);
+      border-left: 2px solid $colorPrimary;
+      text-align: left;
+      padding: 30px;
+      border-radius: 30%;
+
+      &__time {
+        @include size(100%, auto);
+        display: flex;
+
+        &__date {
+          font-family: $mainFont;
+          font-size: 2em;
+          padding: 0px 20px 0px 0px;
+          border-right: 2px solid $colorPrimary;
+        }
+
+        &__year {
+          padding: 0px 20px;
+          font-weight: bold;
+
+          span {
+            display: block;
+          }
+        }
+      }
+
+      &__content {
+        font-size: 1.5em;
+        margin-top: 20px;
+
+        &:hover {
+          color: $colorPrimary;
+        }
+      }
+
+      &__readMore {
+        opacity: 0.6;
+
+        &:hover {
+          color: $colorPrimary;
+        }
+      }
+    }
+  }
+}
+
+//TODO: Customer Review
+.comment {
+  @include size(100%, 450px);
+  padding: 80px 0px 30px 0px;
+  background: url(../../Assets/backgroundImage.jpg) center bottom/cover
+    no-repeat local;
+
+  &__box {
+    @include size(100%, auto);
+    padding: 50px 0px;
+    display: flex !important;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.4);
+    // background-color: red;
+
+    &__avatar {
+      @include size(10%, auto);
+      padding: 0px;
+      //   background-color: blue;
+
+      img {
+        @include size(100%, auto);
+        border-radius: 50%;
+      }
+    }
+
+    &__customer {
+      @include size(60%, auto);
+      padding: 10px 50px;
+      color: white;
+      //   background-color: red;
+
+      .customer__info {
+        display: flex;
+
+        &__name {
+          padding: 0px 15px 0px 0px;
+          border-right: 1.5px solid white;
+        }
+
+        &__address {
+          padding: 5px 0px 0px 15px;
+        }
+      }
+    }
+  }
+}
+
+//todo: custom dots of slick slider in CustomerCmt Component
+.dots__list {
+  li {
+    width: 15px !important;
+    height: 10px !important;
+    border-radius: 10px !important;
+    // background-color: red;
+  }
+
+  .slick-active {
+    background-color: white;
+  }
+}

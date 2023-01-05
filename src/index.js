@@ -1,13 +1,30 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+//* Components
+import { ArrowGoTop } from "./Components/footer/ArrowGoTop";
+
+//* Bootstrap + React Animation On Scroll + fontawesome + react slick
+import "bootstrap/dist/css/bootstrap.min.css";
+// import "animate.css/animate.min.css";
+import "react-animation-on-scroll";
+import "@fortawesome/fontawesome-free/css/all.min.css";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
+//* redux toolkit
+import { Provider } from "react-redux";
+import { store } from "./Store/store";
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      {/* <ArrowGoTop /> */}
+      <App />
+    </Provider>
   </React.StrictMode>
 );
 

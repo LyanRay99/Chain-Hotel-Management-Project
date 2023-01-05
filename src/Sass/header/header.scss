@@ -1,0 +1,102 @@
+@import "../settings/mixin.scss";
+@import "../settings/reset.scss";
+@import "../settings/variable.scss";
+
+//TODO: Custom Logo on Navbar
+.logoHotel {
+  @include size(60px, auto);
+}
+
+.navbar {
+  opacity: 0.8;
+}
+
+.navbar-nav {
+  width: 100% !important;
+  justify-content: space-around !important;
+  padding: 0px 15% !important;
+}
+
+#navbarScroll .navbar-nav {
+  margin-right: 0px !important;
+}
+
+@media screen and (max-width: 1250px) {
+  .navbar-nav {
+    padding: 0px 10% !important;
+  }
+}
+
+.nav-link {
+  color: black !important;
+  font-weight: bold;
+}
+
+.activeClass {
+  color: $colorPrimary !important;
+  border-bottom: 3px solid $colorPrimary !important;
+  padding-bottom: 0px !important;
+}
+
+.navbarInfo {
+  @include size(200px, auto);
+  text-align: center;
+  font-size: 0.8em;
+  padding: 0px 0px 0px 0px;
+
+  &__phone:hover {
+    color: $colorPrimary;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .navbarInfo {
+    display: none;
+  }
+}
+
+.navbar-toggler:focus {
+  color: white;
+}
+
+.navbar-nav-scroll {
+  max-height: 300px !important;
+}
+
+//TODO: Slider
+.carousel-control-prev-icon {
+  width: 3rem !important;
+  height: 3rem !important;
+  background-image: url("../../Assets/Slider/Previous.png") !important;
+}
+
+.carousel-control-next-icon {
+  width: 3rem !important;
+  height: 3rem !important;
+  background-image: url("../../Assets/Slider/next.png") !important;
+}
+
+.carousel-indicators [data-bs-target] {
+  width: 10px !important;
+  height: 10px !important;
+  border: 1px solid transparent !important;
+  border-radius: 10px;
+}
+
+.carousel-caption {
+  width: auto !important;
+
+  h3 {
+    @include size(auto, auto);
+    font-family: $mainFont;
+    font-size: 4em;
+    text-shadow: 6px 6px 7px $colorPrimary;
+    margin-bottom: 5%;
+  }
+}
+
+.carousel-item {
+  img {
+    filter: brightness(80%);
+  }
+}

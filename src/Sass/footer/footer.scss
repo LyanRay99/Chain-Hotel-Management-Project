@@ -1,0 +1,174 @@
+@import "../settings/mixin.scss";
+@import "../settings/reset.scss";
+@import "../settings/variable.scss";
+
+//* Footer
+.footer {
+  @include size(100%, auto);
+  padding: 30px 20px;
+  background-color: rgb(46 46 46);
+
+  &__contactMe {
+    @include size(100%, auto);
+    border-bottom: 2px solid rgba(85, 85, 85, 0.3);
+    padding: 0px 0px 30px 0px;
+    display: flex;
+    justify-content: space-around;
+
+    &__email {
+      @include size(50%, auto);
+      padding: 0px 0px 0px 100px;
+      display: flex;
+      align-items: center;
+      //   background-color: red;
+
+      .logoEmail {
+        .icon {
+          padding: 10px;
+          font-size: 2em;
+          color: $colorPrimary;
+          border: 2px solid $colorPrimary;
+          border-radius: 50%;
+        }
+      }
+
+      .inputEmail {
+        @include size(60%, auto);
+        display: flex;
+
+        input {
+          @include size(100%, 50px);
+          padding: 0px 10px;
+          margin-left: 20px;
+          border: 2px solid $colorPrimary;
+          border-radius: 10px 0px 0px 10px;
+          color: white;
+          background-color: #3e3e3e;
+          outline: none;
+        }
+
+        button {
+          padding: 5px 15px;
+          background-color: #3e3e3e;
+          border-radius: 0px 10px 10px 0px;
+          border: 2px solid $colorPrimary;
+          border-left: none;
+          color: $colorPrimary;
+
+          .icon {
+            font-size: 1.5em;
+          }
+        }
+      }
+    }
+
+    &__social {
+      @include size(30%, auto);
+      //   background-color: red;
+
+      span {
+        .icon {
+          font-size: 1.5em;
+          color: white;
+          margin-left: 50px;
+          padding-top: 15px;
+
+          &:hover {
+            color: $colorPrimary;
+          }
+        }
+      }
+    }
+  }
+
+  &__others {
+    @include size(100%, auto);
+    padding: 20px 10%;
+    display: flex;
+    align-items: center;
+
+    &__logo {
+      @include size(30%, auto);
+      padding: 10px;
+
+      img {
+        @include size(100%, auto);
+      }
+    }
+
+    &__info {
+      @include size(70%, auto);
+      color: white;
+      display: flex;
+      justify-content: space-between;
+
+      .box {
+        @include size(32%, auto);
+
+        ul {
+          list-style-type: none;
+          line-height: 40px;
+
+          a {
+            color: white;
+            text-decoration: none;
+
+            &:hover {
+              color: $colorPrimary;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__bottom {
+    @include size(100%, auto);
+    padding-top: 25px;
+    border-top: 2px solid rgba(85, 85, 85, 0.3);
+    text-align: center;
+    display: flex;
+    align-items: center;
+
+    &__copyRight {
+      @include size(50%, auto);
+      color: $colorPrimary;
+      font-size: 0.8em;
+    }
+
+    &__payment {
+      @include size(50%, auto);
+      color: white;
+
+      span {
+        .icon {
+          font-size: 2em;
+          margin-left: 50px;
+
+          &:hover {
+            color: $colorPrimary;
+          }
+        }
+      }
+    }
+  }
+}
+
+//* Arrow go top
+.arrowGoTop {
+  @include size(50px, 50px);
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  background-color: $colorPrimary;
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.5s linear;
+
+  &__icon {
+    @include size(70%, auto);
+    margin-top: 20%;
+    color: white;
+  }
+}

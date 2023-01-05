@@ -1,0 +1,158 @@
+[
+  {
+    "id": 1,
+    "nameBranchEN": "Panorama Da Nang",
+    "nameBranchVN": "Panorama Đà Nẵng",
+    "phone": "(+84) 28. 38 12 17 19",
+    "addressVN": "99 Ngô Quyền, An Hải Bắc, Sơn Trà, TP Đà Nẵng, Việt Nam",
+    "addressEN": "99 Ngo Quyen, An Hai Bac, Son Tra, TP Da Nang, VietNam",
+    "email": "info-danang@panoramacorp.vn",
+    "roomTotal": 100,
+    "manager": "Nguyen Van A",
+    "actived": true,
+    "dateCreated": "13h30 23-02-2022",
+    "dateUpdated": "13h30 23-02-2022",
+    "numberOfMember": [],
+    "roomType": [
+      {
+        "id": 1,
+        "type": "Normal",
+        "price": "1000$",
+        "roomTotal": 50,
+        "actived": true,
+        "dateCreated": "13h30 23-02-2022",
+        "dateUpdated": "13h30 23-02-2022",
+        "typeR": [
+          {
+            "id": 1,
+            "name": "single bed room",
+            "roomTotal": 20,
+            "dateCreated": "13h30 23-02-2022",
+            "dateUpdated": "13h30 23-02-2022",
+            "actived": true,
+            "numberOfRoom": [
+              {
+                "id": 1,
+                "numberRoom": 101,
+                "price": "1050$",
+                "dateCreated": "13h30 23-02-2022",
+                "dateUpdated": "13h30 23-02-2022",
+                "actived": true
+              },
+              {
+                "id": 2,
+                "numberRoom": 102,
+                "price": "1050$",
+                "dateCreated": "13h30 23-02-2022",
+                "dateUpdated": "13h30 23-02-2022",
+                "actived": true
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "name": "twin bed room",
+            "roomTotal": 20,
+            "dateCreated": "13h30 23-02-2022",
+            "dateUpdated": "13h30 23-02-2022",
+            "actived": true,
+            "numberOfRoom": [
+              {
+                "id": 1,
+                "numberRoom": 201,
+                "price": "2050$",
+                "dateCreated": "13h30 23-02-2022",
+                "dateUpdated": "13h30 23-02-2022",
+                "actived": true
+              },
+              {
+                "id": 2,
+                "numberRoom": 202,
+                "price": "2050$",
+                "dateCreated": "13h30 23-02-2022",
+                "dateUpdated": "13h30 23-02-2022",
+                "actived": true
+              }
+            ]
+          },
+          {
+            "id": 3,
+            "name": "double bed room",
+            "roomTotal": 10,
+            "dateCreated": "13h30 23-02-2022",
+            "dateUpdated": "13h30 23-02-2022",
+            "actived": true,
+            "numberOfRoom": [
+              {
+                "id": 1,
+                "numberRoom": 301,
+                "price": "3050$",
+                "dateCreated": "13h30 23-02-2022",
+                "dateUpdated": "13h30 23-02-2022",
+                "actived": false
+              },
+              {
+                "id": 2,
+                "numberRoom": 302,
+                "price": "3050$",
+                "dateCreated": "13h30 23-02-2022",
+                "dateUpdated": "13h30 23-02-2022",
+                "actived": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "type": "Vip",
+        "price": "2000$",
+        "roomTotal": 25,
+        "dateCreated": "13h30 23-02-2022",
+        "dateUpdated": "13h30 23-02-2022",
+        "actived": true
+      },
+      {
+        "id": 3,
+        "type": "Luxury",
+        "price": "3000$",
+        "roomTotal": 25,
+        "dateCreated": "13h30 23-02-2022",
+        "dateUpdated": "13h30 23-02-2022",
+        "actived": true
+      }
+    ]
+  },
+  {
+    "id": 1,
+    "nameBranchEN": "Panorama Phu Quoc",
+    "nameBranchVN": "Panorama Phú Quốc",
+    "phone": "(+84) 28. 38 12 17 20",
+    "addressVN": "9 Búng Gội, Gành Gió, Phú Quốc, Kiên Giang, Việt Nam",
+    "addressEN": "9 Bung Goi, Ganh Gio, Phu Quoc, Kien Giang, Vietnam",
+    "email": "info-phuquoc@panoramacorp.vn",
+    "roomTotal": 100,
+    "manager": "Nguyen Van B",
+    "actived": true,
+    "dateCreated": "13h30 23-02-2022",
+    "dateUpdated": "13h30 23-02-2022",
+    "numberOfMember": [],
+    "roomType": []
+  },
+  {
+    "id": 1,
+    "nameBranchEN": "Panorama Nha Trang",
+    "nameBranchVN": "Panorama Nha Trang",
+    "phone": "(+84) 28. 38 12 17 21",
+    "addressVN": "10 Trần Phú, Xương Huân, Nha Trang, Khánh Hòa, Việt Nam",
+    "addressEN": "10 Tran Phu, Xuong Huan, Nha Trang, Khanh Hoa, VietNam",
+    "email": "info-nhatrang@panoramacorp.vn",
+    "roomTotal": 100,
+    "manager": "Nguyen Van C",
+    "actived": true,
+    "dateCreated": "13h30 23-02-2022",
+    "dateUpdated": "13h30 23-02-2022",
+    "numberOfMember": [],
+    "roomType": []
+  }
+]

@@ -1,0 +1,30 @@
+@import "../settings/mixin.scss";
+@import "../settings/reset.scss";
+@import "../settings/variable.scss";
+
+// TODO: SupSlider
+.supSlider {
+  @include size(100%, 50vh);
+  position: relative;
+
+  img {
+    @include size(100%, 100%);
+    object-fit: cover;
+    filter: brightness(80%);
+  }
+
+  &__title {
+    @include size(auto, auto);
+    font-family: $mainFont;
+    font-size: 4em;
+    text-align: center;
+    color: white;
+    text-shadow: 6px 6px 7px $colorPrimary;
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%);
+  }
+}
+
+// TODO: Scrollbar

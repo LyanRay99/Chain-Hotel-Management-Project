@@ -1,0 +1,88 @@
+@import "../settings/mixin.scss";
+@import "../settings/reset.scss";
+@import "../settings/variable.scss";
+
+.contact {
+  @include size(100%, auto);
+  display: flex;
+
+  &__info {
+    @include size(50%, auto);
+    padding: 50px 20px 30px 20px;
+
+    &__title {
+      font-weight: bold;
+    }
+
+    &__content {
+      text-align: justify;
+    }
+
+    &__listChainHotels {
+      @include size(100%, auto);
+      font-size: 0.9em;
+      line-height: 25px;
+
+      ul {
+        li {
+          list-style-type: none;
+
+          .icon {
+            margin: 0px 20px 0px 0px;
+            color: grey;
+          }
+        }
+      }
+
+      .branch {
+        padding: 0px;
+      }
+    }
+  }
+
+  &__feedback {
+    @extend .contact__info;
+
+    div {
+      @include size(100%, auto);
+      margin: 20px 0px 0px 0px;
+
+      input {
+        @include size(100%, auto);
+        border: 2px solid $colorPrimary;
+        padding: 10px;
+        outline: none;
+      }
+    }
+
+    &__account {
+      display: flex;
+      justify-content: space-between;
+
+      input {
+        width: 49% !important;
+      }
+    }
+
+    &__content {
+      height: 300px !important;
+
+      textarea {
+        @include size(100%, auto);
+        border: 2px solid $colorPrimary;
+        padding: 10px;
+        outline: none;
+        height: 100% !important;
+      }
+    }
+
+    &__send {
+      border: none;
+      border-radius: 5px;
+      padding: 5px 20px;
+      background-color: $colorPrimary;
+      color: white;
+      margin: 20px 0px 0px 0px;
+    }
+  }
+}
