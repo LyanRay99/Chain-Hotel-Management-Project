@@ -1,5 +1,5 @@
 import React from "react";
-import { RoomTypes } from "./slick-slider/roomType.";
+import { RoomTypes } from "./slick-slider/roomType";
 
 export const OurRooms = () => {
   return (

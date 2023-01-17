@@ -3,11 +3,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 
 //* Fontawesome
-import {
-  faEnvelope,
-  faPaperPlane,
-  faSeedling,
-} from "@fortawesome/free-solid-svg-icons";
+import { faEnvelope, faPaperPlane } from "@fortawesome/free-solid-svg-icons";
 import {
   faCcDiscover,
   faCcMastercard,
@@ -22,6 +18,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 //* Logo
 import Logo from "../../Assets/Logo.png";
+
+//* Components support
+import { goTop } from "../support/goTop";
 
 export const Footer = () => {
   return (
@@ -75,8 +74,10 @@ export const Footer = () => {
             <ul>
               <li>Our Location</li>
               <li>Carrer</li>
-              <li>About Us</li>
-              <NavLink end to="/contact">
+              <NavLink to="/about" onClick={goTop}>
+                <li>About Us</li>
+              </NavLink>
+              <NavLink to="/contact" onClick={goTop}>
                 <li>Contact Us</li>
               </NavLink>
             </ul>

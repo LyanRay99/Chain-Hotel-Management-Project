@@ -1,10 +1,10 @@
 import React from "react";
-import { useSelector, useDispatch } from "react-redux";
-import AboutUs1 from "../../../Assets/About Us/about-1.jpg";
-import AboutUs2 from "../../../Assets/About Us/about-2.jpg";
+import { useSelector } from "react-redux";
+import AboutUs1 from "../../../Assets/About/home/about-1.jpg";
+import AboutUs2 from "../../../Assets/About/home/about-2.jpg";
 
 export const AboutUs = () => {
-  const aboutUs = useSelector((state) => state.RS_aboutUs.aboutUs);
+  const aboutUs = useSelector((state) => state.RS_aboutUs.aboutUs.aboutUs_Home);
 
   return (
     <div className="ourRooms aboutUs">

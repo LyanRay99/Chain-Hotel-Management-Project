@@ -1,0 +1,504 @@
+@import "../settings/mixin.scss";
+@import "../settings/reset.scss";
+@import "../settings/variable.scss";
+
+//* Booking Page
+.section {
+  .booking {
+    @include size(100%, auto);
+
+    &__control {
+      @include size(100%, auto);
+      padding: 40px 0px 10px 0px;
+      border-bottom: 2px solid rgba(134, 133, 133, 0.3);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      div {
+        margin: 0px 30px;
+        // border-bottom: 2px solid $colorPrimary;
+        font-weight: bold;
+        position: relative;
+
+        &:hover {
+          color: $colorPrimary;
+          cursor: pointer;
+        }
+
+        .icon {
+          font-size: 2em;
+        }
+      }
+
+      .activeStyle {
+        span {
+          @include size(100%, 2px);
+          display: inline-block;
+          background-color: $colorPrimary;
+          z-index: 99;
+          position: absolute;
+          bottom: -16.8px;
+          left: 0px;
+          animation: LeftToRight1 0.3s ease-out;
+        }
+      }
+    }
+
+    &__body {
+      @include size(100%, auto);
+      margin: 30px 0px 0px 0px;
+      display: flex;
+
+      &__navbar {
+        @include size(25%, auto);
+        padding: 0px 30px 0px 0px;
+      }
+
+      &__content {
+        @include size(75%, auto);
+        padding: 00px 0px 0px 30px;
+      }
+    }
+  }
+}
+
+//* Style animation Left to Right
+@keyframes LeftToRight1 {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+//* Reservation
+.reservation {
+  @include size(100%, auto);
+  background-color: #f1f1f1;
+  padding: 0px 0px 20px 0px;
+  margin: 0px 0px 30px 0px;
+
+  &__title {
+    padding: 15px;
+    text-align: center;
+    font-size: 0.95em;
+    font-weight: 900;
+    border-bottom: 1.5px solid rgba(0, 0, 0, 0.2);
+    color: $colorPrimary;
+  }
+
+  &__branch {
+    @include size(100%, auto);
+    padding: 15px 25px;
+
+    span {
+      @include TitlefReservation;
+      margin: 0px 0px 15px 0px;
+    }
+  }
+
+  &__dates {
+    @extend .reservation__branch;
+
+    span {
+      @include TitlefReservation;
+    }
+
+    p {
+      @include POfReservation;
+    }
+
+    input[type="date"] {
+      @include size(100%, auto);
+      background-color: white;
+      padding: 10px;
+
+      font-family: "Roboto Mono", monospace;
+      //   color: #ffffff;
+      font-size: 18px;
+      border: none;
+      outline: none;
+      border-radius: 5px;
+
+      &::-webkit-calendar-picker-indicator {
+        background-color: #ffffff;
+        padding: 5px;
+        cursor: pointer;
+        border-radius: 3px;
+      }
+    }
+
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    &__input {
+      @include size(100%, auto);
+      border: 1px solid rgba(193, 193, 193, 0.5);
+      padding: 5px 10px;
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  &__roomType {
+    @extend .reservation__branch;
+
+    span {
+      @include TitlefReservation;
+    }
+
+    p {
+      @include POfReservation;
+    }
+  }
+
+  &__roomsGuest {
+    @extend .reservation__branch;
+
+    span {
+      @include TitlefReservation;
+    }
+
+    p {
+      @include POfReservation;
+    }
+
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    input {
+      @extend .reservation__dates__input;
+    }
+  }
+
+  &__customer {
+    @extend .reservation__branch;
+    margin: -20px 0px 10px 0px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    div:first-child {
+      @include size(30%, auto);
+    }
+
+    div {
+      @include size(35%, auto);
+
+      p {
+        @include POfReservation;
+      }
+
+      .css-b62m3t-container {
+        width: 100% !important;
+
+        .select,
+        .selectActive {
+          width: 90% !important;
+        }
+
+        .css-lkh0o5-menu {
+          width: 90% !important;
+
+          & * {
+            width: 100% !important;
+          }
+        }
+      }
+    }
+  }
+
+  &__check {
+    @include size(100%, auto);
+    text-align: center;
+
+    button {
+      @include Btn;
+      margin: auto;
+      font-size: 0.9em;
+    }
+  }
+}
+
+//* CSS Select in Reservation
+.css-t3ipsp-control {
+  &:hover {
+    border-color: $colorPrimary !important;
+  }
+}
+
+.css-1u9des2-indicatorSeparator {
+  display: none !important;
+}
+
+//* Select Room
+.selectRoom {
+  &__total {
+    @extend .reservation__branch;
+
+    &__rooms {
+      div {
+        @include size(100%, auto);
+        display: flex;
+
+        p:first-child {
+          @include size(50%, auto);
+          font-weight: bold;
+          text-align: left;
+        }
+
+        p {
+          @include size(50%, auto);
+          text-align: right;
+          text-decoration: none;
+        }
+
+        .roomPrice {
+          color: $colorPrimary;
+          font-weight: bold;
+        }
+      }
+    }
+
+    p {
+      text-decoration: underline;
+      font-size: 0.9em;
+    }
+  }
+
+  &__selected {
+    @extend .reservation__branch;
+    background-color: $colorPrimary;
+    color: white;
+    margin: -10px 0px 0px 0px;
+
+    h6 {
+      font-weight: bold;
+    }
+
+    p {
+      margin: 0px;
+      font-size: 0.9em;
+    }
+  }
+
+  &__roomInfo {
+    @extend .reservation__branch;
+    padding-bottom: 0px;
+    display: flex;
+    align-items: center;
+
+    p:first-child {
+      @include size(30%, auto);
+      font-weight: bold;
+    }
+
+    p {
+      @include size(70%, auto);
+      margin: 0px;
+      font-size: 0.8em;
+      color: grey;
+    }
+
+    &__total {
+      font-size: 1.1em !important;
+    }
+
+    &__price {
+      color: $colorPrimary !important;
+      text-align: right;
+      font-size: 1.1em !important;
+      font-weight: bold;
+    }
+  }
+
+  .Confirmation {
+    border-top: 1.5px solid rgba(0, 0, 0, 0.2);
+  }
+}
+
+.roomInfo {
+  @include size(100%, auto);
+
+  &__title {
+    font-weight: 900;
+    margin-top: 40px;
+
+    &:hover {
+      color: $colorPrimary;
+      cursor: pointer;
+    }
+
+    &:first-child {
+      margin-top: 0px;
+    }
+  }
+
+  &__info {
+    @include size(100%, auto);
+    display: flex;
+    justify-content: space-between;
+
+    &__image {
+      @include size(49%, auto);
+      padding: 10px 10px 10px 0px;
+
+      img {
+        @include size(100%, auto);
+      }
+    }
+
+    &__content {
+      @extend .roomInfo__info__image;
+      padding: 0px 10px;
+      line-height: 1.7;
+      -webkit-line-clamp: 1;
+      text-overflow: ellipsis;
+      overflow: hidden;
+
+      &__main {
+        @include size(100%, 80px);
+        display: block; /* Fallback trong trường hợp trình duyệt không hỗ trợ display dạng box */
+        display: -webkit-box;
+        max-height: 100%; /* Fallback số dòng bạn muốn giới hạn */
+        -webkit-line-clamp: 3; /* Số dòng bạn muốn giới hạn */
+        -webkit-box-orient: vertical;
+        visibility: visible;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        text-align: justify;
+        // max-width: 300px;
+      }
+
+      &__viewMore {
+        text-decoration: underline;
+        font-style: italic;
+        font-size: 0.9em;
+        color: grey;
+        cursor: pointer;
+      }
+
+      &__price {
+        b {
+          font-size: 1.5em;
+          font-weight: 900;
+        }
+      }
+    }
+  }
+
+  .accordion {
+    .card {
+      border: none !important;
+      border-radius: 0px !important;
+
+      &-header {
+        border: none !important;
+
+        div {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          &:hover {
+            color: $colorPrimary;
+          }
+
+          p {
+            margin: 0px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 0.9em;
+          }
+
+          .iconPlus {
+            transform: rotate(45deg);
+            transition: all 0.5s linear;
+          }
+
+          .iconMinus {
+            transform: rotate(-45deg);
+            transition: all 0.5s linear;
+          }
+        }
+      }
+
+      &-body {
+        .packageBox {
+          @include size(100%, auto);
+          display: flex;
+          align-items: center;
+
+          &__image {
+            @include size(20%, auto);
+
+            img {
+              @include size(100%, auto);
+            }
+          }
+
+          &__content {
+            @include size(80%, auto);
+            padding: 10px 30px;
+
+            p:first-child {
+              font-weight: bold;
+              font-size: 1em;
+              color: black;
+            }
+
+            p {
+              font-size: 0.9em;
+              color: grey;
+            }
+          }
+
+          &__price {
+            @include size(20%, auto);
+
+            p {
+              font-size: 1.5em;
+              font-weight: 900;
+              margin: 0px 0px 10px 0px;
+            }
+
+            button {
+              @include Btn;
+              font-size: 0.9em;
+              margin: 0px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.allRoomSelected {
+  @include size(100%, auto);
+  background-color: rgba(128, 128, 128, 0.15);
+  text-align: center;
+  padding: 68px 10px;
+
+  h5 {
+    font-weight: 900;
+  }
+
+  p {
+    color: grey;
+  }
+
+  button {
+    @include Btn;
+  }
+}

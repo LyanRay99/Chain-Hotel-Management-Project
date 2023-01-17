@@ -4,26 +4,27 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 
-//* React-router
+//* React + React-router
+import React from "react";
 import { NavLink, Outlet } from "react-router-dom";
 
-//* Component UI
+//* Component UI + Support
 import { Footer } from "../footer/Footer";
+import { goTop } from "../support/goTop";
 
 //*Fontawasome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPhone } from "@fortawesome/free-solid-svg-icons";
 
 //* Image
 import Logo from "../../Assets/Logo.png";
-import React from "react";
-import { faPhone } from "@fortawesome/free-solid-svg-icons";
 
 export const Navbars = () => {
   return (
     <React.Fragment>
-      <Navbar bg="light" expand="lg" fixed="top">
+      <Navbar expand="lg" fixed="top">
         <Container fluid>
-          <NavLink to="/">
+          <NavLink to="/" onClick={goTop}>
             <img className="logoHotel" src={Logo} alt="Panorama Hotel"></img>
           </NavLink>
           <Navbar.Toggle aria-controls="navbarScroll" />
@@ -41,6 +42,7 @@ export const Navbars = () => {
                 }}
                 end
                 to="/"
+                onClick={goTop}
               >
                 HOME
               </NavLink>
@@ -53,6 +55,7 @@ export const Navbars = () => {
                 }}
                 end
                 to="/rooms"
+                onClick={goTop}
               >
                 ROOMS
               </NavLink>
@@ -65,6 +68,7 @@ export const Navbars = () => {
                 }}
                 end
                 to="/bookings"
+                onClick={goTop}
               >
                 BOOKING
               </NavLink>
@@ -77,6 +81,7 @@ export const Navbars = () => {
                 }}
                 end
                 to="/new&event"
+                onClick={goTop}
               >
                 NEW & EVENT
               </NavLink>
@@ -89,6 +94,7 @@ export const Navbars = () => {
                 }}
                 end
                 to="/about"
+                onClick={goTop}
               >
                 ABOUT
               </NavLink>
@@ -101,6 +107,7 @@ export const Navbars = () => {
                 }}
                 end
                 to="/contact"
+                onClick={goTop}
               >
                 CONTACT
               </NavLink>
@@ -121,7 +128,7 @@ export const Navbars = () => {
         </Container>
       </Navbar>
 
-      <div style={{ marginTop: "55px" }}>
+      <div style={{ marginTop: "0px" }}>
         <Outlet />
       </div>
 

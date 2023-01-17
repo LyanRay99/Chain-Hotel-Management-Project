@@ -77,12 +77,7 @@
     }
 
     &__send {
-      border: none;
-      border-radius: 5px;
-      padding: 5px 20px;
-      background-color: $colorPrimary;
-      color: white;
-      margin: 20px 0px 0px 0px;
+      @include Btn;
     }
   }
 }

@@ -7,16 +7,19 @@
   @include size(100%, 50vh);
   position: relative;
 
-  img {
+  &__background {
     @include size(100%, 100%);
-    object-fit: cover;
-    filter: brightness(80%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url(../../Assets/Slider/background-others-page.jpg) 0% 220% /
+      cover no-repeat fixed;
   }
 
   &__title {
     @include size(auto, auto);
     font-family: $mainFont;
-    font-size: 4em;
+    font-size: 3em;
     text-align: center;
     color: white;
     text-shadow: 6px 6px 7px $colorPrimary;

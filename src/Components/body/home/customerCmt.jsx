@@ -37,11 +37,16 @@ export const CustomerCmt = () => {
 
   return (
     <div className="comment">
+      <div className="comment__background"></div>
+
       <Slider {...settings}>
         {customerCmt.map((item, index) => (
           <div className="comment__box" key={index}>
             <div className="comment__box__avatar">
-              <img src={item.avatar} alt={item.name}></img>
+              <img
+                src={require(`../../../Assets/${item.avatar}`)}
+                alt={item.name}
+              ></img>
             </div>
 
             <div className="comment__box__customer">

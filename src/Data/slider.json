@@ -1,0 +1,22 @@
+[
+  {
+    "name": "slide1",
+    "image": "Slider/image1.jpg",
+    "content": "Wellcome to Panorama"
+  },
+  {
+    "name": "slide2",
+    "image": "Slider/image2.jpg",
+    "content": "Enjoy a Luxury Experience"
+  },
+  {
+    "name": "slide3",
+    "image": "Slider/image3.jpg",
+    "content": "Book Your Vacation"
+  },
+  {
+    "name": "slide4",
+    "image": "Slider/image4.jpg",
+    "content": "Touch The Sea"
+  }
+]

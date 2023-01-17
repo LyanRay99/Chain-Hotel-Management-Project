@@ -9,6 +9,7 @@
 
 .navbar {
   opacity: 0.8;
+  background-color: rgba(138, 137, 137, 0.3);
 }
 
 .navbar-nav {
@@ -28,8 +29,8 @@
 }
 
 .nav-link {
-  color: black !important;
-  font-weight: bold;
+  color: white !important;
+  font-weight: bold !important;
 }
 
 .activeClass {
@@ -89,7 +90,8 @@
   h3 {
     @include size(auto, auto);
     font-family: $mainFont;
-    font-size: 4em;
+    // font-size: 4rem;
+    font-size: 300%;
     text-shadow: 6px 6px 7px $colorPrimary;
     margin-bottom: 5%;
   }
@@ -97,6 +99,14 @@
 
 .carousel-item {
   img {
-    filter: brightness(80%);
+    filter: brightness(90%);
+    object-fit: cover;
+  }
+}
+
+//* Custom size slider
+@media (min-width: 1400px) {
+  .carousel-item img {
+    height: 800px !important;
   }
 }

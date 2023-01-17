@@ -1,0 +1,94 @@
+{
+  "aboutUs_Home": [
+    {
+      "name": "MASTER BEDROOMS",
+      "image": "About/home/about-icon-1.png"
+    },
+    {
+      "name": "SEA VIEW BALCONY",
+      "image": "About/home/about-icon-2.png"
+    },
+    {
+      "name": "POOL & SPA",
+      "image": "About/home/about-icon-3.png"
+    },
+    {
+      "name": "WIFI COVERAGE",
+      "image": "About/home/about-icon-4.png"
+    },
+    {
+      "name": "AWESOME PACKAGES",
+      "image": "About/home/about-icon-5.png"
+    },
+    {
+      "name": "CLEANING EVERDAY",
+      "image": "About/home/about-icon-6.png"
+    },
+    {
+      "name": "BUTFFET BREAKFAST",
+      "image": "About/home/about-icon-7.png"
+    },
+    {
+      "name": "AIRPORT TAXI",
+      "image": "About/home/about-icon-8.png"
+    }
+  ],
+  "aboutUs_Page": [
+    {
+      "id": 1,
+      "title": "ABOUT US",
+      "content": "The Panorama Hotel, one of the comfortable, modern hotels located in prime locations. With its geographical location in the center of the city and 5-star service quality, the hotel is always the first choice of many tourists when coming to Panorama.",
+      "image": "About/info/page-about-1.jpg"
+    },
+    {
+      "id": 2,
+      "title": "WHY GUEST CHOOSE SKYLINE HOTEL?",
+      "content": "Panorama hotel chain currently has 3 branches in Da Nang, Nha Trang and Phu Quoc. Each branch has more than 500 rooms with various room types such as deluxe room, vip room, luxury room and family room. Panorama is designed in a modern, simple and not too fussy style, helping customers to feel comfortable while staying. Owning a variety of room types, from standard rooms to VIP rooms to meet different needs of customers. Rooms are fully equipped and comfortable with many other services such as 24/7 reception, parking, laundry, kitchen, motorbike rental... In addition, the hotel also has a gym. Free gym for hotel guests. That's why Panorama Hotel is perfectly suitable for customers traveling, business guests or long-term renters.",
+      "image": "About/info/page-about-2.jpg"
+    }
+  ],
+  "aboutUs_Statistic": [
+    {
+      "count": 768,
+      "content": "GUEST STAY"
+    },
+    {
+      "count": 632,
+      "content": "BOOK ROOM"
+    },
+    {
+      "count": 1024,
+      "content": "MEMBER STAY"
+    },
+    {
+      "count": 256,
+      "content": "MEALS SERVED"
+    }
+  ],
+  "about_Team": [
+    {
+      "name": "JESSICA ALBA",
+      "position": "Founder Hotel",
+      "image": "About/team/member1.png",
+      "description": "Mea omnium explicari te, eu sit vidit harum fabellas, his no legere feugaitper in laudem malorum epicuri, quod natum evertitur ne per."
+    },
+    {
+      "name": "ROBET WILIAM",
+      "position": "Manager lotus Hotel",
+      "image": "About/team/member2.png",
+      "description": "Mea omnium explicari te, eu sit vidit harum fabellas, his no legere feugaitper in laudem malorum epicuri, quod natum evertitur ne per."
+    },
+    {
+      "name": "ADAM",
+      "position": "Rooms Division Manager",
+      "image": "About/team/member3.png",
+      "description": "Mea omnium explicari te, eu sit vidit harum fabellas, his no legere feugaitper in laudem malorum epicuri, quod natum evertitur ne per."
+    },
+    {
+      "name": "DAVID GARI",
+      "position": "F&B Manager",
+      "image": "About/team/member4.png",
+      "description": "Mea omnium explicari te, eu sit vidit harum fabellas, his no legere feugaitper in laudem malorum epicuri, quod natum evertitur ne per."
+    }
+  ]
+}

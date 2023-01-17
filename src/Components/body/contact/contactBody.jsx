@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import listRooms from "../../../Data/list_room.json";
+import { useSelector } from "react-redux";
+import { ContactFeedback } from "./contactFeedback";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faEnvelope,
@@ -9,7 +10,8 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 export const ContactBody = () => {
-  const [listChainHotels, setListChainHotels] = useState(listRooms);
+  const listHotel = useSelector((state) => state.RS_rooms.Rooms);
+  const [listChainHotels, setListChainHotels] = useState(listHotel);
 
   return (
     <div className="contact">
@@ -22,8 +24,8 @@ export const ContactBody = () => {
         </p>
 
         <div className="contact__info__listChainHotels">
-          {listChainHotels.map((item) => (
-            <ul className="branch">
+          {listChainHotels.map((item, index) => (
+            <ul className="branch" key={index}>
               <li>
                 <FontAwesomeIcon icon={faHotel} className="icon" />
                 {item.nameBranchEN}
@@ -47,7 +49,8 @@ export const ContactBody = () => {
         </div>
       </div>
 
-      <div className="contact__feedback">
+      <ContactFeedback title="contact" />
+      {/* <div className="contact__feedback">
         <div className="contact__feedback__account">
           <input type="text" placeholder="Name"></input>
           <input type="text" placeholder="Email"></input>
@@ -62,7 +65,7 @@ export const ContactBody = () => {
         </div>
 
         <button className="contact__feedback__send">SEND</button>
-      </div>
+      </div> */}
     </div>
   );
 };
