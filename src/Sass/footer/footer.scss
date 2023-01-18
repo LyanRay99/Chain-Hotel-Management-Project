@@ -153,22 +153,3 @@
     }
   }
 }
-
-//* Arrow go top
-.arrowGoTop {
-  @include size(50px, 50px);
-  position: fixed;
-  bottom: 50px;
-  right: 50px;
-  background-color: $colorPrimary;
-  border-radius: 10px;
-  text-align: center;
-  cursor: pointer;
-  transition: all 0.5s linear;
-
-  &__icon {
-    @include size(70%, auto);
-    margin-top: 20%;
-    color: white;
-  }
-}

@@ -1,5 +1,12 @@
 //* Library
-import React, { useState, useEffect } from "react";
+import React from "react";
+
+//* Store in Redux
+import {
+  CHANGEBOOKINGSTEP,
+  CHANGEBOOKINGSTYLE,
+  CHANGESTEP,
+} from "../../Store/reducers/R_rooms";
 
 //* Components UI
 import { SupSlider } from "../../Components/headers/supSlider";
@@ -11,69 +18,18 @@ import { Confirmation } from "../../Components/body/booking/details/confirmation
 //* Icon
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretLeft, faCaretRight } from "@fortawesome/free-solid-svg-icons";
+import { useDispatch, useSelector } from "react-redux";
 
 export const Booking = () => {
-  const [booking, setBooking] = useState(0);
-  const [bookingStyle, setBookingStyle] = useState({
-    chooseDate: "",
-    chooseRoom: "",
-    reservation: "",
-    confirmation: "",
-  });
+  const bookingStep = useSelector(
+    (state) => state.RS_rooms.booking.bookingStep
+  );
 
-  const changeBooking = (index) => {
-    index === 0
-      ? setBooking(0)
-      : index === 1
-      ? setBooking(1)
-      : index === 2
-      ? setBooking(2)
-      : setBooking(3);
-  };
+  const bookingStyle = useSelector(
+    (state) => state.RS_rooms.booking.bookingStyle
+  );
 
-  const changeStyle = (index) => {
-    index === 0
-      ? setBookingStyle({
-          chooseDate: "activeStyle",
-          chooseRoom: "",
-          reservation: "",
-          confirmation: "",
-        })
-      : index === 1
-      ? setBookingStyle({
-          chooseDate: "",
-          chooseRoom: "activeStyle",
-          reservation: "",
-          confirmation: "",
-        })
-      : index === 2
-      ? setBookingStyle({
-          chooseDate: "",
-          chooseRoom: "",
-          reservation: "activeStyle",
-          confirmation: "",
-        })
-      : setBookingStyle({
-          chooseDate: "",
-          chooseRoom: "",
-          reservation: "",
-          confirmation: "activeStyle",
-        });
-  };
-
-  useEffect(() => {
-    changeStyle(0);
-  }, []);
-
-  const changeStep = (booking, step) => {
-    if (step === "previous" && booking > 0) {
-      setBooking((booking = booking - 1));
-      changeStyle(booking);
-    } else if (step === "next" && booking < 3) {
-      setBooking((booking = booking + 1));
-      changeStyle(booking);
-    }
-  };
+  const dispatch = useDispatch();
 
   return (
     <>
@@ -81,14 +37,19 @@ export const Booking = () => {
       <section className="section">
         <div className="booking">
           <div className="booking__control">
-            <div onClick={() => changeStep(booking, "previous")}>
+            <div
+              onClick={() => {
+                dispatch(CHANGESTEP({ bookingStep, type: "previous" }));
+                dispatch(CHANGEBOOKINGSTYLE(bookingStep - 1));
+              }}
+            >
               <FontAwesomeIcon icon={faCaretLeft} className="icon" />
             </div>
             <div
               className={bookingStyle.chooseDate}
               onClick={() => {
-                changeBooking(0);
-                changeStyle(0);
+                dispatch(CHANGEBOOKINGSTEP(0));
+                dispatch(CHANGEBOOKINGSTYLE(0));
               }}
             >
               <b>1.</b> Choose Date
@@ -97,8 +58,8 @@ export const Booking = () => {
             <div
               className={bookingStyle.chooseRoom}
               onClick={() => {
-                changeBooking(1);
-                changeStyle(1);
+                dispatch(CHANGEBOOKINGSTEP(1));
+                dispatch(CHANGEBOOKINGSTYLE(1));
               }}
             >
               <b>2.</b> Choose Room
@@ -107,8 +68,8 @@ export const Booking = () => {
             <div
               className={bookingStyle.reservation}
               onClick={() => {
-                changeBooking(2);
-                changeStyle(2);
+                dispatch(CHANGEBOOKINGSTEP(2));
+                dispatch(CHANGEBOOKINGSTYLE(2));
               }}
             >
               <b>3.</b> Make a Reservation
@@ -117,24 +78,29 @@ export const Booking = () => {
             <div
               className={bookingStyle.confirmation}
               onClick={() => {
-                changeBooking(3);
-                changeStyle(3);
+                dispatch(CHANGEBOOKINGSTEP(3));
+                dispatch(CHANGEBOOKINGSTYLE(3));
               }}
             >
               <b>4.</b> Confirmation
               <span></span>
             </div>
-            <div onClick={() => changeStep(booking, "next")}>
+            <div
+              onClick={() => {
+                dispatch(CHANGESTEP({ bookingStep, type: "next" }));
+                dispatch(CHANGEBOOKINGSTYLE(bookingStep + 1));
+              }}
+            >
               <FontAwesomeIcon icon={faCaretRight} className="icon" />
             </div>
           </div>
 
           <div className="booking__body">
-            {booking === 0 ? (
+            {bookingStep === 0 ? (
               <ChooseDate />
-            ) : booking === 1 ? (
+            ) : bookingStep === 1 ? (
               <ChooseRoom />
-            ) : booking === 2 ? (
+            ) : bookingStep === 2 ? (
               <MakeAReservation />
             ) : (
               <Confirmation />

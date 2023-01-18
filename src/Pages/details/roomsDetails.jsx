@@ -1,11 +1,11 @@
 //* Library
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Link, useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { goTop } from "../../Components/support/goTop";
 
 //* Store in Redux
-import { CHANGEROOMINFO } from "../../Store/reducers/R_rooms";
+import { CHANGEROOMINFO, CHANGESTYLEINFO } from "../../Store/reducers/R_rooms";
 
 //* Components UI
 import { SupSlider } from "../../Components/headers/supSlider";
@@ -29,51 +29,13 @@ export const RoomsDetails = () => {
     (state) => state.RS_rooms.Rooms[0].roomType[params]
   );
   const roomType = useSelector((state) => state.RS_rooms.Rooms[0].roomType);
-  const [roomInfo, setRoomInfo] = useState(0);
-
-  const [roomInfoStyle, setRoomInfoStyle] = useState({
-    Overview: "",
-    Amenities: "",
-    Package: "",
-  });
-
+  const roomInfo = useSelector(
+    (state) => state.RS_rooms.roomDetail.roomDetailInfo
+  );
+  const roomInfoStyle = useSelector(
+    (state) => state.RS_rooms.roomDetail.roomInfoStyle
+  );
   const dispatch = useDispatch();
-
-  const changeRoomInfo = () => {
-    dispatch(CHANGEROOMINFO);
-  };
-
-  // const changeRoomInfo = (index) => {
-  //   index === 0
-  //     ? setRoomInfo(0)
-  //     : index === 1
-  //     ? setRoomInfo(1)
-  //     : setRoomInfo(2);
-  // };
-
-  const changeStyle = (index) => {
-    index === 0
-      ? setRoomInfoStyle({
-          Overview: "activeStyle",
-          Amenities: "",
-          Package: "",
-        })
-      : index === 1
-      ? setRoomInfoStyle({
-          Overview: "",
-          Amenities: "activeStyle",
-          Package: "",
-        })
-      : setRoomInfoStyle({
-          Overview: "",
-          Amenities: "",
-          Package: "activeStyle",
-        });
-  };
-
-  useEffect(() => {
-    changeStyle(0);
-  }, []);
 
   return (
     <>
@@ -104,8 +66,8 @@ export const RoomsDetails = () => {
               <p
                 className={roomInfoStyle.Overview}
                 onClick={() => {
-                  changeRoomInfo(0);
-                  changeStyle(0);
+                  dispatch(CHANGEROOMINFO(0));
+                  dispatch(CHANGESTYLEINFO(0));
                 }}
               >
                 OVERVIEW
@@ -114,8 +76,8 @@ export const RoomsDetails = () => {
               <p
                 className={roomInfoStyle.Amenities}
                 onClick={() => {
-                  changeRoomInfo(1);
-                  changeStyle(1);
+                  dispatch(CHANGEROOMINFO(1));
+                  dispatch(CHANGESTYLEINFO(1));
                 }}
               >
                 AMENITIES
@@ -124,8 +86,8 @@ export const RoomsDetails = () => {
               <p
                 className={roomInfoStyle.Package}
                 onClick={() => {
-                  changeRoomInfo(2);
-                  changeStyle(2);
+                  dispatch(CHANGEROOMINFO(2));
+                  dispatch(CHANGESTYLEINFO(2));
                 }}
               >
                 PACKAGE

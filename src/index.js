@@ -5,6 +5,7 @@ import reportWebVitals from "./reportWebVitals";
 
 //* Components
 import { ArrowGoTop } from "./Components/support/ArrowGoTop";
+import { BookingNow } from "./Components/support/bookingNow";
 
 //* Bootstrap + fontawesome + react slick
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -21,7 +22,8 @@ root.render(
   <React.StrictMode>
     <Provider store={store}>
       <App />
-      {/* <ArrowGoTop /> */}
+      <ArrowGoTop />
+      <BookingNow />
     </Provider>
   </React.StrictMode>
 );

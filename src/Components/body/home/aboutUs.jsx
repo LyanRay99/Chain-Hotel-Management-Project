@@ -34,7 +34,10 @@ export const AboutUs = () => {
       <div className="aboutUs__service">
         {aboutUs.map((item, index) => (
           <span key={index}>
-            <img src={item.image} alt={item.name}></img>
+            <img
+              src={require(`../../../Assets/${item.image}`)}
+              alt={item.name}
+            ></img>
             <p>{item.name}</p>
           </span>
         ))}

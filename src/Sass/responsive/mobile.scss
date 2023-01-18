@@ -1,0 +1,23 @@
+@import "../settings/mixin.scss";
+@import "../settings/reset.scss";
+@import "../settings/variable.scss";
+
+//* Responsive 320px => 480px
+@media screen and (max-width: 520px) {
+  //* Completed: Header
+  .header__topline {
+    &__container {
+      &__left {
+        display: none;
+        span {
+        }
+      }
+
+      &__right {
+        span {
+          padding: 0px 20px 0px 0px;
+        }
+      }
+    }
+  }
+}

@@ -30,4 +30,103 @@
   }
 }
 
+// TODO: Arrow go top
+.arrowGoTop {
+  @include size(50px, 50px);
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  background-color: $colorPrimary;
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
+  animation: arrowGoTop 1s linear;
+
+  &__icon {
+    @include size(70%, auto);
+    margin-top: 20%;
+    color: white;
+  }
+}
+
+@keyframes arrowGoTop {
+  0% {
+    transform: scale(-1);
+  }
+
+  50% {
+    transform: scale(1.5);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+// TODO: Booking Now
+.bookingNow {
+  @include size(100px, 100px);
+  border-radius: 50%;
+  position: fixed;
+  top: 45%;
+  right: 20px;
+
+  &__close {
+    &__content {
+      @include size(100%, auto);
+      position: absolute;
+      padding: 25px 0px;
+      text-align: center;
+      font-weight: 900;
+      color: $colorPrimary;
+    }
+
+    .star1 {
+      @include size(100%, 100%);
+      position: absolute;
+      background-color: red;
+    }
+
+    .star2 {
+      @extend .star1;
+      transform: rotate(30deg);
+    }
+
+    .star3 {
+      @extend .star1;
+      transform: rotate(60deg);
+    }
+
+    span {
+      font-size: 1.5em;
+      position: absolute;
+      top: -25px;
+      right: -15px;
+      color: $colorPrimary;
+      cursor: pointer;
+    }
+  }
+
+  &__open {
+    @include size(100%, 100%);
+    background-color: greenyellow;
+    border-radius: 50% 0% 0% 50%;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: -73px;
+
+    span {
+      rotate: 90deg;
+      text-align: center;
+      font-size: 0.8em;
+      font-weight: 900;
+      color: $colorPrimary;
+      position: absolute;
+      top: 30%;
+      right: 40%;
+    }
+  }
+}
+
 // TODO: Scrollbar

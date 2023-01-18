@@ -6,7 +6,7 @@ import { goTop } from "../../../support/goTop";
 
 export const NewsAndEventDeal = () => {
   const deal = useSelector((state) => state.RS_rooms.Rooms[0].roomType);
-  console.log(deal);
+
   const settings = {
     dots: true,
     infinite: true,

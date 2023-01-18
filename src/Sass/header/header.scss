@@ -9,7 +9,7 @@
 
 .navbar {
   opacity: 0.8;
-  background-color: rgba(138, 137, 137, 0.3);
+  background-color: rgba(138, 137, 137, 0.8);
 }
 
 .navbar-nav {
@@ -30,11 +30,11 @@
 
 .nav-link {
   color: white !important;
-  font-weight: bold !important;
+  font-weight: 900 !important;
 }
 
 .activeClass {
-  color: $colorPrimary !important;
+  color: gold !important;
   border-bottom: 3px solid $colorPrimary !important;
   padding-bottom: 0px !important;
 }
@@ -43,6 +43,8 @@
   @include size(200px, auto);
   text-align: center;
   font-size: 0.8em;
+  font-weight: bold;
+  color: white;
   padding: 0px 0px 0px 0px;
 
   &__phone:hover {
@@ -62,6 +64,13 @@
 
 .navbar-nav-scroll {
   max-height: 300px !important;
+}
+
+#colorChangeNavbar {
+  background-color: $colorPrimary !important;
+  color: goldenrod !important;
+  top: -2px !important;
+  transition: all 0.5s linear;
 }
 
 //TODO: Slider
@@ -104,9 +113,60 @@
   }
 }
 
+.carousel-control-next {
+  margin: 0px 40px 0px 0px !important;
+  width: 100px !important;
+}
+
+.carousel-control-prev {
+  margin: 0px 0px 0px 40px !important;
+  width: 100px !important;
+}
+
 //* Custom size slider
 @media (min-width: 1400px) {
   .carousel-item img {
     height: 800px !important;
+  }
+}
+
+//TODO: Header Topline
+.header__topline {
+  @include size(100%, auto);
+  background-color: rgba(138, 137, 137, 0.8);
+  color: white;
+  position: relative;
+  z-index: 50;
+
+  &__container {
+    padding: 5px 0px;
+    margin: 0px 30px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+    display: flex;
+    justify-content: space-between;
+
+    &__left {
+      @include size(auto, auto);
+
+      span {
+        padding: 0px 20px 0px 0px;
+        font-size: 0.75em;
+        font-weight: bold;
+      }
+    }
+
+    &__right {
+      @extend .header__topline__container__left;
+
+      span {
+        padding: 0px 0px 0px 25px;
+        font-size: 0.75em;
+        font-weight: bold;
+
+        &:hover {
+          color: $colorPrimary;
+        }
+      }
+    }
   }
 }

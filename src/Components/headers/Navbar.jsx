@@ -5,7 +5,7 @@ import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 
 //* React + React-router
-import React from "react";
+import React, { useState } from "react";
 import { NavLink, Outlet } from "react-router-dom";
 
 //* Component UI + Support
@@ -14,15 +14,64 @@ import { goTop } from "../support/goTop";
 
 //*Fontawasome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPhone } from "@fortawesome/free-solid-svg-icons";
+import { faClock, faCloud, faPhone } from "@fortawesome/free-solid-svg-icons";
 
 //* Image
 import Logo from "../../Assets/Logo.png";
 
 export const Navbars = () => {
+  //* Get date
+  const date = new Date();
+  let day = date.getDate();
+  let month = date.getMonth() + 1;
+  let year = date.getFullYear();
+  let hour = date.getHours();
+  let minute = date.getMinutes();
+  let seconds = date.getSeconds();
+
+  //* Change color navbar when scroll
+  const [colorChange, setColorchange] = useState(false);
+
+  const handleScroll = () => {
+    if (window.scrollY >= 35.6) {
+      setColorchange(true);
+    } else {
+      setColorchange(false);
+    }
+  };
+
+  window.addEventListener("scroll", handleScroll);
+
   return (
     <React.Fragment>
-      <Navbar expand="lg" fixed="top">
+      {/* Completed: Login, Register, language, ... */}
+      <div className="header__topline">
+        <div className="header__topline__container">
+          <div className="header__topline__container__left">
+            <span>
+              <FontAwesomeIcon icon={faCloud} /> 18'C
+            </span>
+            <span>
+              <FontAwesomeIcon icon={faClock} />{" "}
+              {`${day}/${month}/${year} - ${hour}:${minute}:${seconds}`}
+            </span>
+          </div>
+
+          <div className="header__topline__container__right">
+            <span>LOGIN</span>
+            <span>REGISTER</span>
+            <span>VI</span>
+            <span>EN</span>
+          </div>
+        </div>
+      </div>
+
+      {/* Completed: Navbar */}
+      <Navbar
+        expand="lg"
+        sticky="top"
+        id={colorChange ? "colorChangeNavbar" : ""}
+      >
         <Container fluid>
           <NavLink to="/" onClick={goTop}>
             <img className="logoHotel" src={Logo} alt="Panorama Hotel"></img>
@@ -121,17 +170,18 @@ export const Navbars = () => {
 
           <div className="navbarInfo">
             <span className="navbarInfo__phone">
-              <FontAwesomeIcon icon={faPhone} />
-              (+84) 28. 38 12 17 19
+              <FontAwesomeIcon icon={faPhone} /> (+84) 28. 38 12 17 19
             </span>
           </div>
         </Container>
       </Navbar>
 
-      <div style={{ marginTop: "0px" }}>
+      {/* Completed: Body */}
+      <div style={{ marginTop: "-92px" }}>
         <Outlet />
       </div>
 
+      {/* Completed: Footer */}
       <Footer />
     </React.Fragment>
   );

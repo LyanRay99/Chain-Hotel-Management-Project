@@ -12,6 +12,7 @@ import "./Sass/pages/about.scss";
 import "./Sass/footer/footer.scss";
 import "./Sass/details/roomsDetails.scss";
 import "./Sass/others/others.scss";
+import "./Sass/responsive/mobile.scss";
 
 //* Main pages
 import { Navbars } from "./Components/headers/Navbar";
@@ -21,7 +22,6 @@ import { Booking } from "./Pages/main/booking";
 import { NewsAndEvent } from "./Pages/main/news&Event";
 import { About } from "./Pages/main/about";
 import { Contact } from "./Pages/main/contact";
-
 
 //* Detail Page
 import { RoomsDetails } from "./Pages/details/roomsDetails";
@@ -48,7 +48,6 @@ function App() {
               element={<NewsAndEventDetails />}
             />
           </Route>
-       
         </Routes>
       </BrowserRouter>
     </section>
