@@ -1,0 +1,148 @@
+[
+  {
+    "title": "General Hotel Information",
+    "content": [
+      {
+        "question": "What time can I check-in and check-out?",
+        "answer": "Standard check-in time is at 2 PM and check-out at 12 PM. Kindly note that check-in time may be shifted to 3:00 PM during high occupancy periods."
+      },
+      {
+        "question": "Can I request for wake up calls?",
+        "answer": "Make your way out of bed with our timely wake-up call. Please press service key “1” for assistance."
+      },
+      {
+        "question": "How can I talk to the Duty Manager?",
+        "answer": "Please dial service key “1” for assistance."
+      },
+      {
+        "question": "Can I request housekeeping?",
+        "answer": "Housekeeping services are available. Shoe shine service is offered to guests upon request. Please press the service key “1” for assistance."
+      },
+      {
+        "question": "Do you have wifi?",
+        "answer": "Stay connected during your stay with 40MB bandwidth internet service provided throughout our guestrooms and public areas. Please log-in with your username and password provided at check-in. User name is your room no. Password is *followed by room no. eg: USER NAME: 2803 PASSWORD: *2803."
+      },
+      {
+        "question": "Do you allow early check in and late check-out? ",
+        "answer": "Requests for early check-in and late check-out are honored but subject to availability. Allowable free-of-charge early check-in is from 12 PM and late check-out until 2 PM only. This privilege is extended to guests who book directly with us. Applicable charges will be billed for exceeding hours."
+      },
+      {
+        "question": "Can I store my bag?",
+        "answer": "Yes, we do offer luggage storage free of charge. I’M hotel reserves to right to deny storage of oversized and suspicious items."
+      },
+      {
+        "question": "Do you have an elevator?",
+        "answer": "We are equipped with six (6) guest elevators (3 high rise, 3 low rise elevators) and two (2) separate elevators serving the spa floors. Guest elevators are equipped with a high-level security feature that enables guests to access each designated floor using a keycard."
+      },
+      {
+        "question": "Can I bring my pet inside the hotel?",
+        "answer": "As much as we love pets, unfortunately, we are unable to accommodate them in our rooms or any of our common areas. We can refer you to the local pet house, while you choose to stay with us."
+      },
+      {
+        "question": "Do you offer parking slot for hotel guests?",
+        "answer": "Yes, however parking space is subject to availability. Registered hotel guests are entitled to one (1) complimentary parking slot per room."
+      },
+      {
+        "question": "Do you offer accommodation for the physically challenged?",
+        "answer": "Yes, we have PWD rooms specially available for senior citizens and persons with disabilities."
+      },
+      {
+        "question": "What is your linen & damage Policy?",
+        "answer": "Please note that additional charges are applicable for linen stains and other cleaning or damages caused intentionally or unintentionally. Penalties vary depending on the extent and severity of the damage. These include, but are not limited to, cleaning, repair, or replacement charges for stained walls, vomit, blood and food stain on linens, and broken furniture and fittings. The exact cost will be determined on a case-by-case basis by the Manager in charge. "
+      }
+    ]
+  },
+  {
+    "title": "Reservations & Cancellations",
+    "content": [
+      {
+        "question": "Can I cancel my booking?",
+        "answer": "Yes, but keep in mind that cancellations made less than three (3) days prior to arrival are subject to 100% charge."
+      },
+      {
+        "question": "Will a security deposit be required upon check-in?",
+        "answer": "The hotel requires an incidental deposit that may be settled through cash or credit card upon check-in. It is fully refundable if not used. If you are using a credit card, released upon check-out. Kindly note that it might take at least 7-14 banking days for your bank to activate the release."
+      },
+      {
+        "question": "What payment methods are accepted?",
+        "answer": "We accept cash and all major credit cards as payment."
+      }
+    ]
+  },
+  {
+    "title": "Reservation",
+    "content": [
+      {
+        "question": "Where can I make a reservation?",
+        "answer": "For room reservations at I’M Hotel, please email reservations@imhotel.com or visit www.imhotel.com. Direct bookers enjoy a best rate guarantee and other exclusive perks. "
+      }
+    ]
+  },
+  {
+    "title": "Rooms and Rates",
+    "content": [
+      {
+        "question": "Are smoking rooms available?",
+        "answer": "We are sorry, but I’M Hotel rooms are strictly non-smoking. There will be a cleaning fee of PHP 10,000 levied per incidence of smoking. For our guest’s comfort, there are designated smoking areas available at the 2nd floor, Mermaid Pool Bar."
+      },
+      {
+        "question": "Do kids stay free?",
+        "answer": "Yes, kids 12 years old and below are allowed to stay free-of-charge. The number of kids may vary depending on the room type."
+      },
+      {
+        "question": "Can I change my room type upon check-in?",
+        "answer": "Yes, but such requests are subject to room availability, applicable charges, and rate difference at the time of check-in."
+      },
+      {
+        "question": "Are extra beds available?",
+        "answer": "Yes, we offer extra beds should you require one. These are only available for the Indulgence room category and above and are offered at PHP 2,000 nett with a buffet breakfast for one (1)."
+      },
+      {
+        "question": "Are guests allowed in the hotel room?",
+        "answer": "Guests are allowed to visit the room. However, for overnight stays beyond the capacity of each room, there will be an extra person surcharge."
+      },
+      {
+        "question": "Do I have privacy in my room?",
+        "answer": "For rooms, we have an electronic “Do Not Disturb” button located by the door next to “Make up Room” button. For suites, a physical door tag is provided to hang outside your door to serve the same purpose. You may also request the front desk to take messages for you during this time."
+      }
+    ]
+  },
+  {
+    "title": "Hotel Amenities / Facilities",
+    "content": [
+      {
+        "question": "Is there a fitness center?",
+        "answer": "Yes, We have a fitness center available for all guests. Equipments are powered by Lifefitness"
+      },
+      {
+        "question": "Do you have Gym Facility?",
+        "answer": "Situated on the Mezzanine (M1) floor, our state-of-the-art gym facilities powered by Life Fitness. Operating Schedule: Daily, 6:00 AM to 12:00 MN "
+      },
+      {
+        "question": "How deep is the water in the pool?",
+        "answer": "Get ready to make your swimming an elevated and sensorial experience! Our acrylic-bottom swimming pool is located on the 2nd floor. Guests entering the hotel will be treated with the glistening water of the pool when they look up. Maximum depth of the pool is 4 feet."
+      }
+    ]
+  },
+  {
+    "title": "Meetings and Events",
+    "content": [
+      {
+        "question": "I would like to make an enquiry for an event. How should I go about this?",
+        "answer": "Kindly email sales@imhotel.com and a dedicated sales executive will assist you regarding your query within 24 hours."
+      },
+      {
+        "question": "Do you have a policy on filming & photoshoot?",
+        "answer": "Guests may shoot non-commercial photography or video for their personal use (with no professional equipment, lighting, etc.) in their guest room or on the property but must respect the privacy of other guests within the area. The use of DSLR/SLR cameras, drone, tri-pods, extensions, external flash units, and reflectors is not allowed. For professional photography, please send a letter of request to marketing@imhotel.com. Requests to use any area of our property for commercial shoots or filming as well as special occasions including but not limited to: weddings, debuts, anniversaries, should be coordinated to the Marketing Department. Such photo/video shoots are subject to applicable fees and schedule."
+      },
+      {
+        "question": "Do you offer caterings?",
+        "answer": "Should you be interested in viewing or booking our banquet spaces for your corporate or social events, please email sales@imhotel.com and a dedicated sales manager will get back to you regarding your request."
+      },
+      {
+        "question": "Do you have facilities for social events venues?",
+        "answer": "While with us, please do not hesitate to ask for an ocular visit to our Grand Ballroom and meeting rooms. Please dial “1” for assistance. Arrangements for the following event venues can be made in advance through our Sales Team. Please email sales@imhotel.com."
+      }
+    ]
+  }
+]

@@ -1,10 +1,10 @@
-// set size of element
+//* set size of element
 @mixin size($width, $height) {
   width: $width;
   height: $height;
 }
 
-//set scrollbar
+//* set scrollbar
 @mixin scrollbar($width) {
   ::-webkit-scrollbar {
     width: $width;
@@ -19,4 +19,69 @@
     background-color: $colorSecond;
     border-radius: 10px;
   }
+}
+
+//* Title at navigation of new & event page
+@mixin newsEvent__navbar__title {
+  color: $colorPrimary;
+  // text-shadow: 2px 0 $colorPrimary;
+  // letter-spacing: 1.5px;
+  font-weight: 900;
+}
+
+@mixin ColorPrimaryOpacity($color) {
+  background-color: rgba(219, 166, 33, $color);
+}
+
+//* class box__time at navigation of new & event page
+@mixin BoxTime {
+  @include size(25%, 90%);
+  border: 3px solid $colorPrimary;
+  border-radius: 10px;
+
+  p:first-child {
+    font-size: 2em;
+    margin: 0px;
+  }
+
+  p {
+    height: 60%;
+  }
+}
+
+//* Button
+@mixin Btn {
+  border: none;
+  border-radius: 5px;
+  padding: 5px 20px;
+  background-color: $colorPrimary;
+  color: white;
+  font-weight: bold;
+  margin: 20px 0px 0px 0px;
+  transition: all 0.5s linear;
+
+  &:hover {
+    color: $colorPrimary;
+    background-color: white;
+    outline: 2px solid $colorPrimary;
+  }
+}
+
+//* Title of Reservation
+@mixin TitlefReservation {
+  @include size(100%, 15px);
+  color: $colorPrimary;
+  border-left: 3px solid $colorPrimary;
+  font-size: 0.9em;
+  font-weight: 900;
+  padding: 0px 0px 0px 10px;
+  display: flex;
+  align-items: center;
+}
+
+//* P of Reservation (arrive + depature)
+@mixin POfReservation {
+  font-size: 0.8em;
+  font-weight: 900;
+  margin: 10px 0px;
 }

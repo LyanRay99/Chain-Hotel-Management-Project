@@ -36,27 +36,36 @@ export const CustomerCmt = () => {
   };
 
   return (
-    <div className="comment">
-      <Slider {...settings}>
-        {customerCmt.map((item, index) => (
-          <div className="comment__box" key={index}>
-            <div className="comment__box__avatar">
-              <img src={item.avatar} alt={item.name}></img>
-            </div>
+    <div className="homeCustomerCmt-SECTION">
+      <section className="section">
+        <div className="comment">
+          {/* <div className="comment__background"></div> */}
 
-            <div className="comment__box__customer">
-              <div className="customer__info">
-                <h3 className="customer__info__name">{item.name}</h3>
-                <span className="customer__info__address">
-                  From {item.address}
-                </span>
+          <Slider {...settings}>
+            {customerCmt.map((item, index) => (
+              <div className="comment__box" key={index}>
+                <div className="comment__box__avatar">
+                  <img
+                    src={require(`../../../Assets/${item.avatar}`)}
+                    alt={item.name}
+                  ></img>
+                </div>
+
+                <div className="comment__box__customer">
+                  <div className="customer__info">
+                    <h3 className="customer__info__name">{item.name}</h3>
+                    <span className="customer__info__address">
+                      From {item.address}
+                    </span>
+                  </div>
+
+                  <p className="customer__info__content">"{item.comment}"</p>
+                </div>
               </div>
-
-              <p className="customer__info__content">"{item.comment}"</p>
-            </div>
-          </div>
-        ))}
-      </Slider>
+            ))}
+          </Slider>
+        </div>
+      </section>
     </div>
   );
 };

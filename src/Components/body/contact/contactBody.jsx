@@ -1,15 +1,10 @@
-import React, { useState } from "react";
-import listRooms from "../../../Data/list_room.json";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faEnvelope,
-  faHotel,
-  faMap,
-  faPhone,
-} from "@fortawesome/free-solid-svg-icons";
+import React from "react";
+import { useSelector } from "react-redux";
+import { ContactFeedback } from "./contactFeedback";
+import { ListBranch } from "./listBranch";
 
 export const ContactBody = () => {
-  const [listChainHotels, setListChainHotels] = useState(listRooms);
+  const listHotel = useSelector((state) => state.RS_rooms.Rooms);
 
   return (
     <div className="contact">
@@ -22,47 +17,13 @@ export const ContactBody = () => {
         </p>
 
         <div className="contact__info__listChainHotels">
-          {listChainHotels.map((item) => (
-            <ul className="branch">
-              <li>
-                <FontAwesomeIcon icon={faHotel} className="icon" />
-                {item.nameBranchEN}
-                <ul>
-                  <li>
-                    <FontAwesomeIcon icon={faMap} className="icon" />
-                    {item.addressEN}
-                  </li>
-                  <li>
-                    <FontAwesomeIcon icon={faPhone} className="icon" />
-                    {item.phone}
-                  </li>
-                  <li>
-                    <FontAwesomeIcon icon={faEnvelope} className="icon" />
-                    {item.email}
-                  </li>
-                </ul>
-              </li>
-            </ul>
+          {listHotel.map((item, index) => (
+            <ListBranch item={item} key={index} />
           ))}
         </div>
       </div>
 
-      <div className="contact__feedback">
-        <div className="contact__feedback__account">
-          <input type="text" placeholder="Name"></input>
-          <input type="text" placeholder="Email"></input>
-        </div>
-
-        <div className="contact__feedback__subject">
-          <input type="text" placeholder="Subject"></input>
-        </div>
-
-        <div className="contact__feedback__content">
-          <textarea placeholder="Write what do you want!"></textarea>
-        </div>
-
-        <button className="contact__feedback__send">SEND</button>
-      </div>
+      <ContactFeedback title="contact" />
     </div>
   );
 };

@@ -3,7 +3,7 @@
 @import "../settings/variable.scss";
 
 .section {
-  @include size(1200px, auto);
+  @include size(1400px, auto);
   margin: auto auto 50px auto;
   //   background-color: red;
 
@@ -37,7 +37,7 @@
         padding: 20px;
 
         &__image {
-          @include size(100%, 350px);
+          @include size(100%, 400px);
           overflow: hidden;
           border-radius: 20px;
           position: relative;
@@ -116,13 +116,22 @@
       // background-color: red;
 
       &__1 {
+        // @include size(10%, auto);
         text-align: left;
+
+        img {
+          @include size(50%, auto);
+        }
       }
 
       &__2 {
         position: absolute;
         top: 50px;
-        right: 50px;
+        right: 140px;
+
+        img {
+          @include size(110%, auto);
+        }
       }
     }
 
@@ -207,6 +216,7 @@
   .news {
     @include size(100%, auto);
     padding: 50px 0px 0px 0px;
+    border: none;
     display: flex;
     justify-content: space-between;
 
@@ -256,50 +266,71 @@
       }
     }
   }
+
+  #news {
+    border: none;
+  }
 }
 
 //TODO: Customer Review
-.comment {
-  @include size(100%, 450px);
-  padding: 80px 0px 30px 0px;
+
+.homeCustomerCmt-SECTION {
+  @include size(100%, auto);
   background: url(../../Assets/backgroundImage.jpg) center bottom/cover
     no-repeat local;
 
-  &__box {
-    @include size(100%, auto);
-    padding: 50px 0px;
-    display: flex !important;
-    justify-content: center;
-    background: rgba(0, 0, 0, 0.4);
-    // background-color: red;
+  section {
+    .comment {
+      @include size(100%, 450px);
+      padding: 80px 0px 30px 0px;
+      // background: url(../../Assets/backgroundImage.jpg) center bottom/cover
+      //   no-repeat local;
 
-    &__avatar {
-      @include size(10%, auto);
-      padding: 0px;
-      //   background-color: blue;
+      // &__background {
+      //   @include size(100%, 100%);
+      //   background: url(../../Assets/backgroundImage.jpg) center bottom/cover
+      //     no-repeat fixed;
+      //   position: absolute;
+      //   top: 0;
+      //   left: 0;
+      // }
 
-      img {
-        @include size(100%, auto);
-        border-radius: 50%;
-      }
-    }
+      &__box {
+        @include size(100%, 100%);
+        padding: 50px 0px;
+        display: flex !important;
+        justify-content: center;
+        background: rgba(0, 0, 0, 0.4);
 
-    &__customer {
-      @include size(60%, auto);
-      padding: 10px 50px;
-      color: white;
-      //   background-color: red;
+        &__avatar {
+          @include size(10%, auto);
+          padding: 0px;
+          //   background-color: blue;
 
-      .customer__info {
-        display: flex;
-
-        &__name {
-          padding: 0px 15px 0px 0px;
-          border-right: 1.5px solid white;
+          img {
+            @include size(100%, auto);
+            border-radius: 50%;
+          }
         }
 
-        &__address {
-          padding: 5px 0px 0px 15px;
+        &__customer {
+          @include size(60%, auto);
+          padding: 10px 50px;
+          color: white;
+          //   background-color: red;
+
+          .customer__info {
+            display: flex;
+
+            &__name {
+              padding: 0px 15px 0px 0px;
+              border-right: 1.5px solid white;
+            }
+
+            &__address {
+              padding: 5px 0px 0px 15px;
+            }
+          }
         }
       }
     }

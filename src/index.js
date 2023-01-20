@@ -4,12 +4,10 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
 //* Components
-import { ArrowGoTop } from "./Components/footer/ArrowGoTop";
+import { ArrowGoTop } from "./Components/support/ArrowGoTop";
 
-//* Bootstrap + React Animation On Scroll + fontawesome + react slick
+//* Bootstrap + fontawesome + react slick
 import "bootstrap/dist/css/bootstrap.min.css";
-// import "animate.css/animate.min.css";
-import "react-animation-on-scroll";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -22,8 +20,8 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      {/* <ArrowGoTop /> */}
       <App />
+      <ArrowGoTop />
     </Provider>
   </React.StrictMode>
 );

@@ -1,0 +1,241 @@
+{
+  "news_home": [
+    {
+      "date": 25,
+      "month": "JANUARY",
+      "year": 2023,
+      "time": "12:30 Pm, Wed 25 Jan 2023",
+      "content": "Update menu food in Panorama Hote"
+    },
+    {
+      "date": 22,
+      "month": "JANUARY",
+      "year": 2023,
+      "time": "15:30 Pm, Sun 25 Jan 2023",
+      "content": "Las Maquinas on Tragamonedas"
+    },
+    {
+      "date": 25,
+      "month": "FEBRUARY",
+      "year": 2023,
+      "time": "9:30 Pm, Wed 25 Feb 2023",
+      "content": "Mother Earth Hosts Our Travels"
+    }
+  ],
+  "events_home": [
+    {
+      "name": "Beach Sports",
+      "image": "Event/homePage/Our-Events-1.jpg"
+    },
+    {
+      "name": "Wedding Day",
+      "image": "Event/homePage/Our-Events-2.jpg"
+    },
+    {
+      "name": "Golf Cup 2023",
+      "image": "Event/homePage/Our-Events-3.jpg"
+    }
+  ],
+  "news_recent": [
+    {
+      "id": 1,
+      "name": "RELAXING & TRAVEL IN OUR HOTEL",
+      "time": "12:30 Pm, Thu 01 October   2023",
+      "date": "01",
+      "month": "OCTOBER",
+      "year": 2023,
+      "image": "Event/navigation/recent/event-recent-1.jpg",
+      "imageMain": "Event/body/content/blog-1.jpg",
+      "imageSup": "Event/body/content/blog-1.1.jpg",
+      "author": "Jonatha Owens",
+      "tags": ["Food Dinner", "Tralvel"],
+      "content": [
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.",
+        "But also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries. But also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets",
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries. But also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software",
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries."
+      ],
+      "comment": [
+        {
+          "name": "Jonatha Owens",
+          "avatar": "Event/body/comment/avatar1.jpg",
+          "title": "Lorem Ipsum is simply dummy text of the printing",
+          "content": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here.",
+          "time": "20PM 15 Oct 2022",
+          "reply": []
+        },
+        {
+          "name": "Jonatha Owens",
+          "avatar": "Event/body/comment/avatar2.jpg",
+          "title": "Lorem Ipsum is simply dummy text of the printing",
+          "content": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here.",
+          "time": "20PM 15 Oct 2022",
+          "reply": [
+            {
+              "name": "Jessica Anba",
+              "avatar": "Event/body/comment/avatar4.jpg",
+              "title": "Lorem Ipsum is simply dummy text of the printing",
+              "content": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College.",
+              "time": "20PM 15 Oct 2022"
+            }
+          ]
+        },
+        {
+          "avatar": "Event/body/comment/avatar3.jpg",
+          "name": "Jonatha Owens",
+          "title": "Lorem Ipsum is simply dummy text of the printing",
+          "content": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here.",
+          "time": "20PM 15 Oct 2022",
+          "reply": []
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "NEW KIND OF CHICKEN FOOD FOR DINNER",
+      "time": "12:30 Pm, Thu 01 January   2023",
+      "date": "01",
+      "month": "JANUARY",
+      "year": 2023,
+      "image": "Event/navigation/recent/event-recent-2.jpg",
+      "imageMain": "Event/body/content/blog-2.jpg",
+      "imageSup": "Event/body/content/blog-2.2.jpg",
+      "author": "Luis Jubica",
+      "tags": ["Food Dinner", "Tralvel"],
+      "content": [
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.",
+        "But also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries. But also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets",
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries. But also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software",
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries."
+      ],
+      "comment": [
+        {
+          "name": "Jonatha Owens",
+          "avatar": "Event/body/comment/avatar1.jpg",
+          "title": "Lorem Ipsum is simply dummy text of the printing",
+          "content": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here.",
+          "time": "20PM 15 Oct 2022",
+          "reply": []
+        },
+        {
+          "name": "Jonatha Owens",
+          "avatar": "Event/body/comment/avatar2.jpg",
+          "title": "Lorem Ipsum is simply dummy text of the printing",
+          "content": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here.",
+          "time": "20PM 15 Oct 2022",
+          "reply": [
+            {
+              "name": "Jessica Anba",
+              "avatar": "Event/body/comment/avatar4.jpg",
+              "title": "Lorem Ipsum is simply dummy text of the printing",
+              "content": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College.",
+              "time": "20PM 15 Oct 2022"
+            }
+          ]
+        },
+        {
+          "avatar": "Event/body/comment/avatar3.jpg",
+          "name": "Jonatha Owens",
+          "title": "Lorem Ipsum is simply dummy text of the printing",
+          "content": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here.",
+          "time": "20PM 15 Oct 2022",
+          "reply": []
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "ONE NIGHT WEDDING WITH JESSIA & ROBET",
+      "time": "12:30 Pm, Mon 01 May        2023",
+      "date": "15",
+      "month": "MAY",
+      "year": 2023,
+      "image": "Event/navigation/recent/event-recent-3.jpg",
+      "imageMain": "Event/body/content/blog-3.jpg",
+      "imageSup": "Event/body/content/blog-3.3.jpg",
+      "author": "David Mora",
+      "tags": ["Food Dinner", "Tralvel"],
+      "content": [
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.",
+        "But also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries. But also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets",
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries. But also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software",
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries."
+      ],
+      "comment": [
+        {
+          "name": "Jonatha Owens",
+          "avatar": "Event/body/comment/avatar1.jpg",
+          "title": "Lorem Ipsum is simply dummy text of the printing",
+          "content": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here.",
+          "time": "20PM 15 Oct 2022",
+          "reply": []
+        },
+        {
+          "name": "Jonatha Owens",
+          "avatar": "Event/body/comment/avatar2.jpg",
+          "title": "Lorem Ipsum is simply dummy text of the printing",
+          "content": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here.",
+          "time": "20PM 15 Oct 2022",
+          "reply": [
+            {
+              "name": "Jessica Anba",
+              "avatar": "Event/body/comment/avatar4.jpg",
+              "title": "Lorem Ipsum is simply dummy text of the printing",
+              "content": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College.",
+              "time": "20PM 15 Oct 2022"
+            }
+          ]
+        },
+        {
+          "avatar": "Event/body/comment/avatar3.jpg",
+          "name": "Jonatha Owens",
+          "title": "Lorem Ipsum is simply dummy text of the printing",
+          "content": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here.",
+          "time": "20PM 15 Oct 2022",
+          "reply": []
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "FISHING WITH SKYLINE HOTEL",
+      "time": "09:30 Pm, Fri 20 May        2023",
+      "date": "20",
+      "month": "JANUARY",
+      "year": 2023,
+      "image": "Event/navigation/recent/event-recent-4.jpg",
+      "imageMain": "Event/body/content/blog-4.jpg",
+      "imageSup": "Event/body/content/blog-4.4.jpg",
+      "author": "Philip Anato",
+      "tags": ["Food Dinner", "Tralvel"],
+      "content": [
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.",
+        "But also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries. But also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets",
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries. But also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software",
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries."
+      ],
+      "comment": [
+        {
+          "name": "Jonatha Owens",
+          "avatar": "Event/body/comment/avatar1.jpg",
+          "title": "Lorem Ipsum is simply dummy text of the printing",
+          "content": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here.",
+          "time": "20PM 15 Oct 2022",
+          "reply": []
+        },
+        {
+          "avatar": "Event/body/comment/avatar3.jpg",
+          "name": "Jonatha Owens",
+          "title": "Lorem Ipsum is simply dummy text of the printing",
+          "content": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here.",
+          "time": "20PM 15 Oct 2022",
+          "reply": []
+        }
+      ]
+    }
+  ]
+}

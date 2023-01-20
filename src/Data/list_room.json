@@ -17,11 +17,19 @@
       {
         "id": 1,
         "type": "Normal",
-        "price": "1000$",
+        "price": "$1000",
+        "image": "Room type/rooms/room-1.jpg",
+        "imageOurRoom": "Room type/rooms-1.jpg",
+        "imageDetail": [
+          "Room type/rooms/room-1.jpg",
+          "Room type/detail/Normal/roomDetail-2.jpg"
+        ],
+        "max_person": 3,
+        "introduction": "<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a <b>more-or-less</b> normal <b>distribution</b> of letters.</p>",
         "roomTotal": 50,
-        "actived": true,
         "dateCreated": "13h30 23-02-2022",
         "dateUpdated": "13h30 23-02-2022",
+        "actived": true,
         "typeR": [
           {
             "id": 1,
@@ -106,7 +114,15 @@
       {
         "id": 2,
         "type": "Vip",
-        "price": "2000$",
+        "price": "$2000",
+        "image": "Room type/rooms/room-2.jpg",
+        "imageOurRoom": "Room type/rooms-2.jpg",
+        "imageDetail": [
+          "Room type/rooms/room-2.jpg",
+          "Room type/detail/Vip/vip-2.jpg"
+        ],
+        "max_person": 2,
+        "introduction": "<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a <b>more-or-less</b> normal <b>distribution</b> of letters.</p>",
         "roomTotal": 25,
         "dateCreated": "13h30 23-02-2022",
         "dateUpdated": "13h30 23-02-2022",
@@ -115,7 +131,32 @@
       {
         "id": 3,
         "type": "Luxury",
-        "price": "3000$",
+        "price": "$3000",
+        "image": "Room type/rooms/room-3.jpg",
+        "imageOurRoom": "Room type/rooms-3.jpg",
+        "imageDetail": [
+          "Room type/rooms/room-3.jpg",
+          "Room type/detail/Luxury/luxury-2.jpg"
+        ],
+        "max_person": 2,
+        "introduction": "<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a <b>more-or-less</b> normal <b>distribution</b> of letters.</p>",
+        "roomTotal": 25,
+        "dateCreated": "13h30 23-02-2022",
+        "dateUpdated": "13h30 23-02-2022",
+        "actived": true
+      },
+      {
+        "id": 4,
+        "type": "Family",
+        "price": "$2500",
+        "image": "Room type/rooms/room-4.jpg",
+        "imageOurRoom": "Room type/rooms-4.jpg",
+        "imageDetail": [
+          "Room type/rooms/room-4.jpg",
+          "Room type/detail/Family/family-2.jpg"
+        ],
+        "max_person": 6,
+        "introduction": "<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a <b>more-or-less</b> normal <b>distribution</b> of letters.</p>",
         "roomTotal": 25,
         "dateCreated": "13h30 23-02-2022",
         "dateUpdated": "13h30 23-02-2022",

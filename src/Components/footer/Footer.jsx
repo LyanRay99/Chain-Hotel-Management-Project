@@ -1,13 +1,10 @@
 //* Library
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 //* Fontawesome
-import {
-  faEnvelope,
-  faPaperPlane,
-  faSeedling,
-} from "@fortawesome/free-solid-svg-icons";
+import { faEnvelope, faPaperPlane } from "@fortawesome/free-solid-svg-icons";
 import {
   faCcDiscover,
   faCcMastercard,
@@ -23,7 +20,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 //* Logo
 import Logo from "../../Assets/Logo.png";
 
+//* Components support
+import { ListBranch } from "../body/contact/listBranch";
+import { goTop } from "../support/goTop";
+
 export const Footer = () => {
+  const listBranch = useSelector((state) => state.RS_rooms.Rooms);
+
   return (
     <footer className="footer">
       <div className="footer__contactMe">
@@ -64,31 +67,37 @@ export const Footer = () => {
         <div className="footer__others__info">
           <div className="box">
             <ul>
-              <li>Site Map</li>
-              <li>Term & Conditions</li>
+              <NavLink to="/gallery" onClick={goTop}>
+                <li>Photo & Video</li>
+              </NavLink>
+              <NavLink to="/careers" onClick={goTop}>
+                <li>Carrer</li>
+              </NavLink>
+              <NavLink to="/about" onClick={goTop}>
+                <li>About Us</li>
+              </NavLink>
+              <NavLink to="/contact" onClick={goTop}>
+                <li>Contact Us</li>
+              </NavLink>
+              <NavLink to="faqs" onClick={goTop}>
+                <li>FAQs</li>
+              </NavLink>
+              <NavLink to="/new&event" onClick={goTop}>
+                <li>News</li>
+              </NavLink>
+              <li>Our Location</li>
+              <NavLink to="/term" onClick={goTop}>
+                <li>Term & Conditions</li>
+              </NavLink>
               <li>Privacy Policy</li>
               <li>Help</li>
             </ul>
           </div>
 
-          <div className="box">
-            <ul>
-              <li>Our Location</li>
-              <li>Carrer</li>
-              <li>About Us</li>
-              <NavLink end to="/contact">
-                <li>Contact Us</li>
-              </NavLink>
-            </ul>
-          </div>
-
-          <div className="box">
-            <ul>
-              <li>FAQs</li>
-              <li>News</li>
-              <li>Photo & Video</li>
-              <li>Gift Card</li>
-            </ul>
+          <div className="listBranch">
+            {listBranch.map((item, index) => (
+              <ListBranch item={item} key={index} />
+            ))}
           </div>
         </div>
       </div>
