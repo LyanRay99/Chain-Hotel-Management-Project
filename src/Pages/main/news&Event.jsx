@@ -1,4 +1,8 @@
+//* Library
 import React from "react";
+import { Slide } from "react-awesome-reveal";
+
+//* Components UI
 import { SupSlider } from "../../Components/headers/supSlider";
 import { Reservation } from "../../Components/body/booking/reservation";
 import { NewsAndEventDeal } from "../../Components/body/new_event/navigation/newsEventDeal";
@@ -11,24 +15,27 @@ import { NewsAndEventOverall } from "../../Components/body/new_event/Overall/new
 export const NewsAndEvent = () => {
   return (
     <>
-      <SupSlider />
-      <section className="section">
-        <div className="newsEvent">
-          {/* TODO: Navigation new&event */}
-          <div className="newsEvent__navbar">
-            <Reservation />
-            <NewsAndEventDeal />
-            <NewsAndEventCategories />
-            <NewsAndEventUpcoming />
-            <NewsAndEventRecent />
-            <NewsAndEventTagsSocial />
+      <SupSlider supSlider="NEWS & EVENTS" />
+
+      <Slide triggerOnce={true}>
+        <section className="section">
+          <div className="newsEvent">
+            {/* TODO: Navigation new&event */}
+            <div className="newsEvent__navbar">
+              <Reservation />
+              <NewsAndEventDeal />
+              <NewsAndEventCategories />
+              <NewsAndEventUpcoming />
+              <NewsAndEventRecent />
+              <NewsAndEventTagsSocial />
+            </div>
+            {/* TODO: Detail content event */}
+            <div className="newsEvent__detail">
+              <NewsAndEventOverall />
+            </div>
           </div>
-          {/* TODO: Detail content event */}
-          <div className="newsEvent__detail">
-            <NewsAndEventOverall />
-          </div>
-        </div>
-      </section>
+        </section>
+      </Slide>
     </>
   );
 };

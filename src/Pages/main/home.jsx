@@ -1,4 +1,18 @@
-import React from "react";
+//* Library
+import React, { useEffect, useState } from "react";
+import {
+  Fade,
+  Bounce,
+  Hinge,
+  Flip,
+  JackInTheBox,
+  Roll,
+  Rotate,
+  Slide,
+  Zoom,
+} from "react-awesome-reveal";
+
+//* Components UI
 import { Slider } from "../../Components/headers/Slider";
 import { OurRooms } from "../../Components/body/home/ourRooms";
 import { AboutUs } from "../../Components/body/home/aboutUs";
@@ -9,15 +23,31 @@ import { OurNews } from "../../Components/body/home/ourNews";
 export const Home = () => {
   return (
     <>
-      <Slider />
+      <Zoom triggerOnce={true}>
+        <Slider />
+      </Zoom>
       <div className="section">
-        <OurRooms />
-        <AboutUs />
+        <Slide direction="left" triggerOnce={true}>
+          <OurRooms />
+        </Slide>
+
+        <Slide direction="right" triggerOnce={true}>
+          <AboutUs />
+        </Slide>
       </div>
-      <CustomerCmt />
+
+      <Zoom triggerOnce={true}>
+        <CustomerCmt />
+      </Zoom>
+
       <div className="section">
-        <OurEvent />
-        <OurNews />
+        <Slide direction="left" triggerOnce={true}>
+          <OurEvent />
+        </Slide>
+
+        <Slide direction="right" triggerOnce={true}>
+          <OurNews />
+        </Slide>
       </div>
     </>
   );
