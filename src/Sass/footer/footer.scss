@@ -85,11 +85,10 @@
     @include size(100%, auto);
     padding: 20px 10%;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
 
     &__logo {
-      @include size(30%, auto);
-      padding: 10px;
+      @include size(35%, auto);
 
       img {
         @include size(100%, auto);
@@ -97,13 +96,13 @@
     }
 
     &__info {
-      @include size(70%, auto);
+      @include size(65%, auto);
       color: white;
       display: flex;
-      justify-content: space-between;
+      justify-content: space-around;
 
       .box {
-        @include size(32%, auto);
+        @include size(30%, auto);
 
         ul {
           list-style-type: none;
@@ -115,6 +114,21 @@
 
             &:hover {
               color: $colorPrimary;
+            }
+          }
+        }
+      }
+
+      .listBranch {
+        @include size(70%, auto);
+
+        ul {
+          line-height: 30px;
+          list-style-type: none;
+
+          li {
+            .icon {
+              margin: 0px 15px 0px 0px;
             }
           }
         }
@@ -153,3 +167,5 @@
     }
   }
 }
+
+

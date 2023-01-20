@@ -2,7 +2,6 @@
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import NavDropdown from "react-bootstrap/NavDropdown";
 
 //* React + React-router
 import React, { useState } from "react";
@@ -11,6 +10,7 @@ import { NavLink, Outlet } from "react-router-dom";
 //* Component UI + Support
 import { Footer } from "../footer/Footer";
 import { goTop } from "../support/goTop";
+import { BookingNow } from "../support/bookingNow";
 
 //*Fontawasome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -58,8 +58,8 @@ export const Navbars = () => {
           </div>
 
           <div className="header__topline__container__right">
-            <span>LOGIN</span>
-            <span>REGISTER</span>
+            {/* <span>LOGIN</span>
+            <span>REGISTER</span> */}
             <span>VI</span>
             <span>EN</span>
           </div>
@@ -160,11 +160,6 @@ export const Navbars = () => {
               >
                 CONTACT
               </NavLink>
-
-              {/* <NavDropdown title="LANGUAGE" id="navbarScrollingDropdown">
-                <NavDropdown.Item>English</NavDropdown.Item>
-                <NavDropdown.Item>Vietnamese</NavDropdown.Item>
-              </NavDropdown> */}
             </Nav>
           </Navbar.Collapse>
 
@@ -180,6 +175,9 @@ export const Navbars = () => {
       <div style={{ marginTop: "-92px" }}>
         <Outlet />
       </div>
+
+      {/* Completed: Booking Now */}
+      <BookingNow />
 
       {/* Completed: Footer */}
       <Footer />

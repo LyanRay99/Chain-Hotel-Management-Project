@@ -11,6 +11,7 @@ export const ChooseDate = () => {
 
       <div className="booking__body__content">
         <BookingCalender />
+        <BookingCalender />
       </div>
     </React.Fragment>
   );

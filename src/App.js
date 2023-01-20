@@ -12,6 +12,7 @@ import "./Sass/pages/about.scss";
 import "./Sass/footer/footer.scss";
 import "./Sass/details/roomsDetails.scss";
 import "./Sass/others/others.scss";
+import "./Sass/others/otherInfo.scss";
 import "./Sass/responsive/mobile.scss";
 
 //* Main pages
@@ -22,6 +23,9 @@ import { Booking } from "./Pages/main/booking";
 import { NewsAndEvent } from "./Pages/main/news&Event";
 import { About } from "./Pages/main/about";
 import { Contact } from "./Pages/main/contact";
+import { Term } from "./Pages/otherInfo/term";
+import { Faqs } from "./Pages/otherInfo/faqs";
+import { Careers } from "./Pages/otherInfo/careers";
 
 //* Detail Page
 import { RoomsDetails } from "./Pages/details/roomsDetails";
@@ -40,6 +44,9 @@ function App() {
             <Route path="new&event" element={<NewsAndEvent />} />
             <Route path="about" element={<About />} />
             <Route path="contact" element={<Contact />} />
+            <Route path="term" element={<Term />} />
+            <Route path="faqs" element={<Faqs />} />
+            <Route path="careers" element={<Careers />} />
 
             {/* TODO: Detal Pages */}
             <Route path="/rooms-details/:id" element={<RoomsDetails />} />

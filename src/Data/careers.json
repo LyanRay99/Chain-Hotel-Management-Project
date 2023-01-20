@@ -1,0 +1,156 @@
+{
+  "info": {
+    "title": "BE PART OF AN I'M-AZING TEAM",
+    "content": "Here at I’M Hotel, we believe that hospitality is a team sport. Our team is made up of well-rounded individuals who are passionate about their work and eager to learn. Whether you’re a student looking for an internship, or an experienced professional looking for a new challenge, we have the perfect opportunity for you."
+  },
+
+  "benefits": {
+    "title": "Workplace Benefits",
+    "content": [
+      {
+        "image": "Carrers/carrers-1.jpg",
+        "imageTitle": "Employee discounts and special offers"
+      },
+      {
+        "image": "Carrers/carrers-2.jpg",
+        "imageTitle": "Discounted hotel room rates for you and your friends and family"
+      },
+      {
+        "image": "Carrers/carrers-3.jpg",
+        "imageTitle": "Inter-department career opportunities"
+      },
+      {
+        "image": "Carrers/carrers-4.jpg",
+        "imageTitle": "Staff meals"
+      },
+      {
+        "image": "Carrers/carrers-5.jpg",
+        "imageTitle": "Training & Development"
+      },
+      {
+        "image": "Carrers/carrers-6.jpg",
+        "imageTitle": "More perks"
+      }
+    ]
+  },
+  "opportunity": {
+    "title": "OPPORTUNITIES WITH I'M",
+    "content": "Talk to us and get acquainted with our experienced management team and find out what career opportunities could be in your future. We are looking to hire a wide range of positions in various departments.",
+    "opportunities": [
+      {
+        "position": "Internal Audit Officer (Quality and Performance Analyst)",
+        "department": "HRD",
+        "employmentType": "Full time",
+        "description": "Reporting to the General Manager. The Internal Audit Officer will ensure that all business processes in I'M Hotel are risk-management compliant. The operating process includes assessing certain areas for compliance with relevant laws and evaluating how effective this department has been at creating and implementing its policies and procedures along with its practiced control measures."
+      },
+      {
+        "position": "PR & Marketing Assistant",
+        "department": "Marketing",
+        "employmentType": "Full time",
+        "description": "Assists Marketing Team to develop and implement tactical plans to promote the hotel and thereby support our sales efforts both room, Spa, Banquet and F&B and outlets. And ensure that the hotel's product image is professionally reflected in all communications to the hotel’s current and potential guests."
+      },
+      {
+        "position": "Graphic and Marketing Assistant",
+        "department": "Marketing",
+        "employmentType": "Full time",
+        "description": "As a graphic design assistant, it is your job to help the lead graphic designer complete all print, online, and electronic media projects. You prepare marketing materials, create print layouts, give creative input, develop logos and images, and design promotional tools."
+      },
+      {
+        "position": "Sous Chef",
+        "department": "Food & Beverage",
+        "employmentType": "Full time",
+        "description": "Reporting to the General Manager. The Sous Chef will provide a high standard of food production at all times and will ensure effective control of stock purchasing, receipt, storage, preparation, and recipe execution with regard to quality, quantity, and safety in accordance with the Corporate Executive Chef and Head Chef."
+      },
+      {
+        "position": "Security and Safety Manager",
+        "department": "Security",
+        "employmentType": "Full time",
+        "description": "Reporting to the General Manager. The Security & Safety Manager will be responsible for maintaining law and order and will ensure safe and crime free environment within the Hotel and its premises; safeguards customers, employees, and assets of the Hotel against fire and other hazard by implementing all applicable security methods and procedures and will ensure the compliance of all concerned."
+      },
+      {
+        "position": "IT Officer",
+        "department": "IT",
+        "employmentType": "Full time",
+        "description": "Reporting to the IT Head. The IT Officer will contribute to the achievement of company goals and objectives by providing the right options and right technology to improve services, company connectivity, productivity, and revenue of both internal and external customers."
+      },
+      {
+        "position": "Credit Officer",
+        "department": "Finance",
+        "employmentType": "Full time",
+        "description": "Reporting to the Financial Controller. The Credit Officer will ensure prompt collection and maintain collectability of company's Accounts Receivable ( In-House guest and send bill accounts)."
+      },
+      {
+        "position": "Income Auditor",
+        "department": "Finance",
+        "employmentType": "Full time",
+        "description": "Reporting to the Financial Controller. The Income Auditor will ensure that all revenues are properly accounted for and to verify if concessionaries billing are correct based on transfer prices per contract."
+      },
+      {
+        "position": "Front Office Manager",
+        "department": "Front Office",
+        "employmentType": "Full time",
+        "description": "Reporting to the General Manager. The Front Office Manager will be responsible for the general administration and profitability of the operation of the Front Office Department, including Front Desk, Concierge, Telephone and Bell Service."
+      },
+      {
+        "position": "Sales Executives",
+        "department": "Sales",
+        "employmentType": "Full time",
+        "description": "Reporting to the Sr. Sales Manager. With a minimum of 3 years relevant experience, the Sales Executive will solicit FIT/ group business for the hotel and promote accommodation, spa, banquet to maximize profits through creative and selective selling."
+      },
+      {
+        "position": "Sales Manager",
+        "department": "Sales",
+        "employmentType": "Full time",
+        "description": "Reporting to the Sr. Sales Manager. With a minimum of 5 years relevant experience, the Sales Manager will solicit FIT/ group business for the hotel and promote accommodation, spa, banquet to maximize profits through creative and selective selling."
+      },
+      {
+        "position": "Reservation Officers",
+        "department": "Reservations",
+        "employmentType": "Full time",
+        "description": "Reporting to the Reservations Manager. The Reservation Officer will assist the guests in planning, booking, and reserving according to their preferences in the EHORs. He/ She will receive and reply to all guests inquiries through emails, telephone calls and social network messages and will confirm payment through Bank transfer, Credit Cards, Checks or Cash and inputting in EHORs."
+      },
+      {
+        "position": "Executive Assistant",
+        "department": "Executive Office",
+        "employmentType": "Full time",
+        "description": "Reporting to the General Manager. The Executive Assistant will provide efficient and comprehensive admin and secretarial services to the Executive leader in order to meet her official needs."
+      }
+    ]
+  },
+  "joinUs": {
+    "title": "Join us and take your career to the next level.",
+    "content": [
+      "We stand at the ready to give you an excellent opportunity. Learn more about our company and how we can support your career.",
+      "If you are interested in a career with us, please send your resume to:"
+    ],
+    "image": "Carrers/careers-contact.jpg"
+  },
+  "internship": {
+    "title": "INTERNSHIP",
+    "content": "We offer internships across a diverse range of functions from different departments. With our diverse team, you’ll gain experience in all aspects of hospitality, from front office and back office roles to casual dining and fine dining experience. Our goal is to help you grow as a person outside of work as well as in it.",
+    "image": "Carrers/internship.jpg"
+  },
+  "review": {
+    "title": "REAL REVIEWS FROM OUR COLLEAGUES",
+    "content": [
+      {
+        "author": "Former Quality Analyst",
+        "reviewContent": "“Good” Fun, Open to Career Advancement"
+      },
+      {
+        "author": "Front Office Associate",
+        "reviewContent": "“Fun Working Environment” Free employee meals and very good working environment"
+      },
+      {
+        "author": "Housekeeping Supervisor",
+        "reviewContent": "Easy to work with other departments!"
+      }
+    ]
+  },
+  "note": [
+    "Please note that apart from our corporate Human Resources office, I’M Hotel only works with accredited agencies, namely Value Added Facility Management Services Inc. and Global Watch Security Services Inc. for our recruitment services. Any other agencies with the exception of the two mentioned do not have the authority to act on behalf of I’M Hotel.",
+    "Please note that I’M Hotel and its ancillary outlets’ recruitment process is done via official channels and email accounts only and without requiring placement fees at any time during the recruitment process.",
+    "If you have any questions, concerns, see suspicious job advertisements or received unofficial communications that reference I’M Hotel and its ancillary outlets, please email us at info@imhotel.com and hr@imhotel.com.",
+    "We strongly advise you to report to local authorities if you believe you are a victim of any fraudulent recruitment activity."
+  ]
+}

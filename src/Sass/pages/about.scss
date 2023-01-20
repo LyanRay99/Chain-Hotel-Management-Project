@@ -109,54 +109,62 @@
   }
 }
 
-.about__statistic {
-  @include size(100%, 350px);
-  text-align: center;
-  color: white;
-  position: relative;
-  font-weight: bold;
+.aboutStatistic-SECTION {
+  @include size(100%, auto);
+  background: url(../../Assets/About/statistics/background-statistics.jpg)
+    center center/cover no-repeat fixed;
+  filter: brightness(90%);
+  // background-color: greenyellow;
 
-  &__background {
-    @include size(100%, 100%);
-    position: absolute;
-    top: 0;
-    left: 0;
-    background: url(../../Assets/About/statistics/background-statistics.jpg)
-      center center/cover no-repeat fixed;
-    filter: brightness(50%);
-  }
+  section {
+    .about__statistic {
+      @include size(100%, 350px);
+      text-align: center;
+      color: white;
+      font-weight: bold;
 
-  &__container {
-    @include size(100%, 100%);
-    padding: 50px 0px 0px 0px;
-    position: absolute;
-    // z-index: 99;
+      // &__background {
+      //   @include size(100%, 100%);
+      //   position: absolute;
+      //   top: 0;
+      //   left: 0;
+      //   background: url(../../Assets/About/statistics/background-statistics.jpg)
+      //     center center/cover no-repeat fixed;
+      //   filter: brightness(50%);
+      // }
 
-    &__title {
-      @extend .about__info__description__title;
-      padding: 0px 0px 30px 0px;
-    }
+      &__container {
+        @include size(100%, 100%);
+        padding: 50px 0px 0px 0px;
+        // position: absolute;
 
-    &__content {
-      @include size(100%, auto);
-      padding: 0px 10%;
-      display: flex;
-      justify-content: space-between;
-
-      .box {
-        @include size(20%, auto);
-        background-color: rgba(136, 131, 131, 0.6);
-        border-radius: 30px;
-
-        &__count {
-          font-size: 4rem;
-          font-weight: bold;
-          margin: 0px;
+        &__title {
+          @extend .about__info__description__title;
+          padding: 0px 0px 30px 0px;
         }
 
         &__content {
-          font-size: 1em;
-          font-weight: 100;
+          @include size(100%, auto);
+          padding: 0px 10%;
+          display: flex;
+          justify-content: space-between;
+
+          .box {
+            @include size(20%, auto);
+            background-color: rgba(136, 131, 131, 0.6);
+            border-radius: 30px;
+
+            &__count {
+              font-size: 4rem;
+              font-weight: bold;
+              margin: 0px;
+            }
+
+            &__content {
+              font-size: 1em;
+              font-weight: 100;
+            }
+          }
         }
       }
     }

@@ -1,0 +1,340 @@
+@import "../settings/mixin.scss";
+@import "../settings/reset.scss";
+@import "../settings/variable.scss";
+
+//Completed Terms
+.term {
+  @include size(100%, auto);
+  padding: 50px 50px 0px 50px;
+
+  &__title {
+    text-align: center;
+    color: $colorPrimary;
+    font-weight: 900;
+    font-size: 2em;
+  }
+
+  &__body {
+    &__box {
+      padding: 10px 0px;
+
+      h4 {
+        margin: 15px;
+        padding: 20px 0px;
+        font-weight: bold;
+        color: $colorPrimary;
+        border-bottom: 1.5px solid $colorPrimary;
+      }
+
+      ul,
+      ol {
+        color: grey;
+        text-align: justify;
+        line-height: 35px;
+      }
+    }
+  }
+}
+
+// Completed: FAQs
+.FAQS {
+  @extend .term;
+
+  &__title {
+    @extend .term__title;
+  }
+
+  &__container {
+    @include size(100%, auto);
+    padding: 50px;
+  }
+
+  .accordion {
+    .accordion-item {
+      .accordion-header {
+        .accordion-button {
+          color: $colorPrimary;
+          font-style: italic;
+          font-size: 0.7em;
+          font-weight: bold;
+
+          &:focus {
+            background-color: rgba(224, 169, 32, 0.2);
+            box-shadow: 0 0 0 0.25rem $colorPrimary;
+          }
+
+          &::after {
+            width: 0px;
+          }
+        }
+      }
+
+      .accordion-collapse {
+        .accordion-body {
+          .FAQS__content {
+            &__question {
+              font-weight: bold;
+            }
+
+            &__answer {
+              color: grey;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.FAQS__container__header {
+  position: relative;
+
+  .icon {
+    color: $colorPrimary;
+    font-size: 2em;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+  }
+}
+
+//Completed: careers
+.careers {
+  @extend .term;
+
+  &__container {
+    &__info {
+      &__title {
+        @extend .term__title;
+      }
+
+      &__content {
+        text-align: center;
+        padding: 30px 20%;
+        line-height: 30px;
+        color: grey;
+      }
+    }
+
+    &__benefits {
+      @include size(100%, auto);
+      margin: 50px 0px;
+
+      &__title {
+        @extend .term__title;
+      }
+
+      &__content {
+        @include size(100%, auto);
+        margin: 30px 0px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        .box {
+          @include size(30%, auto);
+          padding: 15px 30px;
+          text-align: center;
+          font-weight: bold;
+          font-size: 1.5em;
+        }
+      }
+    }
+
+    &__contact {
+      @extend .careers__container__benefits;
+      display: flex;
+
+      &__info {
+        @include size(50%, auto);
+        padding-right: 10px;
+
+        h4 {
+          @extend .term__title;
+          text-align: left;
+        }
+
+        p {
+          text-align: left;
+          color: grey;
+        }
+      }
+
+      &__image {
+        @include size(50%, 505px);
+
+        img {
+          @include size(100%, 100%);
+          border-radius: 10px;
+        }
+      }
+    }
+
+    &__opportunities {
+      @extend .careers__container__benefits;
+
+      h4 {
+        @extend .term__title;
+      }
+
+      p {
+        @extend .careers__container__info__content;
+      }
+
+      .careersFrame {
+        @include size(90%, auto);
+        margin: auto;
+        padding: 5%;
+        border: 2px solid $colorPrimary;
+
+        &__parent {
+          @include size(100%, 100%);
+          overflow-y: scroll;
+
+          &__child {
+            @include size(100%, 1000px);
+
+            .box {
+              border-bottom: 1px solid $colorPrimary;
+              padding-top: 20px;
+
+              &__title {
+                @extend .term__title;
+                font-size: 1.5em;
+                text-align: left;
+              }
+
+              &__content {
+                padding: 0px;
+                margin: 0px;
+                text-align: left;
+
+                span {
+                  @include size(auto, 12.5px);
+                  display: inline-block;
+                  border-left: 3px solid $colorPrimary;
+                  margin: 0px 10px;
+                }
+              }
+
+              &__description {
+                color: grey;
+                text-align: left;
+                padding: 0px;
+              }
+
+              &:last-child {
+                border: none;
+              }
+
+              &:first-child {
+                padding: 0px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &__note {
+      &__frame {
+        @include size(90%, auto);
+        margin: -40px auto 0px auto;
+        padding: 50px;
+        border: 4px solid $colorPrimary;
+        border-radius: 10px;
+
+        p {
+          text-align: center;
+          color: grey;
+        }
+      }
+    }
+  }
+}
+
+.careersIntership-SECTION {
+  @include size(100%, auto);
+  background-color: rgba(128, 128, 128, 0.3);
+
+  section {
+    .careersIntership {
+      @extend .careers__container__info;
+      display: flex;
+
+      &__info {
+        @include size(50%, auto);
+        padding: 5% 3%;
+
+        h4 {
+          @extend .term__title;
+          text-align: left;
+        }
+
+        p {
+          @extend .careers__container__info__content;
+          padding: 0px;
+          text-align: left;
+          color: black;
+        }
+
+        button {
+          @include Btn;
+        }
+      }
+
+      &__image {
+        @include size(50%, auto);
+        padding: 5%;
+
+        img {
+          @include size(100%, auto);
+        }
+      }
+    }
+  }
+}
+
+.careersReview__SECTION {
+  @include size(100%, auto);
+  background: url(../../Assets//Carrers//bgReview.jpg) center center/cover
+    no-repeat fixed;
+  margin-top: -50px;
+
+  &__bgc {
+    @include size(100%, auto);
+    background-color: #a2720a;
+    opacity: 0.7;
+
+    section {
+      .careersReview {
+        @extend .careers__container__info;
+        padding: 80px 10px;
+        color: white;
+
+        h4 {
+          @extend .term__title;
+          color: white;
+        }
+
+        &__container {
+          margin: 50px 0px 0px 0px;
+          display: flex;
+          justify-content: space-around;
+
+          .box {
+            @include size(32%, auto);
+            padding: 0px 5%;
+
+            p {
+              font-style: italic;
+              font-size: 1.2em;
+              font-weight: bold;
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+  }
+}

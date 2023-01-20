@@ -1,6 +1,8 @@
 import { faClose } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { goTop } from "./goTop";
 
 export const BookingNow = () => {
   //* Completed: close + open Booking Now
@@ -54,9 +56,11 @@ export const BookingNow = () => {
         ></div>
 
         <div className="bookingNow__close__content">
-          BOOKING
-          <br />
-          NOW
+          <Link to="bookings" onClick={goTop}>
+            BOOKING
+            <br />
+            NOW
+          </Link>
         </div>
 
         <span

@@ -12,10 +12,10 @@ export const About = () => {
 
   return (
     <>
-      {/* TODO: Slider phụ của mỗi page, supSlider truyền vào để component SupSlider biết được title hiện tại*/}
+      {/* Completed: Slider phụ của mỗi page, supSlider truyền vào để component SupSlider biết được title hiện tại*/}
       <SupSlider supSlider="ABOUT US" />
 
-      {/* TODO: Body của phần About */}
+      {/* Completed: Body của phần About */}
       <section className="section">
         <div className="about">
           {aboutUsInfo.map((item, index) => {

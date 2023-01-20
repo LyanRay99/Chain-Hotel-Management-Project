@@ -58,6 +58,12 @@
       &__content {
         @include size(75%, auto);
         padding: 00px 0px 0px 30px;
+        display: flex;
+        justify-content: space-around;
+
+        .calendar {
+          @include size(48%, auto);
+        }
       }
     }
   }
