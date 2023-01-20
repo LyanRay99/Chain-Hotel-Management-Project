@@ -1,5 +1,6 @@
 //* Library
-import React, { useEffect, useState } from "react";
+import React from "react";
+import LazyLoad from "react-lazy-load";
 import {
   Fade,
   Bounce,
@@ -45,9 +46,11 @@ export const Home = () => {
           <OurEvent />
         </Slide>
 
-        <Slide direction="right" triggerOnce={true}>
-          <OurNews />
-        </Slide>
+        <LazyLoad>
+          <Slide direction="right" triggerOnce={true}>
+            <OurNews />
+          </Slide>
+        </LazyLoad>
       </div>
     </>
   );
