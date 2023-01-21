@@ -12,7 +12,7 @@ import { NewsAndEventRecent } from "../../Components/body/new_event/navigation/n
 import { NewsAndEventTagsSocial } from "../../Components/body/new_event/navigation/newsEventTags_socials";
 import { NewsAndEventOverall } from "../../Components/body/new_event/Overall/news&EventOverall";
 
-export const NewsAndEvent = () => {
+const NewsAndEvent = () => {
   return (
     <>
       <SupSlider supSlider="NEWS & EVENTS" />
@@ -39,3 +39,5 @@ export const NewsAndEvent = () => {
     </>
   );
 };
+
+export default NewsAndEvent;

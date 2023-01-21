@@ -21,7 +21,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretLeft, faCaretRight } from "@fortawesome/free-solid-svg-icons";
 import { useDispatch, useSelector } from "react-redux";
 
-export const Booking = () => {
+const Booking = () => {
   const bookingStep = useSelector(
     (state) => state.RS_rooms.booking.bookingStep
   );
@@ -115,3 +115,5 @@ export const Booking = () => {
     </>
   );
 };
+
+export default Booking;

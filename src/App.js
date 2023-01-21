@@ -1,4 +1,5 @@
 //* Library
+import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 //* Style
@@ -16,20 +17,36 @@ import "./Sass/others/otherInfo.scss";
 import "./Sass/responsive/mobile.scss";
 
 //* Main pages
-import { Navbars } from "./Components/headers/Navbar";
-import { Home } from "./Pages/main/home";
-import { Rooms } from "./Pages/main/rooms";
-import { Booking } from "./Pages/main/booking";
-import { NewsAndEvent } from "./Pages/main/news&Event";
-import { About } from "./Pages/main/about";
-import { Contact } from "./Pages/main/contact";
-import { Term } from "./Pages/otherInfo/term";
-import { Faqs } from "./Pages/otherInfo/faqs";
-import { Careers } from "./Pages/otherInfo/careers";
+import Navbars from "./Components/headers/Navbar";
+import Home from "./Pages/main/home";
+import Rooms from "./Pages/main/rooms";
+import Booking from "./Pages/main/booking";
+import NewsAndEvent from "./Pages/main/news&Event";
+import About from "./Pages/main/about";
+import Contact from "./Pages/main/contact";
+import Term from "./Pages/otherInfo/term";
+import Faqs from "./Pages/otherInfo/faqs";
+import Careers from "./Pages/otherInfo/careers";
+
+// const Navbars = React.lazy(() => import("./Components/headers/Navbar"));
+// const Home = React.lazy(() => import("./Pages/main/home"));
+// const Rooms = React.lazy(() => import("./Pages/main/rooms"));
+// const Booking = React.lazy(() => import("./Pages/main/booking"));
+// const NewsAndEvent = React.lazy(() => import("./Pages/main/news&Event"));
+// const About = React.lazy(() => import("./Pages/main/about"));
+// const Contact = React.lazy(() => import("./Pages/main/contact"));
+// const Term = React.lazy(() => import("./Pages/otherInfo/term"));
+// const Faqs = React.lazy(() => import("./Pages/otherInfo/faqs"));
+// const Careers = React.lazy(() => import("./Pages/otherInfo/careers"));
 
 //* Detail Page
-import { RoomsDetails } from "./Pages/details/roomsDetails";
-import { NewsAndEventDetails } from "./Pages/details/news&eventDetails";
+import RoomsDetails from "./Pages/details/roomsDetails";
+import NewsAndEventDetails from "./Pages/details/news&eventDetails";
+
+// const RoomsDetails = React.lazy(() => import("./Pages/details/roomsDetails"));
+// const NewsAndEventDetails = React.lazy(() =>
+//   import("./Pages/details/news&eventDetails")
+// );
 
 function App() {
   return (

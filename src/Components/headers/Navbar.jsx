@@ -6,6 +6,8 @@ import Navbar from "react-bootstrap/Navbar";
 //* React + React-router
 import React, { useState } from "react";
 import { NavLink, Outlet } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 //* Component UI + Support
 import { Footer } from "../footer/Footer";
@@ -19,7 +21,7 @@ import { faClock, faCloud, faPhone } from "@fortawesome/free-solid-svg-icons";
 //* Image
 import Logo from "../../Assets/Logo.png";
 
-export const Navbars = () => {
+const Navbars = () => {
   //* Get date
   const date = new Date();
   let day = date.getDate();
@@ -29,7 +31,7 @@ export const Navbars = () => {
   let minute = date.getMinutes();
   let seconds = date.getSeconds();
 
-  //* Change color navbar when scroll
+  //* Change color navbar when scroll over 35.6px
   const [colorChange, setColorchange] = useState(false);
 
   const handleScroll = () => {
@@ -41,6 +43,25 @@ export const Navbars = () => {
   };
 
   window.addEventListener("scroll", handleScroll);
+
+  //* Custom style Toastify
+  const notify = () =>
+    toast.success(
+      "Welcome to PANORAMA",
+      {
+        icon: "🚀",
+      },
+      {
+        position: "bottom-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+      }
+    );
 
   return (
     <React.Fragment>
@@ -71,6 +92,7 @@ export const Navbars = () => {
         expand="lg"
         sticky="top"
         id={colorChange ? "colorChangeNavbar" : ""}
+        onLoad={notify}
       >
         <Container fluid>
           <NavLink to="/" onClick={goTop}>
@@ -184,3 +206,5 @@ export const Navbars = () => {
     </React.Fragment>
   );
 };
+
+export default Navbars;

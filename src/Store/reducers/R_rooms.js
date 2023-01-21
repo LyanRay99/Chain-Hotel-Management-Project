@@ -64,7 +64,6 @@ const R_rooms = createSlice({
         : (state.booking.bookingStep = 3);
     },
     CHANGEBOOKINGSTYLE: (state, actions) => {
-      console.log(actions.payload);
       actions.payload === 0
         ? (state.booking.bookingStyle = {
             chooseDate: "activeStyle",

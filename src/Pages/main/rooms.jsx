@@ -1,5 +1,5 @@
 //* Library
-import React from "react";
+import React, { Suspense } from "react";
 import { useSelector } from "react-redux";
 import { Zoom } from "react-awesome-reveal";
 
@@ -8,7 +8,7 @@ import { SupSlider } from "../../Components/headers/supSlider";
 import { RoomsImage } from "../../Components/body/rooms/overall/roomsImage";
 import { RoomsDescription } from "../../Components/body/rooms/overall/roomsDescription";
 
-export const Rooms = () => {
+const Rooms = () => {
   const roomTypes = useSelector((state) => state.RS_rooms.Rooms[0].roomType);
 
   return (
@@ -39,3 +39,5 @@ export const Rooms = () => {
     </>
   );
 };
+
+export default Rooms;

@@ -24,7 +24,7 @@ import { faBed, faEye, faPerson } from "@fortawesome/free-solid-svg-icons";
 //* Image
 import Logo from "../../Assets/Logo.png";
 
-export const RoomsDetails = () => {
+const RoomsDetails = () => {
   const params = useParams().id;
   const roomDetails = useSelector(
     (state) => state.RS_rooms.Rooms[0].roomType[params]
@@ -160,3 +160,5 @@ export const RoomsDetails = () => {
     </>
   );
 };
+
+export default RoomsDetails;

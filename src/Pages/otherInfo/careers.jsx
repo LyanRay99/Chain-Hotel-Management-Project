@@ -7,7 +7,7 @@ import { Zoom } from "react-awesome-reveal";
 import { SupSlider } from "../../Components/headers/supSlider";
 import { ListBranch } from "../../Components/body/contact/listBranch";
 
-export const Careers = () => {
+const Careers = () => {
   const careers = useSelector((state) => state.RS_careers.careers);
   const listBranch = useSelector((state) => state.RS_rooms.Rooms);
 
@@ -160,3 +160,5 @@ export const Careers = () => {
     </>
   );
 };
+
+export default Careers;
