@@ -26,7 +26,6 @@ export const Home = () => {
     <>
       <Zoom triggerOnce={true}>
         <Slider />
-        <span>test</span>
       </Zoom>
       <div className="section">
         <Slide direction="left" triggerOnce={true}>
