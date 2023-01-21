@@ -58,8 +58,8 @@ export const Navbars = () => {
           </div>
 
           <div className="header__topline__container__right">
-            {/* <span>LOGIN</span>
-            <span>REGISTER</span> */}
+            <span>LOGIN</span>
+            <span>REGISTER</span>
             <span>VI</span>
             <span>EN</span>
           </div>
