@@ -32,7 +32,7 @@ const Home = () => {
       </Zoom>
 
       {/* Completed: Our Rooms */}
-      <div className="section">
+      <section className="section">
         <Slide direction="left" triggerOnce={true}>
           <OurRooms />
         </Slide>
@@ -41,7 +41,7 @@ const Home = () => {
         <Slide direction="right" triggerOnce={true}>
           <AboutUs />
         </Slide>
-      </div>
+      </section>
 
       {/* Completed: Customer Comment */}
       <Zoom triggerOnce={true}>
@@ -49,7 +49,7 @@ const Home = () => {
       </Zoom>
 
       {/* Completed: Our Events */}
-      <div className="section">
+      <section className="section">
         <Slide direction="left" triggerOnce={true}>
           <OurEvent />
         </Slide>
@@ -60,7 +60,7 @@ const Home = () => {
           <OurNews />
         </Slide>
         {/* </LazyLoad> */}
-      </div>
+      </section>
 
       {/* Completed: React Toastify */}
       <div>
@@ -70,7 +70,7 @@ const Home = () => {
           hideProgressBar={false}
           newestOnTop
           closeOnClick
-          rtl={false} 
+          rtl={false}
           pauseOnFocusLoss
           draggable
           pauseOnHover

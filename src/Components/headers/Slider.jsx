@@ -13,7 +13,7 @@ export const Slider = () => {
 
   return (
     <div>
-      <Carousel activeIndex={index} onSelect={handleSelect} interval={3000}>
+      <Carousel activeIndex={index} onSelect={handleSelect}>
         {slider.map((item, index) => (
           <Carousel.Item key={index}>
             <img
@@ -30,3 +30,5 @@ export const Slider = () => {
     </div>
   );
 };
+
+// interval={3000}

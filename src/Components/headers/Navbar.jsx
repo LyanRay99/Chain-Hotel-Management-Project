@@ -89,9 +89,9 @@ const Navbars = () => {
 
       {/* Completed: Navbar */}
       <Navbar
-        expand="lg"
+        expand="md"
         sticky="top"
-        id={colorChange ? "colorChangeNavbar" : ""}
+        id={colorChange ? "colorChangeNavbar" : "navbarID"}
         onLoad={notify}
       >
         <Container fluid>
@@ -194,7 +194,7 @@ const Navbars = () => {
       </Navbar>
 
       {/* Completed: Body */}
-      <div style={{ marginTop: "-92px" }}>
+      <div className="bodyMain">
         <Outlet />
       </div>
 

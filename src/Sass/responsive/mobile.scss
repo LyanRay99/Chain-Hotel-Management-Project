@@ -2,22 +2,270 @@
 @import "../settings/reset.scss";
 @import "../settings/variable.scss";
 
-//* Responsive 320px => 480px
-@media screen and (max-width: 520px) {
-  //* Completed: Header
-  .header__topline {
-    &__container {
-      &__left {
-        display: none;
-        span {
-        }
-      }
+//* TODO: Responsive 320px
+@media screen and (max-width: 320px) {
+  //* Completed: Slider
+  .navbar-expand-lg {
+    height: 40px !important;
 
-      &__right {
-        span {
-          padding: 0px 20px 0px 0px;
+    .navbar-toggler {
+      font-size: 1em;
+      padding: 0px 0px 7px 0px;
+    }
+  }
+}
+
+//* TODO: Responsive 370px
+@media screen and (max-width: 370px) {
+  //* Completed: Slider
+  .carousel-inner {
+    .carousel-caption {
+      h3 {
+        font-size: 1em;
+        margin: 0px;
+      }
+    }
+  }
+
+  .section {
+    //* Completed: Home - OurRoom
+    .ourRooms {
+      .ourRooms__title {
+        font-size: 1.3em;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 370px) and (min-width: 321px) {
+}
+
+//* TODO: Responsive 480px
+@media screen and (max-width: 480px) {
+  //* Completed: Slider
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    display: none !important;
+  }
+
+  //* Completed: Home - News
+  .section {
+    .news {
+      .news__box {
+        width: 100% !important;
+        padding: 10%;
+
+        .news__box__content {
+          font-size: 1.2em;
         }
       }
     }
   }
+}
+
+@media screen and (max-width: 480px) and (min-width: 371px) {
+  //* Completed: Slider
+  .active {
+    .carousel-caption {
+      h3 {
+        font-size: 1.5em;
+        margin: 0px;
+      }
+    }
+  }
+}
+
+//* TODO: Responsive 600px
+@media screen and (max-width: 600px) {
+  .section {
+    .ourRooms {
+      .ourRooms__box {
+        padding: 10%;
+      }
+    }
+
+    .ourEvent__box {
+      width: 100%;
+      padding: 5% 10%;
+
+      .ourEvent__box__name {
+        width: 80%;
+
+        p {
+          font-size: 1.5em;
+        }
+      }
+    }
+  }
+}
+
+//* TODO: Responsive 650px
+@media screen and (max-width: 650px) {
+  //* Completed: Slider
+  .carousel-caption {
+    h3 {
+      font-size: 2em;
+      margin: 0px;
+    }
+  }
+
+  .section {
+    //* Completed: Home - OurRooms
+    .ourRooms__title {
+      font-size: 1.8em;
+    }
+
+    .comment__box {
+      padding: 5% 0px;
+
+      .comment__box__customer {
+        .customer__info__name {
+          font-size: 1em;
+        }
+
+        .customer__info__address {
+          padding-top: 0px;
+        }
+
+        .customer__info__content {
+          font-size: 0.8em;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 650px) and (min-width: 481px) {
+  .section {
+    //* Completed: Home - OurRooms
+    .ourRooms__box__info {
+      .info__other {
+        span {
+          font-size: 0.8em;
+        }
+      }
+    }
+  }
+}
+
+//* TODO: Responsive 800px
+@media screen and (max-width: 800px) {
+  .section {
+    //* Completed: Home - AboutUs
+    .aboutUs {
+      .aboutUs__service {
+        span {
+          width: 40%;
+        }
+      }
+    }
+
+    .ourEvent__box__name {
+      p {
+        font-size: 1.2em;
+        margin: 0px;
+        padding: 2%;
+      }
+    }
+
+    .news {
+      .news__box {
+        width: 50%;
+        margin: 0px 0px 5% 0px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 800px) and (min-width: 651px) {
+  .section {
+    //* Completed: Home - OurRooms
+    .ourRooms__box__info {
+      .info__other {
+        span {
+          font-size: 0.8em;
+        }
+      }
+    }
+  }
+}
+
+//* TODO: Responsive 1200px
+@media screen and (max-width: 1000px) {
+  // .navbar-toggler:active .bodyMain {
+  //   margin-top: -342px !important;
+  // }
+
+  // .navbar-toggler:active .container-fluid {
+  //   background-color: red;
+  // }
+}
+
+@media screen and (max-width: 1000px) and (min-width: 801px) {
+  .section {
+    .ourEvent__box__name {
+      p {
+        font-size: 1.5em;
+        margin: 0px;
+        padding: 3%;
+      }
+    }
+  }
+}
+
+//* TODO: Responsive 1200px
+@media screen and (max-width: 1200px) {
+  .section {
+    //* Completed: Home - OurRooms
+    //* Completed: Home - OurRooms
+    .ourRooms__content {
+      margin: 20px 0px;
+    }
+
+    .info__other {
+      span {
+        font-size: 0.9em;
+      }
+    }
+
+    //* Completed: Home - AboutUs
+    .aboutUs {
+      padding-bottom: 10%;
+
+      .aboutUs__image {
+        padding-bottom: 10%;
+
+        .aboutUs__image__2 {
+          width: 50%;
+          top: 5%;
+          right: 10%;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) and (min-width: 1001px) {
+}
+
+//* TODO: Responsive 1400px
+@media screen and (max-width: 1400px) {
+  .section {
+    @include size(100%, auto);
+    margin-bottom: 0px;
+
+    .comment__box {
+      .comment__box__image {
+        width: 20%;
+      }
+
+      .comment__box__customer {
+        width: 80%;
+        padding: 0px 2%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1400px) and (min-width: 1201px) {
 }

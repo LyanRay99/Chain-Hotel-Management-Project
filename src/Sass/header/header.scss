@@ -73,6 +73,15 @@
   transition: all 0.5s linear;
 }
 
+.navbar-toggler:active .ourRooms__title {
+  // margin-top: -342px !important;
+  color: red !important;
+}
+
+// #navbarID:focus-within {
+//   background-color: red !important;
+// }
+
 //TODO: Slider
 .carousel-control-prev-icon {
   width: 3rem !important;
@@ -146,25 +155,34 @@
     justify-content: space-between;
 
     &__left {
-      @include size(auto, auto);
+      @include size(75%, auto);
 
       span {
-        padding: 0px 20px 0px 0px;
         font-size: 0.75em;
         font-weight: bold;
+
+        &:last-child {
+          padding: 0px 0px 0px 20px;
+        }
       }
     }
 
     &__right {
       @extend .header__topline__container__left;
+      @include size(25%, auto);
+      text-align: right;
 
       span {
-        padding: 0px 0px 0px 25px;
+        // padding: 0px 0px 0px 25px;
         font-size: 0.75em;
         font-weight: bold;
 
         &:hover {
           color: $colorPrimary;
+        }
+
+        &:first-child {
+          padding: 0px 0px 0px 20px;
         }
       }
     }
