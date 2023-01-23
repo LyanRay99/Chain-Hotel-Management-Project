@@ -36,6 +36,7 @@
     }
   }
 
+  //* Completed: Contact
   .contact {
     .contact__feedback {
       input {
@@ -55,6 +56,25 @@
 
       .contact__feedback__send {
         font-size: 0.7em;
+      }
+    }
+  }
+
+  //* Completed: Booking Now
+  .bookingNow {
+    @include size(70px, 70px);
+    .bookingNow__close {
+      .bookingNow__close__content {
+        font-size: 0.8em;
+        padding: 25% 0px;
+      }
+    }
+
+    .bookingNow__open {
+      right: -60px;
+
+      span {
+        font-size: 0.6em;
       }
     }
   }
@@ -113,7 +133,7 @@
     height: 30vh !important;
 
     .supSlider__title {
-      font-size: 1.4em !important;
+      font-size: 1.3em !important;
     }
   }
 
@@ -215,6 +235,236 @@
           }
         }
       }
+    }
+  }
+
+  //* Completed: News&Events - Navigation
+  .newsEvent {
+    .newsEvent__detail {
+      @include size(100%, auto);
+
+      .box {
+        .box__image {
+          height: 200px;
+        }
+
+        .box__info {
+          .box__info__title {
+            font-size: 1.2em;
+          }
+
+          .box__info__others {
+            font-size: 0.7em;
+
+            span {
+              @include size(100%, auto);
+              display: inline-block;
+              margin: 0px;
+
+              span {
+                display: inline;
+                padding-left: 2%;
+              }
+
+              .hoverItem {
+                padding: 0px;
+              }
+            }
+          }
+
+          .box__info__content {
+            font-size: 0.9em;
+          }
+        }
+
+        button {
+          font-size: 0.7em;
+        }
+      }
+    }
+  }
+
+  //* Completed: Term
+  .term {
+    .term__title {
+      font-size: 1em !important;
+    }
+
+    .term__body__box {
+      h4 {
+        font-size: 0.9em !important;
+        padding-top: 0px;
+      }
+
+      ol,
+      ul {
+        font-size: 0.85em !important;
+        line-height: 25px !important;
+      }
+    }
+  }
+
+  //* Completed: FAQs
+  .FAQS {
+    .FAQS__title {
+      font-size: 1.3em;
+    }
+
+    .FAQS__container {
+      padding: 5%;
+    }
+
+    .accordion-button {
+      font-size: 0.6em !important;
+    }
+
+    .icon {
+      top: 20% !important;
+    }
+
+    .FAQS__content__question {
+      font-size: 0.8em;
+    }
+
+    .FAQS__content__answer {
+      font-size: 0.7em;
+    }
+  }
+
+  //* Completed: Room Detail - Infomation
+  .roomDetails__info {
+    .roomDetails__info__control {
+      padding-right: 3%;
+
+      p {
+        font-size: 0.8em;
+      }
+    }
+
+    .roomDetails__info__content {
+      padding-left: 3%;
+
+      .overview1__title {
+        font-size: 0.9em;
+      }
+
+      .overview1__content {
+        font-size: 0.9em;
+      }
+
+      .overview2__box {
+        .overview2__box__title {
+          font-size: 0.8em;
+        }
+
+        ul {
+          padding: 0px;
+
+          li {
+            font-size: 0.8em;
+          }
+        }
+      }
+    }
+  }
+
+  //* Completed: Room Detail - Another Accommodation
+  .roomDetails__othersRooms {
+    padding: 5% !important;
+
+    .roomDetails__othersRooms__title {
+      font-size: 1.1em;
+    }
+
+    .roomDetails__othersRooms__roomType {
+      justify-content: center;
+
+      .box {
+        width: 100% !important;
+        margin-top: 5%;
+
+        .box__image {
+          img {
+            object-fit: cover;
+          }
+        }
+
+        .box__info {
+          h5 {
+            font-size: 1em;
+          }
+
+          p {
+            font-size: 0.9em;
+          }
+        }
+      }
+    }
+  }
+
+  //* Completed: News&Event Detail
+  .content__imageMain {
+    padding: 0px 5%;
+    height: 200px !important;
+  }
+  .content__body {
+    padding: 2% 3%;
+  }
+
+  .content__body__time {
+    p {
+      font-size: 1.2em !important;
+
+      &:last-child {
+        font-size: 0.8em !important;
+      }
+    }
+  }
+
+  .details__title {
+    font-size: 1em;
+  }
+
+  .details__info {
+    font-size: 0.9em;
+  }
+
+  .details__text {
+    p {
+      font-size: 0.9em;
+    }
+  }
+
+  //* Completed: Booking - Content
+  .packageBox {
+    flex-wrap: wrap;
+    padding: 0px 10%;
+
+    .packageBox__image {
+      width: 100% !important;
+    }
+
+    .packageBox__content {
+      width: 100% !important;
+    }
+
+    .packageBox__price {
+      width: 100% !important;
+    }
+  }
+
+  //* Completed: Booking - allRoomSelected
+  .allRoomSelected {
+    h5 {
+      font-size: 1em;
+    }
+
+    p {
+      font-size: 0.9em;
+    }
+
+    button {
+      font-size: 0.8em;
     }
   }
 

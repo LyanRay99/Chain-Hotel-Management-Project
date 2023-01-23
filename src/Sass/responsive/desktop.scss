@@ -4,6 +4,41 @@
 
 //* TODO: Responsive 1200px
 @media screen and (max-width: 1000px) {
+  //* Completed: News&Events - Navigation
+  .newsEvent__navbar {
+    display: none;
+  }
+
+  .newsEvent__detail {
+    @include size(85%, auto);
+
+    .box:last-child {
+      padding-bottom: 5%;
+    }
+  }
+
+  //* Completed: Room Detail -  Slider
+  .roomDetails__slider {
+    .roomDetails__slider__main {
+      @include size(100%, auto);
+    }
+
+    .roomDetails__slider__navbar {
+      @include size(600px, auto);
+      margin: auto;
+      padding: 0px;
+    }
+  }
+
+  .roomInfo__info {
+    .roomInfo__info__image {
+      width: 100%;
+    }
+
+    .roomInfo__info__content {
+      width: 100%;
+    }
+  }
 }
 
 @media screen and (max-width: 1000px) and (min-width: 801px) {
@@ -85,6 +120,39 @@
       }
     }
   }
+
+  //* Completed: Booking
+  .section {
+    .booking {
+      .booking__body {
+        justify-content: space-between;
+
+        .booking__body__navbar {
+          width: 40%;
+          padding: 0px;
+        }
+
+        .booking__body__content {
+          display: block;
+
+          .calendar {
+            width: 90%;
+            margin: auto;
+            margin-bottom: 5%;
+          }
+
+          .roomInfo {
+            padding-left: 3%;
+          }
+
+          .allRoomSelected {
+            width: 90%;
+            margin: auto;
+          }
+        }
+      }
+    }
+  }
 }
 
 @media screen and (max-width: 1200px) and (min-width: 1001px) {
@@ -110,6 +178,30 @@
 
     .rooms {
       padding: 2%;
+    }
+  }
+
+  //* Completed: Room Detail - Infomation
+  .roomDetails {
+    .roomDetails__slider {
+      padding: 0px 3%;
+    }
+
+    .roomDetails__info {
+      padding: 3%;
+    }
+
+    .roomDetails__othersRooms {
+      padding: 2%;
+    }
+  }
+
+  //* Completed: Booking
+  .booking {
+    padding: 2%;
+
+    .booking__body__content {
+      padding: 0px;
     }
   }
 }

@@ -53,7 +53,10 @@ const RoomsDetails = () => {
                 </div>
 
                 <div className="roomDetails__slider__main__introduction">
-                  <img src={Logo} alt={Logo}></img>
+                  <div className="rooms__image">
+                    <img src={Logo} alt={Logo}></img>
+                  </div>
+
                   <RoomsDescription item={roomDetails} />
                 </div>
               </div>

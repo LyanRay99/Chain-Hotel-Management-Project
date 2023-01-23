@@ -86,6 +86,25 @@
       }
     }
   }
+
+  //* Completed: News&Events - Comments
+  .details__social {
+    .details__social__tags {
+      width: 100% !important;
+    }
+
+    .details__social__share {
+      width: 100% !important;
+      padding-top: 2%;
+    }
+  }
+
+  .box__body__info {
+    div {
+      width: 100% !important;
+      margin-bottom: 4%;
+    }
+  }
 }
 
 @media screen and (max-width: 650px) and (min-width: 481px) {
@@ -97,6 +116,41 @@
           font-size: 0.8em;
         }
       }
+    }
+  }
+}
+
+//* TODO: Responsive 700px
+@media screen and (max-width: 700px) {
+  //* Completed: Booking - Control
+  .booking {
+    .booking__control {
+      display: block;
+      text-align: center;
+
+      div {
+        padding: 10px;
+      }
+
+      .activeStyle {
+        span {
+          top: 40px;
+        }
+      }
+    }
+
+    .booking__body {
+      .booking__body__navbar {
+        width: 100% !important;
+      }
+
+      .booking__body__content {
+        width: 100% !important;
+      }
+    }
+
+    .allRoomSelected {
+      padding: 10% 5%;
     }
   }
 }
@@ -145,7 +199,7 @@
       height: 40vh;
 
       .supSlider__title {
-        font-size: 2.5em;
+        font-size: 2em;
       }
     }
   }
@@ -210,6 +264,75 @@
         @include size(50%, auto);
         margin-bottom: 5%;
         padding: 2%;
+      }
+    }
+  }
+
+  //* Completed: Term
+  .term {
+    padding: 5% 4%;
+
+    .term__title {
+      font-size: 1.5em;
+    }
+
+    .term__body__box {
+      h4 {
+        font-size: 1.1em;
+      }
+
+      ol,
+      ul {
+        font-size: 1em;
+      }
+    }
+  }
+
+  //* Completed: FAQs
+  .FAQS {
+    padding: 2% 0px;
+  }
+
+  //* Completed: Room Detail - Slider
+  .rooms__introduction {
+    padding: 0px 5% 0px 0px;
+
+    .rooms__introduction__title {
+      font-size: 1.2em;
+    }
+
+    .rooms__introduction__content {
+      p {
+        font-size: 0.9em;
+      }
+    }
+  }
+
+  //* Completed: Room Detail - Another Accommodation
+  .roomDetails__othersRooms {
+    .roomDetails__othersRooms__roomType {
+      .box {
+        @include size(48.5%, auto);
+        margin-top: 5%;
+      }
+    }
+  }
+
+  //* Completed: Booking
+  .booking {
+    .booking__control {
+      div:first-child {
+        display: none;
+      }
+
+      div:last-child {
+        display: none;
+      }
+
+      .activeStyle {
+        span {
+          bottom: -12px;
+        }
       }
     }
   }

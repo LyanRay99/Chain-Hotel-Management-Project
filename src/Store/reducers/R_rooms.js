@@ -4,7 +4,7 @@ import roomsData from "../../Data/list_room.json";
 const initialState = {
   Rooms: roomsData,
   roomDetail: {
-    roomDetailInfo: 0,
+    roomDetailInfo: 2,
     roomInfoStyle: {
       Overview: "activeStyle",
       Amenities: "",
@@ -12,7 +12,7 @@ const initialState = {
     },
   },
   booking: {
-    bookingStep: 0,
+    bookingStep: 1,
     bookingStyle: {
       chooseDate: "activeStyle",
       chooseRoom: "",

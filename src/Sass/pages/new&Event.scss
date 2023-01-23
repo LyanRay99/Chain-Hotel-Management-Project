@@ -5,6 +5,7 @@
 .newsEvent {
   @include size(100%, auto);
   display: flex;
+  justify-content: center;
 
   &__navbar {
     @include size(30%, auto);
@@ -401,9 +402,10 @@
             border-bottom: 1px solid rgba(134, 133, 133, 0.5);
             padding: 2% 1%;
             display: flex;
+            flex-wrap: wrap;
 
             &__tags {
-              @include size(60%, auto);
+              @include size(50%, auto);
               display: flex;
 
               .icon {
@@ -421,7 +423,7 @@
             }
 
             &__share {
-              @include size(40%, auto);
+              @include size(50%, auto);
 
               span {
                 margin: 0px 3%;
