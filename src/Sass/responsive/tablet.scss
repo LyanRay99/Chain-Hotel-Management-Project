@@ -1,0 +1,263 @@
+@import "../settings/mixin.scss";
+@import "../settings/reset.scss";
+@import "../settings/variable.scss";
+
+//* TODO: Responsive 600px
+@media screen and (max-width: 600px) {
+  .section {
+    //* Completed: Home - Our Rooms
+    .ourRooms {
+      .ourRooms__box {
+        padding: 10%;
+      }
+    }
+
+    //* Completed: Home - Our Events
+    .ourEvent {
+      margin: 2% 0px 1% 0px;
+    }
+
+    .ourEvent__box {
+      width: 100%;
+      padding: 5% 10%;
+
+      .ourEvent__box__name {
+        width: 80%;
+
+        p {
+          font-size: 1.5em;
+        }
+      }
+    }
+  }
+}
+
+//* TODO: Responsive 650px
+@media screen and (max-width: 650px) {
+  //* Completed: Slider
+  .carousel-caption {
+    h3 {
+      font-size: 2em;
+      margin: 0px;
+    }
+  }
+
+  .section {
+    //* Completed: Home - OurRooms
+    .ourRooms__title {
+      font-size: 1.8em;
+    }
+
+    //* Completed: Home - Comment
+    .comment__box {
+      padding: 5% 0px;
+
+      .comment__box__customer {
+        .customer__info__name {
+          font-size: 1em;
+        }
+
+        .customer__info__address {
+          padding-top: 0px;
+        }
+
+        .customer__info__content {
+          font-size: 0.8em;
+        }
+      }
+    }
+  }
+
+  //* Completed: About - Infomation
+  .about {
+    .about__info__image {
+      padding: 1.5%;
+    }
+
+    .about__info__description {
+      padding: 1.5%;
+
+      .about__info__description__title {
+        font-size: 1em;
+      }
+
+      .about__info__description__content {
+        font-size: 0.8em;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 650px) and (min-width: 481px) {
+  .section {
+    //* Completed: Home - OurRooms
+    .ourRooms__box__info {
+      .info__other {
+        span {
+          font-size: 0.8em;
+        }
+      }
+    }
+  }
+}
+
+//* TODO: Responsive 768px
+@media screen and (max-width: 768px) {
+  //* Completed: Main Body
+  .bodyMain {
+    margin-top: 0px !important;
+  }
+}
+
+//* TODO: Responsive 800px
+@media screen and (max-width: 800px) {
+  .section {
+    //* Completed: Home - AboutUs
+    .aboutUs {
+      .aboutUs__service {
+        span {
+          width: 40%;
+        }
+      }
+    }
+
+    //* Completed: Home - Our Events
+    .ourEvent__box__name {
+      p {
+        font-size: 1.2em;
+        margin: 0px;
+        padding: 2%;
+      }
+    }
+
+    //* Completed: Home - News
+    .news {
+      .news__box {
+        width: 50%;
+        margin: 0px 0px 5% 0px;
+      }
+    }
+  }
+
+  //* Completed: SupSlider
+  .bodyMain {
+    .supSlider {
+      height: 40vh;
+
+      .supSlider__title {
+        font-size: 2.5em;
+      }
+    }
+  }
+
+  //* Completed: Rooms
+  .rooms {
+    .rooms__image {
+      @include size(100%, auto);
+      padding: 2%;
+      order: 1;
+    }
+
+    .rooms__introduction {
+      @extend .rooms__image;
+      order: 2;
+
+      button {
+        margin-top: 0px;
+        font-size: 0.6em;
+      }
+    }
+  }
+
+  //* Completed: Contact
+  .contact {
+    .contact__info {
+      @include size(100%, auto);
+      padding: 5% 5% 0px 5%;
+    }
+
+    .contact__feedback {
+      @extend .contact__info;
+      padding-bottom: 5%;
+    }
+  }
+
+  //* Completed: About - Atatistic
+  .aboutStatistic-SECTION {
+    section {
+      .about__statistic {
+        height: 250px;
+
+        .about__statistic__container__content {
+          .box {
+            .box__count {
+              font-size: 1.5em;
+            }
+
+            .box__content {
+              font-size: 0.6em;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  //* Completed: About - Team
+  .about__team {
+    .about__team__member {
+      .card {
+        @include size(50%, auto);
+        margin-bottom: 5%;
+        padding: 2%;
+      }
+    }
+  }
+
+  //* Completed: Footer
+  .footer {
+    .footer__contactMe__email {
+      width: 100%;
+      padding: 0px 10%;
+    }
+
+    .footer__contactMe__social {
+      width: 100%;
+      text-align: center;
+      padding-top: 2%;
+
+      span {
+        .icon {
+          padding: 3% 5% 0px 5%;
+          margin-left: 0px;
+        }
+      }
+    }
+
+    .footer__others {
+      padding: 2% 0px;
+
+      .footer__others__logo {
+        display: none;
+      }
+
+      .footer__others__info {
+        @include size(100%, auto);
+        font-size: 0.8em;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 800px) and (min-width: 651px) {
+  .section {
+    //* Completed: Home - OurRooms
+    .ourRooms__box__info {
+      .info__other {
+        span {
+          font-size: 0.8em;
+        }
+      }
+    }
+  }
+}

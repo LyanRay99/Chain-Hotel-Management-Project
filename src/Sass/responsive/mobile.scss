@@ -35,6 +35,29 @@
       }
     }
   }
+
+  .contact {
+    .contact__feedback {
+      input {
+        font-size: 0.7em;
+        padding: 2%;
+      }
+
+      .contact__feedback__content {
+        height: 150px !important;
+
+        textarea {
+          font-size: 0.7em;
+          padding: 2%;
+          // height: 200px !important;
+        }
+      }
+
+      .contact__feedback__send {
+        font-size: 0.7em;
+      }
+    }
+  }
 }
 
 @media screen and (max-width: 370px) and (min-width: 321px) {
@@ -48,8 +71,31 @@
     display: none !important;
   }
 
-  //* Completed: Home - News
   .section {
+    //* Completed: Home - Our Rooms
+    .ourRooms {
+      border-bottom: 10px dotted $colorPrimary !important;
+
+      .ourRooms__content {
+        font-size: 0.8em;
+      }
+
+      .ourRooms__box__info {
+        .info__other {
+          span {
+            font-size: 0.7em;
+          }
+        }
+      }
+    }
+
+    //* Completed: Home - AboutUs, News
+    .aboutUs,
+    #news {
+      border: none !important;
+    }
+
+    //* Completed: Home - News
     .news {
       .news__box {
         width: 100% !important;
@@ -57,6 +103,191 @@
 
         .news__box__content {
           font-size: 1.2em;
+        }
+      }
+    }
+  }
+
+  //* Completed: SupSlider
+  .supSlider {
+    height: 30vh !important;
+
+    .supSlider__title {
+      font-size: 1.4em !important;
+    }
+  }
+
+  //* Completed: Rooms
+  .rooms {
+    .rooms__introduction__title {
+      font-size: 1.2em;
+    }
+
+    .rooms__introduction__price {
+      font-size: 0.7em;
+    }
+
+    .rooms__introduction__content {
+      font-size: 0.7em;
+    }
+  }
+
+  //* Completed: Contact - Map
+  .contactMap {
+    height: 200px;
+  }
+
+  //* Completed: About - Infomation
+  .about__info {
+    padding: 5%;
+
+    .about__info__image {
+      @include size(100%, auto);
+    }
+
+    .about__info__description {
+      @extend .about__info__image;
+    }
+
+    &:first-child {
+      padding-bottom: 0px;
+    }
+  }
+
+  //* Completed: About - Atatistic
+  .aboutStatistic-SECTION {
+    section {
+      .about__statistic {
+        height: 150px !important;
+
+        .about__statistic__container {
+          padding: 4% 0px;
+
+          .about__statistic__container__title {
+            font-size: 1em;
+          }
+
+          .about__statistic__container__content {
+            .box {
+              .box__count {
+                font-size: 0.9em;
+              }
+
+              .box__content {
+                font-size: 0.4em;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  //* Completed: About - Team
+  .section {
+    .about__team {
+      .about__team__title {
+        font-size: 1em;
+        padding: 5%;
+      }
+
+      .about__team__member {
+        .card {
+          .card__image {
+            @include size(60%, auto);
+          }
+
+          .card__info {
+            .card__info__name {
+              font-size: 0.9em;
+            }
+
+            .card__info__description,
+            .card__info__position {
+              font-size: 0.7em;
+            }
+          }
+
+          .card__info__social {
+            .icon {
+              font-size: 0.9em;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  //* Completed: Footer
+  .footer {
+    .footer__contactMe {
+      padding: 0px 2% 5% 2%;
+
+      .footer__contactMe__email {
+        padding: 0px !important;
+
+        .logoEmail {
+          .icon {
+            font-size: 1.2em;
+          }
+        }
+
+        .inputEmail {
+          input {
+            height: auto;
+            font-size: 0.8em;
+          }
+
+          button {
+            .icon {
+              font-size: 1.2em;
+            }
+          }
+        }
+      }
+
+      .footer__contactMe__social {
+        span {
+          .icon {
+            font-size: 1.2em;
+          }
+        }
+      }
+    }
+
+    .footer__others {
+      .footer__others__info {
+        .box {
+          @include size(90%, 200px);
+          overflow-y: scroll;
+          margin: 5% auto;
+          border: 2px solid $colorPrimary;
+          border-radius: 10px;
+        }
+
+        .listBranch {
+          @include size(100%, auto);
+
+          ul {
+            margin-left: -5%;
+          }
+        }
+      }
+    }
+
+    .footer__bottom {
+      .footer__bottom__copyRight {
+        @include size(100%, auto);
+      }
+
+      .footer__bottom__payment {
+        @include size(100%, auto);
+        margin-top: 5%;
+
+        span {
+          .icon {
+            font-size: 1.5em;
+          }
         }
       }
     }
@@ -73,199 +304,4 @@
       }
     }
   }
-}
-
-//* TODO: Responsive 600px
-@media screen and (max-width: 600px) {
-  .section {
-    .ourRooms {
-      .ourRooms__box {
-        padding: 10%;
-      }
-    }
-
-    .ourEvent__box {
-      width: 100%;
-      padding: 5% 10%;
-
-      .ourEvent__box__name {
-        width: 80%;
-
-        p {
-          font-size: 1.5em;
-        }
-      }
-    }
-  }
-}
-
-//* TODO: Responsive 650px
-@media screen and (max-width: 650px) {
-  //* Completed: Slider
-  .carousel-caption {
-    h3 {
-      font-size: 2em;
-      margin: 0px;
-    }
-  }
-
-  .section {
-    //* Completed: Home - OurRooms
-    .ourRooms__title {
-      font-size: 1.8em;
-    }
-
-    .comment__box {
-      padding: 5% 0px;
-
-      .comment__box__customer {
-        .customer__info__name {
-          font-size: 1em;
-        }
-
-        .customer__info__address {
-          padding-top: 0px;
-        }
-
-        .customer__info__content {
-          font-size: 0.8em;
-        }
-      }
-    }
-  }
-}
-
-@media screen and (max-width: 650px) and (min-width: 481px) {
-  .section {
-    //* Completed: Home - OurRooms
-    .ourRooms__box__info {
-      .info__other {
-        span {
-          font-size: 0.8em;
-        }
-      }
-    }
-  }
-}
-
-//* TODO: Responsive 800px
-@media screen and (max-width: 800px) {
-  .section {
-    //* Completed: Home - AboutUs
-    .aboutUs {
-      .aboutUs__service {
-        span {
-          width: 40%;
-        }
-      }
-    }
-
-    .ourEvent__box__name {
-      p {
-        font-size: 1.2em;
-        margin: 0px;
-        padding: 2%;
-      }
-    }
-
-    .news {
-      .news__box {
-        width: 50%;
-        margin: 0px 0px 5% 0px;
-      }
-    }
-  }
-}
-
-@media screen and (max-width: 800px) and (min-width: 651px) {
-  .section {
-    //* Completed: Home - OurRooms
-    .ourRooms__box__info {
-      .info__other {
-        span {
-          font-size: 0.8em;
-        }
-      }
-    }
-  }
-}
-
-//* TODO: Responsive 1200px
-@media screen and (max-width: 1000px) {
-  // .navbar-toggler:active .bodyMain {
-  //   margin-top: -342px !important;
-  // }
-
-  // .navbar-toggler:active .container-fluid {
-  //   background-color: red;
-  // }
-}
-
-@media screen and (max-width: 1000px) and (min-width: 801px) {
-  .section {
-    .ourEvent__box__name {
-      p {
-        font-size: 1.5em;
-        margin: 0px;
-        padding: 3%;
-      }
-    }
-  }
-}
-
-//* TODO: Responsive 1200px
-@media screen and (max-width: 1200px) {
-  .section {
-    //* Completed: Home - OurRooms
-    //* Completed: Home - OurRooms
-    .ourRooms__content {
-      margin: 20px 0px;
-    }
-
-    .info__other {
-      span {
-        font-size: 0.9em;
-      }
-    }
-
-    //* Completed: Home - AboutUs
-    .aboutUs {
-      padding-bottom: 10%;
-
-      .aboutUs__image {
-        padding-bottom: 10%;
-
-        .aboutUs__image__2 {
-          width: 50%;
-          top: 5%;
-          right: 10%;
-        }
-      }
-    }
-  }
-}
-
-@media screen and (max-width: 1200px) and (min-width: 1001px) {
-}
-
-//* TODO: Responsive 1400px
-@media screen and (max-width: 1400px) {
-  .section {
-    @include size(100%, auto);
-    margin-bottom: 0px;
-
-    .comment__box {
-      .comment__box__image {
-        width: 20%;
-      }
-
-      .comment__box__customer {
-        width: 80%;
-        padding: 0px 2%;
-      }
-    }
-  }
-}
-
-@media screen and (max-width: 1400px) and (min-width: 1201px) {
 }

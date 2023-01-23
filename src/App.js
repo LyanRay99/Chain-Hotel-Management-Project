@@ -15,6 +15,8 @@ import "./Sass/details/roomsDetails.scss";
 import "./Sass/others/others.scss";
 import "./Sass/others/otherInfo.scss";
 import "./Sass/responsive/mobile.scss";
+import "./Sass/responsive/tablet.scss";
+import "./Sass/responsive/desktop.scss";
 
 //* Main pages
 import Navbars from "./Components/headers/Navbar";

@@ -1,0 +1,118 @@
+@import "../settings/mixin.scss";
+@import "../settings/reset.scss";
+@import "../settings/variable.scss";
+
+//* TODO: Responsive 1200px
+@media screen and (max-width: 1000px) {
+}
+
+@media screen and (max-width: 1000px) and (min-width: 801px) {
+  .section {
+    //* Completed: Home - Our Events
+    .ourEvent__box__name {
+      p {
+        font-size: 1.5em;
+        margin: 0px;
+        padding: 3%;
+      }
+    }
+
+    //* Completed: Rooms
+    .rooms {
+      .rooms__image {
+        @include size(50%, auto);
+      }
+
+      .rooms__introduction {
+        @include size(50%, auto);
+        padding: 0px 2%;
+
+        .rooms__introduction__title {
+          font-size: 1.5em;
+        }
+
+        .rooms__introduction__content {
+          font-size: 0.8em;
+          margin-bottom: 0px;
+        }
+
+        button {
+          font-size: 0.6em;
+          margin-top: 0px;
+        }
+      }
+    }
+  }
+
+  //* Completed: About - Atatistic
+  .aboutStatistic-SECTION {
+    .about__statistic__container__content {
+      .box {
+        .box__count {
+          font-size: 3em;
+        }
+      }
+    }
+  }
+}
+
+//* TODO: Responsive 1200px
+@media screen and (max-width: 1200px) {
+  .section {
+    //* Completed: Home - OurRooms
+    .ourRooms__content {
+      margin: 20px 0px;
+    }
+
+    .info__other {
+      span {
+        font-size: 0.9em;
+      }
+    }
+
+    //* Completed: Home - AboutUs
+    .aboutUs {
+      padding-bottom: 10%;
+
+      .aboutUs__image {
+        padding-bottom: 10%;
+
+        .aboutUs__image__2 {
+          width: 50%;
+          top: 5%;
+          right: 10%;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) and (min-width: 1001px) {
+}
+
+//* TODO: Responsive 1400px
+@media screen and (max-width: 1400px) {
+  .section {
+    @include size(100%, auto);
+    margin-bottom: 0px;
+
+    //* Completed: Home - Comment
+    .comment__box {
+      .comment__box__image {
+        width: 20%;
+      }
+
+      .comment__box__customer {
+        width: 80%;
+        padding: 0px 2%;
+      }
+    }
+
+    .rooms {
+      padding: 2%;
+    }
+  }
+}
+
+@media screen and (max-width: 1400px) and (min-width: 1201px) {
+}
