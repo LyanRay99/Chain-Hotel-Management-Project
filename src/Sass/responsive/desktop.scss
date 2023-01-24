@@ -39,6 +39,42 @@
       width: 100%;
     }
   }
+
+  //* Completed: Careers
+  .careers__container__info__content,
+  .careers__container__opportunities p {
+    padding: 4% 0px;
+  }
+
+  .careers__container__contact__image,
+  .careersIntership__image {
+    display: none;
+  }
+
+  .careers__container__contact__info {
+    @include size(100%, auto);
+  }
+
+  .careers__container__note__frame {
+    margin-top: 0px;
+    padding: 3%;
+  }
+
+  .careersIntership-SECTION {
+    section {
+      .careersIntership__info {
+        @include size(100%, auto);
+        padding: 5%;
+        margin-bottom: 5%;
+      }
+    }
+  }
+
+  .careers__container__opportunities {
+    .careersFrame {
+      width: 100%;
+    }
+  }
 }
 
 @media screen and (max-width: 1000px) and (min-width: 801px) {
@@ -203,6 +239,11 @@
     .booking__body__content {
       padding: 0px;
     }
+  }
+
+  //* Completed: Careers
+  .careers {
+    padding: 5%;
   }
 }
 

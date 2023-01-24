@@ -12,7 +12,7 @@ const initialState = {
     },
   },
   booking: {
-    bookingStep: 1,
+    bookingStep: 0,
     bookingStyle: {
       chooseDate: "activeStyle",
       chooseRoom: "",

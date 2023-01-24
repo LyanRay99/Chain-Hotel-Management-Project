@@ -337,6 +337,67 @@
     }
   }
 
+  //* Completed: Careers
+  .careers__container__info__title,
+  .careers__container__benefits__title,
+  .careers__container__opportunities h4,
+  .careers__container__contact__info h4 {
+    font-size: 1.5em;
+  }
+
+  .careers__container__benefits__content {
+    .box {
+      padding: 0px;
+
+      .boxTitle {
+        font-size: 0.7em;
+      }
+    }
+  }
+
+  .careersReview__SECTION__bgc {
+    section {
+      .careersReview h4 {
+        font-size: 1.5em;
+      }
+
+      .careersReview__container {
+        .box {
+          p {
+            font-size: 0.9em;
+          }
+        }
+      }
+    }
+  }
+
+  .careersIntership-SECTION {
+    section {
+      .careersIntership__info {
+        margin-bottom: 12% !important;
+
+        h4 {
+          font-size: 1.5em;
+        }
+      }
+    }
+  }
+
+  .careers__container__opportunities {
+    .careersFrame {
+      .box {
+        .box__title {
+          font-size: 1.2em;
+        }
+
+        .box__content,
+        .box__description {
+          font-size: 0.9em;
+        }
+      }
+    }
+  }
+
   //* Completed: Footer
   .footer {
     .footer__contactMe__email {
