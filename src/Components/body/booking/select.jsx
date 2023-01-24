@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Select, { components } from "react-select";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
+import { useSelector } from "react-redux";
 
 export const Selects = (props) => {
-  //* Ta cần tạo 1 array như options đã được comment bên dưới
+  //* Completed: Ta cần tạo 1 array như options đã được comment bên dưới
   //* 1 - Ta tạo array trống sau đó map roomTypeData và push array trống đó
   const options = [];
   const check1 = ((props) => {
@@ -45,6 +46,64 @@ export const Selects = (props) => {
   //     { value: "vanilla", label: "Vanilla" },
   //   ];
 
+  //* Get value from Select
+  const [branchValue, setBranchValue] = useState("");
+  const [roomType, setRoomType] = useState("");
+  const [roomKind, setRoomTKind] = useState("");
+  const [customerAmount, setCustomerAmount] = useState("");
+
+  // const getBranch = (choice) => {
+  //   setBranchValue(choice);
+  //   console.log(choice.value);
+  // };
+
+  // const branchValue = useSelector(
+  //   (state) => state.RS_rooms.checkAvailable.branchValue
+  // );
+
+  const getDataSelect = (choice) => {
+    if (props.branchName !== null && props.branchName !== undefined) {
+      // console.log(1);
+      setBranchValue(choice);
+    } else if (props.roomType !== null && props.roomType !== undefined) {
+      // console.log(2);
+      setRoomType(choice);
+    } else if (props.roomTypes !== null && props.roomTypes !== undefined) {
+      // console.log(3);
+      setRoomTKind(choice);
+    } else if (props.customer === true) {
+      // console.log(4);
+      setCustomerAmount(choice);
+    }
+  };
+
+  const setValueSelect = (choice) => {
+    if (props.branchName !== null && props.branchName !== undefined) {
+      // console.log(1);
+      // setBranchValue(choice);
+      return branchValue;
+    } else if (props.roomType !== null && props.roomType !== undefined) {
+      // console.log(2);
+      // setRoomType(choice);
+      return roomType;
+    } else if (props.roomTypes !== null && props.roomTypes !== undefined) {
+      // console.log(3);
+      // setRoomTKind(choice);
+      return roomKind;
+    } else if (props.customer === true) {
+      // console.log(4);
+      // setCustomerAmount(choice);
+      return customerAmount;
+    }
+  };
+
+  // useEffect(() => {
+  //   console.log(branchValue);
+  //   console.log(roomType);
+  //   console.log(roomKind);
+  //   console.log(customerAmount);
+  // }, [customerAmount]);
+
   return (
     <Select
       components={{ DropdownIndicator }}
@@ -67,10 +126,13 @@ export const Selects = (props) => {
           primary: "#8e7037",
         },
       })}
+      onChange={getDataSelect}
+      value={branchValue}
     />
   );
 };
 
+//* Custom icon Down Arrow for Select
 const DropdownIndicator = (props) => {
   return (
     <components.DropdownIndicator {...props}>

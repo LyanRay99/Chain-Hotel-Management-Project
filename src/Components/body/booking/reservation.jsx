@@ -1,13 +1,49 @@
-import React from "react";
-import { useSelector } from "react-redux";
+import React, { useEffect, useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { CHECK_AVAILABLE, GET_INFO } from "../../../Store/reducers/R_rooms";
 import { Selects } from "./select";
+import { SelectBranch } from "./selects/select_branch";
+import { SelectRoomType } from "./selects/select_roomType";
+import { SelectRoomKind } from "./selects/select_roomKind";
+import { SelectAdultAmount } from "./selects/select_adultAmount";
+import { SelectChildAmount } from "./selects/select_childAmount";
 
 export const Reservation = () => {
+  const dispatch = useDispatch();
+
+  //* Completed: Get data from Store to binding data
   const branchName = useSelector((state) => state.RS_rooms.Rooms);
   const roomType = useSelector((state) => state.RS_rooms.Rooms[0].roomType);
   const roomTypes = useSelector(
     (state) => state.RS_rooms.Rooms[0].roomType[0].typeR
   );
+  const value = useSelector(
+    (state) => state.RS_rooms.checkAvailable.roomAmount
+  );
+
+  //* Completed: Prevent User input negative number in Input (type: number)
+  const blockInvalidChar = (e) => {
+    ["e", "E", "+", "-", "0"].includes(e.key) && e.preventDefault();
+  };
+
+  //* Completed: Get info Room Amount in Input (type: number)
+  const getAmountInfo = (e) => {
+    dispatch(GET_INFO(e.target.value));
+  };
+
+  //* Completed: Get info Date in Input (type: date)
+  const getDateInfo = (e) => {
+    if (e.target.name === "arrive") {
+      dispatch(GET_INFO({ value: e.target.value, name: e.target.name }));
+    } else {
+      dispatch(GET_INFO({ value: e.target.value, name: e.target.name }));
+    }
+  };
+
+  // const check = useSelector((state) => state.RS_rooms.checkAvailable);
+  // useEffect(() => {
+  //   console.log(check);
+  // }, [check]);
 
   return (
     <div className="reservation">
@@ -16,7 +52,8 @@ export const Reservation = () => {
       {/* Completed: Branch */}
       <div className="reservation__branch">
         <span>BRANCH</span>
-        <Selects branchName={branchName} />
+        {/* <Selects branchName={branchName} /> */}
+        <SelectBranch branchName={branchName} />
       </div>
 
       {/* Completed: Time */}
@@ -24,16 +61,20 @@ export const Reservation = () => {
         <span>YOUR STAY DATES</span>
         <p>ARRIVE</p>
         {/* datetime picker */}
-        <input type="date" placeholder="Arrive date..."></input>
+        <input
+          type="date"
+          name="arrive"
+          placeholder="Arrive date..."
+          onChange={getDateInfo}
+        ></input>
 
         <p>DEPATURE</p>
-        {/* datetime picker */}
-        <input type="date" placeholder="Arrive date..."></input>
-        <p>NIGHT</p>
+        {/*  datetime picker */}
         <input
-          type="number"
-          placeholder="Night..."
-          className="reservation__dates__input"
+          type="date"
+          name="depature"
+          placeholder="Depature date..."
+          onChange={getDateInfo}
         ></input>
       </div>
 
@@ -41,9 +82,11 @@ export const Reservation = () => {
       <div className="reservation__roomType">
         <span>ROOMS TYPE</span>
         <p>Type</p>
-        <Selects roomType={roomType} />
+        {/* <Selects roomType={roomType} /> */}
+        <SelectRoomType roomType={roomType} />
         <br />
-        <Selects roomTypes={roomTypes} />
+        {/* <Selects roomTypes={roomTypes} /> */}
+        <SelectRoomKind roomTypes={roomTypes} />
       </div>
 
       {/* Completed: Room amount */}
@@ -54,26 +97,34 @@ export const Reservation = () => {
           type="number"
           placeholder="Room..."
           className="reservation__roomsGuest__input"
+          min={1}
+          value={value}
+          onKeyDown={blockInvalidChar}
+          onChange={getAmountInfo}
         ></input>
       </div>
 
       {/* Completed: Customer amount */}
       <div className="reservation__customer">
         <div>
-          <p>ROOMS1 </p>
+          <p>ROOMS</p>
         </div>
         <div>
           <p>ADULT</p>
-          <Selects customer={true} />
+          {/* <Selects customer={true} /> */}
+          <SelectAdultAmount />
         </div>
         <div>
           <p>CHIRLD</p>
-          <Selects customer={true} />
+          {/* <Selects customer={true} /> */}
+          <SelectChildAmount />
         </div>
       </div>
 
       <div className="reservation__check">
-        <button>CHECK AVAILABLE</button>
+        <button onClick={() => dispatch(CHECK_AVAILABLE())}>
+          CHECK AVAILABLE
+        </button>
       </div>
     </div>
   );

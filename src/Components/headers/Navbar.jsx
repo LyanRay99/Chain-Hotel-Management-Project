@@ -199,10 +199,10 @@ const Navbars = () => {
       </div>
 
       {/* Completed: Booking Now */}
-      <BookingNow />
+      {/* <BookingNow /> */}
 
       {/* Completed: Footer */}
-      <Footer />
+      {/* <Footer /> */}
     </React.Fragment>
   );
 };
