@@ -1,6 +1,11 @@
+//* Library
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { CHECK_AVAILABLE, GET_INFO } from "../../../Store/reducers/R_rooms";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+//* Components UI
 import { Selects } from "./select";
 import { SelectBranch } from "./selects/select_branch";
 import { SelectRoomType } from "./selects/select_roomType";
@@ -40,6 +45,14 @@ export const Reservation = () => {
     }
   };
 
+  //* Completed: Notify when info not enough
+  const [infoNotEnough, setInfoNotEnough] = useState(false);
+
+  const changeNotifyWarn = () => {
+    setInfoNotEnough(true);
+  };
+
+  // TODO: Check state available
   // const check = useSelector((state) => state.RS_rooms.checkAvailable);
   // useEffect(() => {
   //   console.log(check);
@@ -122,10 +135,35 @@ export const Reservation = () => {
       </div>
 
       <div className="reservation__check">
-        <button onClick={() => dispatch(CHECK_AVAILABLE())}>
+        <button
+          onClick={() => {
+            dispatch(CHECK_AVAILABLE());
+            changeNotifyWarn();
+          }}
+        >
           CHECK AVAILABLE
         </button>
       </div>
+
+      {/* Completed: Render ra ToastContainer khi thiếu info booking (và để tránh trùng ToastContainer tại Home Page ) */}
+      {infoNotEnough === true ? (
+        <div>
+          <ToastContainer
+            position="bottom-right"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="colored"
+          />
+        </div>
+      ) : (
+        <span></span>
+      )}
     </div>
   );
 };

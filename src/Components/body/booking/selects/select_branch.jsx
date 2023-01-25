@@ -23,6 +23,7 @@ export const SelectBranch = (props) => {
 
   const getData = (choice) => {
     dispatch(GET_INFO({ choice, data: "branch" }));
+    // console.log(choice);
   };
 
   return (

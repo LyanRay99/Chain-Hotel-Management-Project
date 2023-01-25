@@ -6,8 +6,6 @@ import Navbar from "react-bootstrap/Navbar";
 //* React + React-router
 import React, { useState } from "react";
 import { NavLink, Outlet } from "react-router-dom";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 
 //* Component UI + Support
 import { Footer } from "../footer/Footer";
@@ -44,25 +42,6 @@ const Navbars = () => {
 
   window.addEventListener("scroll", handleScroll);
 
-  //* Custom style Toastify
-  const notify = () =>
-    toast.success(
-      "Welcome to PANORAMA",
-      {
-        icon: "🚀",
-      },
-      {
-        position: "bottom-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "colored",
-      }
-    );
-
   return (
     <React.Fragment>
       {/* Completed: Login, Register, language, ... */}
@@ -92,7 +71,6 @@ const Navbars = () => {
         expand="md"
         sticky="top"
         id={colorChange ? "colorChangeNavbar" : "navbarID"}
-        onLoad={notify}
       >
         <Container fluid>
           <NavLink to="/" onClick={goTop}>

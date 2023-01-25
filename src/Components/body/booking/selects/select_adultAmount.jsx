@@ -10,7 +10,7 @@ export const SelectAdultAmount = (props) => {
   //* 1 - Ta tạo array trống sau đó map roomTypeData và push array trống đó
   const options = [];
   const check1 = ((props) => {
-    for (let i = 0; i < 5; i++) {
+    for (let i = 1; i < 5; i++) {
       options.push({
         value: i,
         label: i,

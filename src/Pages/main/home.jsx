@@ -1,19 +1,11 @@
 //* Library
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { WELCOME_NOTIFY } from "../../Store/reducers/R_others";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 // import LazyLoad from "react-lazy-load";
-import {
-  Fade,
-  Bounce,
-  Hinge,
-  Flip,
-  JackInTheBox,
-  Roll,
-  Rotate,
-  Slide,
-  Zoom,
-} from "react-awesome-reveal";
+import { Slide, Zoom } from "react-awesome-reveal";
 
 //* Components UI
 import { Slider } from "../../Components/headers/Slider";
@@ -24,8 +16,17 @@ import { OurEvent } from "../../Components/body/home/ourEvent";
 import { OurNews } from "../../Components/body/home/ourNews";
 
 const Home = () => {
+  const dispatch = useDispatch();
+
+  const welcomeNotify = () => {
+    dispatch(WELCOME_NOTIFY());
+  };
+
   return (
     <>
+      {/*  Completed: Tag này dùng để render ra toastify welcome khi tag này load xong */}
+      <span onLoad={welcomeNotify()}></span>
+
       {/* Completed: Slider */}
       <Zoom triggerOnce={true}>
         <Slider />
@@ -63,6 +64,7 @@ const Home = () => {
       </section>
 
       {/* Completed: React Toastify */}
+      {/* <ToastCheck /> */}
       <div>
         <ToastContainer
           position="bottom-right"

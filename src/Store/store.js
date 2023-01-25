@@ -7,6 +7,7 @@ import R_newsEvent from "./reducers/R_newsEvent";
 import R_terms from "./reducers/R_terms";
 import R_faqs from "./reducers/R_faqs";
 import R_careers from "./reducers/R_careers";
+import R_others from "./reducers/R_others";
 
 export const store = configureStore({
   reducer: {
@@ -18,5 +19,6 @@ export const store = configureStore({
     RS_terms: R_terms,
     RS_faqs: R_faqs,
     RS_careers: R_careers,
+    RS_others: R_others,
   },
 });

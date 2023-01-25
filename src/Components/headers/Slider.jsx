@@ -30,5 +30,3 @@ export const Slider = () => {
     </div>
   );
 };
-
-// interval={3000}
