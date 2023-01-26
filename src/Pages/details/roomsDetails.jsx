@@ -24,7 +24,7 @@ import { faBed, faEye, faPerson } from "@fortawesome/free-solid-svg-icons";
 //* Image
 import Logo from "../../Assets/Logo.png";
 
-export const RoomsDetails = () => {
+const RoomsDetails = () => {
   const params = useParams().id;
   const roomDetails = useSelector(
     (state) => state.RS_rooms.Rooms[0].roomType[params]
@@ -53,7 +53,10 @@ export const RoomsDetails = () => {
                 </div>
 
                 <div className="roomDetails__slider__main__introduction">
-                  <img src={Logo} alt={Logo}></img>
+                  <div className="rooms__image">
+                    <img src={Logo} alt={Logo}></img>
+                  </div>
+
                   <RoomsDescription item={roomDetails} />
                 </div>
               </div>
@@ -160,3 +163,5 @@ export const RoomsDetails = () => {
     </>
   );
 };
+
+export default RoomsDetails;

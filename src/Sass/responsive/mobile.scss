@@ -2,21 +2,635 @@
 @import "../settings/reset.scss";
 @import "../settings/variable.scss";
 
-//* Responsive 320px => 480px
-@media screen and (max-width: 520px) {
-  //* Completed: Header
-  .header__topline {
-    &__container {
-      &__left {
-        display: none;
-        span {
+//* TODO: Responsive 320px
+@media screen and (max-width: 320px) {
+  //* Completed: Slider
+  .navbar-expand-lg {
+    height: 40px !important;
+
+    .navbar-toggler {
+      font-size: 1em;
+      padding: 0px 0px 7px 0px;
+    }
+  }
+}
+
+//* TODO: Responsive 370px
+@media screen and (max-width: 370px) {
+  //* Completed: Slider
+  .carousel-inner {
+    .carousel-caption {
+      h3 {
+        font-size: 1em;
+        margin: 0px;
+      }
+    }
+  }
+
+  .section {
+    //* Completed: Home - OurRoom
+    .ourRooms {
+      .ourRooms__title {
+        font-size: 1.3em;
+      }
+    }
+  }
+
+  //* Completed: Contact
+  .contact {
+    .contact__feedback {
+      input {
+        font-size: 0.7em;
+        padding: 2%;
+      }
+
+      .contact__feedback__content {
+        height: 150px !important;
+
+        textarea {
+          font-size: 0.7em;
+          padding: 2%;
+          // height: 200px !important;
         }
       }
 
-      &__right {
-        span {
-          padding: 0px 20px 0px 0px;
+      .contact__feedback__send {
+        font-size: 0.7em;
+      }
+    }
+  }
+
+  //* Completed: Booking Now
+  .bookingNow {
+    @include size(70px, 70px);
+    .bookingNow__close {
+      .bookingNow__close__content {
+        font-size: 0.8em;
+        padding: 25% 0px;
+      }
+    }
+
+    .bookingNow__open {
+      right: -60px;
+
+      span {
+        font-size: 0.6em;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 370px) and (min-width: 321px) {
+}
+
+//* TODO: Responsive 480px
+@media screen and (max-width: 480px) {
+  //* Completed: Slider
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    display: none !important;
+  }
+
+  .section {
+    //* Completed: Home - Our Rooms
+    .ourRooms {
+      border-bottom: 10px dotted $colorPrimary !important;
+
+      .ourRooms__content {
+        font-size: 0.8em;
+      }
+
+      .ourRooms__box__info {
+        .info__other {
+          span {
+            font-size: 0.7em;
+          }
         }
+      }
+    }
+
+    //* Completed: Home - AboutUs, News
+    .aboutUs,
+    #news {
+      border: none !important;
+    }
+
+    //* Completed: Home - News
+    .news {
+      .news__box {
+        width: 100% !important;
+        padding: 10%;
+
+        .news__box__content {
+          font-size: 1.2em;
+        }
+      }
+    }
+  }
+
+  //* Completed: SupSlider
+  .supSlider {
+    height: 30vh !important;
+
+    .supSlider__title {
+      font-size: 1.3em !important;
+    }
+  }
+
+  //* Completed: Rooms
+  .rooms {
+    .rooms__introduction__title {
+      font-size: 1.2em;
+    }
+
+    .rooms__introduction__price {
+      font-size: 0.7em;
+    }
+
+    .rooms__introduction__content {
+      font-size: 0.7em;
+    }
+  }
+
+  //* Completed: Contact - Map
+  .contactMap {
+    height: 200px;
+  }
+
+  //* Completed: About - Infomation
+  .about__info {
+    padding: 5%;
+
+    .about__info__image {
+      @include size(100%, auto);
+    }
+
+    .about__info__description {
+      @extend .about__info__image;
+    }
+
+    &:first-child {
+      padding-bottom: 0px;
+    }
+  }
+
+  //* Completed: About - Atatistic
+  .aboutStatistic-SECTION {
+    section {
+      .about__statistic {
+        height: 150px !important;
+
+        .about__statistic__container {
+          padding: 4% 0px;
+
+          .about__statistic__container__title {
+            font-size: 1em;
+          }
+
+          .about__statistic__container__content {
+            .box {
+              .box__count {
+                font-size: 0.9em;
+              }
+
+              .box__content {
+                font-size: 0.4em;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  //* Completed: About - Team
+  .section {
+    .about__team {
+      .about__team__title {
+        font-size: 1em;
+        padding: 5%;
+      }
+
+      .about__team__member {
+        .card {
+          .card__image {
+            @include size(60%, auto);
+          }
+
+          .card__info {
+            .card__info__name {
+              font-size: 0.9em;
+            }
+
+            .card__info__description,
+            .card__info__position {
+              font-size: 0.7em;
+            }
+          }
+
+          .card__info__social {
+            .icon {
+              font-size: 0.9em;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  //* Completed: News&Events - Navigation
+  .newsEvent {
+    .newsEvent__detail {
+      @include size(100%, auto);
+
+      .box {
+        .box__image {
+          height: 200px;
+        }
+
+        .box__info {
+          .box__info__title {
+            font-size: 1.2em;
+          }
+
+          .box__info__others {
+            font-size: 0.7em;
+
+            span {
+              @include size(100%, auto);
+              display: inline-block;
+              margin: 0px;
+
+              span {
+                display: inline;
+                padding-left: 2%;
+              }
+
+              .hoverItem {
+                padding: 0px;
+              }
+            }
+          }
+
+          .box__info__content {
+            font-size: 0.9em;
+          }
+        }
+
+        button {
+          font-size: 0.7em;
+        }
+      }
+    }
+  }
+
+  //* Completed: Term
+  .term {
+    .term__title {
+      font-size: 1em !important;
+    }
+
+    .term__body__box {
+      h4 {
+        font-size: 0.9em !important;
+        padding-top: 0px;
+      }
+
+      ol,
+      ul {
+        font-size: 0.85em !important;
+        line-height: 25px !important;
+      }
+    }
+  }
+
+  //* Completed: FAQs
+  .FAQS {
+    .FAQS__title {
+      font-size: 1.3em;
+    }
+
+    .FAQS__container {
+      padding: 5%;
+    }
+
+    .accordion-button {
+      font-size: 0.6em !important;
+    }
+
+    .icon {
+      top: 20% !important;
+    }
+
+    .FAQS__content__question {
+      font-size: 0.8em;
+    }
+
+    .FAQS__content__answer {
+      font-size: 0.7em;
+    }
+  }
+
+  //* Completed: Room Detail - Infomation
+  .roomDetails__info {
+    .roomDetails__info__control {
+      padding-right: 3%;
+
+      p {
+        font-size: 0.8em;
+      }
+    }
+
+    .roomDetails__info__content {
+      padding-left: 3%;
+
+      .overview1__title {
+        font-size: 0.9em;
+      }
+
+      .overview1__content {
+        font-size: 0.9em;
+      }
+
+      .overview2__box {
+        .overview2__box__title {
+          font-size: 0.8em;
+        }
+
+        ul {
+          padding: 0px;
+
+          li {
+            font-size: 0.8em;
+          }
+        }
+      }
+    }
+  }
+
+  //* Completed: Room Detail - Another Accommodation
+  .roomDetails__othersRooms {
+    padding: 5% !important;
+
+    .roomDetails__othersRooms__title {
+      font-size: 1.1em;
+    }
+
+    .roomDetails__othersRooms__roomType {
+      justify-content: center;
+
+      .box {
+        width: 100% !important;
+        margin-top: 5%;
+
+        .box__image {
+          img {
+            object-fit: cover;
+          }
+        }
+
+        .box__info {
+          h5 {
+            font-size: 1em;
+          }
+
+          p {
+            font-size: 0.9em;
+          }
+        }
+      }
+    }
+  }
+
+  //* Completed: News&Event Detail
+  .content__imageMain {
+    padding: 0px 5%;
+    height: 200px !important;
+  }
+  .content__body {
+    padding: 2% 3%;
+  }
+
+  .content__body__time {
+    p {
+      font-size: 1.2em !important;
+
+      &:last-child {
+        font-size: 0.8em !important;
+      }
+    }
+  }
+
+  .details__title {
+    font-size: 1em;
+  }
+
+  .details__info {
+    font-size: 0.9em;
+  }
+
+  .details__text {
+    p {
+      font-size: 0.9em;
+    }
+  }
+
+  //* Completed: Booking - Content
+  .packageBox {
+    flex-wrap: wrap;
+    padding: 0px 10%;
+
+    .packageBox__image {
+      width: 100% !important;
+    }
+
+    .packageBox__content {
+      width: 100% !important;
+    }
+
+    .packageBox__price {
+      width: 100% !important;
+    }
+  }
+
+  //* Completed: Booking - allRoomSelected
+  .allRoomSelected {
+    h5 {
+      font-size: 1em;
+    }
+
+    p {
+      font-size: 0.9em;
+    }
+
+    button {
+      font-size: 0.8em;
+    }
+  }
+
+  //* Completed: Careers
+  .careers__container__info__title,
+  .careers__container__benefits__title,
+  .careers__container__opportunities h4,
+  .careers__container__contact__info h4,
+  .careersReview h4 {
+    font-size: 1.1em !important;
+  }
+
+  .careers__container__info__content,
+  .careers__container__contact__info p,
+  .careers__container__contact__info .branch,
+  .careers__container__opportunities p {
+    font-size: 0.9em;
+  }
+
+  .careers__container__benefits {
+    .careers__container__benefits__content {
+      .box {
+        @include size(48%, auto);
+
+        img {
+          @include size(40%, auto);
+        }
+
+        .boxTitle {
+          font-size: 0.5em;
+        }
+      }
+    }
+  }
+
+  .careers__container__note__frame {
+    height: 300px;
+    overflow-y: scroll;
+
+    p {
+      font-size: 0.9em;
+    }
+  }
+
+  .careersReview__SECTION__bgc {
+    section {
+      .careersReview {
+        .careersReview__container {
+          .box {
+            @include size(100%, auto);
+            padding: 5% 0px 0px 0px;
+
+            p {
+              margin-bottom: 0px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .careersIntership-SECTION {
+    section {
+      .careersIntership__info {
+        h4 {
+          font-size: 1.1em !important;
+        }
+
+        p {
+          font-size: 0.9em;
+        }
+
+        button {
+          margin-top: 0px;
+        }
+      }
+    }
+  }
+
+  .careersFrame {
+    height: 500px !important;
+  }
+
+  //* Completed: Footer
+  .footer {
+    .footer__contactMe {
+      padding: 0px 2% 5% 2%;
+
+      .footer__contactMe__email {
+        padding: 0px !important;
+
+        .logoEmail {
+          .icon {
+            font-size: 1.2em;
+          }
+        }
+
+        .inputEmail {
+          input {
+            height: auto;
+            font-size: 0.8em;
+          }
+
+          button {
+            .icon {
+              font-size: 1.2em;
+            }
+          }
+        }
+      }
+
+      .footer__contactMe__social {
+        span {
+          .icon {
+            font-size: 1.2em;
+          }
+        }
+      }
+    }
+
+    .footer__others {
+      .footer__others__info {
+        .box {
+          @include size(90%, 200px);
+          overflow-y: scroll;
+          margin: 5% auto;
+          border: 2px solid $colorPrimary;
+          border-radius: 10px;
+        }
+
+        .listBranch {
+          @include size(100%, auto);
+
+          ul {
+            margin-left: -5%;
+          }
+        }
+      }
+    }
+
+    .footer__bottom {
+      .footer__bottom__copyRight {
+        @include size(100%, auto);
+      }
+
+      .footer__bottom__payment {
+        @include size(100%, auto);
+        margin-top: 5%;
+
+        span {
+          .icon {
+            font-size: 1.5em;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 480px) and (min-width: 371px) {
+  //* Completed: Slider
+  .active {
+    .carousel-caption {
+      h3 {
+        font-size: 1.5em;
+        margin: 0px;
       }
     }
   }

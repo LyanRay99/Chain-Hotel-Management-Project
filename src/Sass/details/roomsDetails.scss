@@ -9,6 +9,7 @@
     &__slider {
       @include size(100%, auto);
       display: flex;
+      flex-wrap: wrap;
 
       &__main {
         @include size(70%, auto);
@@ -28,15 +29,23 @@
           display: flex;
           justify-content: space-around;
 
-          img {
+          .rooms__image {
             @include size(40%, auto);
+
+            img {
+              @include size(100%, auto);
+            }
+          }
+
+          .rooms__introduction {
+            @include size(60%, auto);
           }
         }
       }
 
       &__navbar {
         @include size(30%, auto);
-        padding: 30px;
+        padding: 30px 0px 30px 30px;
       }
     }
 
@@ -118,6 +127,10 @@
                 font-size: 0.9em;
               }
             }
+
+            &:last-child {
+              margin-left: 10%;
+            }
           }
         }
 
@@ -166,6 +179,7 @@
         @include size(100%, auto);
         display: flex;
         justify-content: space-between;
+        flex-wrap: wrap;
 
         .box {
           @include size(23.5%, auto);

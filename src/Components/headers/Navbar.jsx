@@ -19,7 +19,7 @@ import { faClock, faCloud, faPhone } from "@fortawesome/free-solid-svg-icons";
 //* Image
 import Logo from "../../Assets/Logo.png";
 
-export const Navbars = () => {
+const Navbars = () => {
   //* Get date
   const date = new Date();
   let day = date.getDate();
@@ -29,7 +29,7 @@ export const Navbars = () => {
   let minute = date.getMinutes();
   let seconds = date.getSeconds();
 
-  //* Change color navbar when scroll
+  //* Change color navbar when scroll over 35.6px
   const [colorChange, setColorchange] = useState(false);
 
   const handleScroll = () => {
@@ -68,9 +68,9 @@ export const Navbars = () => {
 
       {/* Completed: Navbar */}
       <Navbar
-        expand="lg"
+        expand="md"
         sticky="top"
-        id={colorChange ? "colorChangeNavbar" : ""}
+        id={colorChange ? "colorChangeNavbar" : "navbarID"}
       >
         <Container fluid>
           <NavLink to="/" onClick={goTop}>
@@ -172,15 +172,17 @@ export const Navbars = () => {
       </Navbar>
 
       {/* Completed: Body */}
-      <div style={{ marginTop: "-92px" }}>
+      <div className="bodyMain">
         <Outlet />
       </div>
 
       {/* Completed: Booking Now */}
-      <BookingNow />
+      {/* <BookingNow /> */}
 
       {/* Completed: Footer */}
-      <Footer />
+      {/* <Footer /> */}
     </React.Fragment>
   );
 };
+
+export default Navbars;

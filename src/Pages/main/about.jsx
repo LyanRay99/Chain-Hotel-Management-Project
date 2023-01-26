@@ -6,7 +6,7 @@ import { AboutStatistic } from "../../Components/body/about/aboutStatistic";
 import { AboutTeam } from "../../Components/body/about/aboutTeam";
 import { Zoom } from "react-awesome-reveal";
 
-export const About = () => {
+const About = () => {
   const aboutUsInfo = useSelector(
     (state) => state.RS_aboutUs.aboutUs.aboutUs_Page
   );
@@ -64,3 +64,5 @@ export const About = () => {
     </>
   );
 };
+
+export default About;

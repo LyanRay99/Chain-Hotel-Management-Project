@@ -6,6 +6,7 @@
   @include size(100%, auto);
   padding: 50px 0px;
   display: flex;
+  flex-wrap: wrap;
 
   &__image {
     @include size(60%, auto);

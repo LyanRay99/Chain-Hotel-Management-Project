@@ -2,7 +2,7 @@ import { useSelector } from "react-redux";
 import { Zoom } from "react-awesome-reveal";
 import { SupSlider } from "../../Components/headers/supSlider";
 
-export const Term = () => {
+const Term = () => {
   const term = useSelector((state) => state.RS_terms.term);
 
   return (
@@ -44,3 +44,5 @@ export const Term = () => {
     </>
   );
 };
+
+export default Term;

@@ -5,6 +5,7 @@
 .contact {
   @include size(100%, auto);
   display: flex;
+  flex-wrap: wrap;
 
   &__info {
     @include size(50%, auto);
@@ -28,7 +29,7 @@
           list-style-type: none;
 
           .icon {
-            margin: 0px 20px 0px 0px;
+            margin: 0px 0.1% 0px 0px;
             color: grey;
           }
         }
@@ -80,4 +81,8 @@
       @include Btn;
     }
   }
+}
+
+.contactMap {
+  height: 450px;
 }

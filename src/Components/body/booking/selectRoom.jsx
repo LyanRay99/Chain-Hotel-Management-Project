@@ -1,7 +1,13 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import {
+  CHANGEBOOKINGSTEP,
+  CHANGEBOOKINGSTYLE,
+} from "../../../Store/reducers/R_rooms";
 
 export const SelectRoom = (props) => {
-  
+  const dispatch = useDispatch();
+
   return (
     <div className="reservation selectRoom">
       <h6 className="reservation__title">SELECT ROOMS</h6>
@@ -20,7 +26,14 @@ export const SelectRoom = (props) => {
             </div>
           </div>
 
-          <p>Change Room</p>
+          <p
+            onClick={() => {
+              dispatch(CHANGEBOOKINGSTEP(0));
+              dispatch(CHANGEBOOKINGSTYLE(0));
+            }}
+          >
+            Change Room
+          </p>
         </div>
       ) : (
         <span></span>
@@ -55,5 +68,3 @@ export const SelectRoom = (props) => {
     </div>
   );
 };
-
-

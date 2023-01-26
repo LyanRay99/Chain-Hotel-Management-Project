@@ -8,7 +8,7 @@ import { Zoom } from "react-awesome-reveal";
 //* Components UI
 import { SupSlider } from "../../Components/headers/supSlider";
 
-export const Faqs = () => {
+const Faqs = () => {
   const faqs = useSelector((state) => state.RS_faqs.faqs);
 
   return (
@@ -52,3 +52,5 @@ export const Faqs = () => {
     </>
   );
 };
+
+export default Faqs;

@@ -16,7 +16,7 @@
       align-items: center;
 
       div {
-        margin: 0px 30px;
+        margin: 0px 1.5%;
         // border-bottom: 2px solid $colorPrimary;
         font-weight: bold;
         position: relative;
@@ -49,20 +49,23 @@
       @include size(100%, auto);
       margin: 30px 0px 0px 0px;
       display: flex;
+      flex-wrap: wrap;
+      // justify-content: space-between;
 
       &__navbar {
-        @include size(25%, auto);
+        @include size(30%, auto);
         padding: 0px 30px 0px 0px;
       }
 
       &__content {
-        @include size(75%, auto);
+        @include size(60%, auto);
         padding: 00px 0px 0px 30px;
         display: flex;
         justify-content: space-around;
 
         .calendar {
           @include size(48%, auto);
+          margin-top: 0px;
         }
       }
     }
@@ -279,6 +282,7 @@
     p {
       text-decoration: underline;
       font-size: 0.9em;
+      cursor: pointer;
     }
   }
 
@@ -354,6 +358,7 @@
     @include size(100%, auto);
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 
     &__image {
       @include size(49%, auto);
@@ -454,8 +459,8 @@
           }
 
           &__content {
-            @include size(80%, auto);
-            padding: 10px 30px;
+            @include size(50%, auto);
+            padding: 10px 4%;
 
             p:first-child {
               font-weight: bold;
@@ -470,7 +475,7 @@
           }
 
           &__price {
-            @include size(20%, auto);
+            @include size(30%, auto);
 
             p {
               font-size: 1.5em;

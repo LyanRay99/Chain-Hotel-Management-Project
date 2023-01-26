@@ -37,7 +37,7 @@
         padding: 20px;
 
         &__image {
-          @include size(100%, 400px);
+          @include size(100%, auto);
           overflow: hidden;
           border-radius: 20px;
           position: relative;
@@ -60,7 +60,7 @@
             font-weight: bold;
             font-family: $mainFont;
             position: absolute;
-            top: 75%;
+            top: 70%;
             background-color: rgba(0, 0, 0, 0.2);
 
             &__name {
@@ -148,8 +148,13 @@
         padding: 10px 0px;
         border-radius: 10px;
 
+        img {
+          @include size(20%, auto);
+        }
+
         p {
           margin: 10px 0px 0px 0px;
+          padding: 0px 2%;
           font-size: 0.8em;
           font-weight: bold;
         }
@@ -163,6 +168,7 @@
     margin: 50px 0px 0px 0px;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 
     &__box {
       @include size(30%, auto);
@@ -219,6 +225,7 @@
     border: none;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 
     &__box {
       @include size(31%, auto);
@@ -283,17 +290,6 @@
     .comment {
       @include size(100%, 450px);
       padding: 80px 0px 30px 0px;
-      // background: url(../../Assets/backgroundImage.jpg) center bottom/cover
-      //   no-repeat local;
-
-      // &__background {
-      //   @include size(100%, 100%);
-      //   background: url(../../Assets/backgroundImage.jpg) center bottom/cover
-      //     no-repeat fixed;
-      //   position: absolute;
-      //   top: 0;
-      //   left: 0;
-      // }
 
       &__box {
         @include size(100%, 100%);

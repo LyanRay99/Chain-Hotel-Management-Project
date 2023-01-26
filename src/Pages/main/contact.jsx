@@ -7,7 +7,7 @@ import { SupSlider } from "../../Components/headers/supSlider";
 import { ContactBody } from "../../Components/body/contact/contactBody";
 import { ContactMap } from "../../Components/body/contact/contactMap";
 
-export const Contact = () => {
+const Contact = () => {
   return (
     <>
       {/* TODO: Slider phụ của mỗi page, supSlider truyền vào để component SupSlider biết được title hiện tại*/}
@@ -25,3 +25,5 @@ export const Contact = () => {
     </>
   );
 };
+
+export default Contact;

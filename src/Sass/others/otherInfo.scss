@@ -321,6 +321,7 @@
           margin: 50px 0px 0px 0px;
           display: flex;
           justify-content: space-around;
+          flex-wrap: wrap;
 
           .box {
             @include size(32%, auto);
