@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import roomsData from "../../Data/list_room.json";
+import bookingData from "../../Data/list_booking.json";
 import { toast } from "react-toastify";
 
 //*  Custom Notify
@@ -60,7 +61,10 @@ function checkDate(date1, date2) {
 }
 
 const initialState = {
+  //* List Rooms of hotel
   Rooms: roomsData,
+
+  //* Various used change state in UI
   roomDetail: {
     roomDetailInfo: 0,
     roomInfoStyle: {
@@ -78,6 +82,11 @@ const initialState = {
       confirmation: "",
     },
   },
+
+  //* List customer book room
+  booking: bookingData,
+
+  //* Various save value used to check booking
   checkAvailable: {
     branchValue: "",
     time: {
@@ -95,6 +104,7 @@ const initialState = {
     },
   },
 
+  // * Various to check condition booking
   checkRooms: {
     checkInfoEnough: "",
     checkInvalidData: "",
@@ -111,6 +121,7 @@ const initialState = {
       index: "",
     },
     checkRoomAmount: "",
+    countRooms: "",
   },
 };
 
@@ -227,11 +238,12 @@ const R_rooms = createSlice({
         state.checkAvailable.roomType.type === "" ||
         state.checkAvailable.roomType.kind === "" ||
         state.checkAvailable.roomAmount === "" ||
+        state.checkAvailable.roomAmount == false ||
         state.checkAvailable.customer.adult === "" ||
         state.checkAvailable.customer.child === ""
       ) {
         notify_InfoNotEnough();
-        state.checkRooms.checkInfoEnough = false;
+        state.checkRooms.checkInfoEnough = "";
       } else {
         state.checkRooms.checkInfoEnough = true;
       }
@@ -245,7 +257,7 @@ const R_rooms = createSlice({
           )
         ) {
           notify_Invalid();
-          state.checkRooms.checkInvalidData = false;
+          state.checkRooms.checkInvalidData = "";
         } else {
           state.checkRooms.checkInvalidData = true;
         }
@@ -310,6 +322,21 @@ const R_rooms = createSlice({
         });
       }
 
+      //* Completed: Show notify Not Empty Room + notify booking success + Reset state of CheckRooms
+      if (state.checkRooms.checkInvalidData) {
+        if (
+          state.checkRooms.checkBranch.status === "" ||
+          state.checkRooms.checkRoomType.status === "" ||
+          state.checkRooms.checkRoomKind.status === ""
+        ) {
+          notify_NotEmptyRoom();
+        }
+      }
+
+      if (state.checkRooms.checkRoomAmount) {
+        notify_SuccessBooking();
+      }
+
       //* Completed: 6 - check room amount (đủ ?)
       if (state.checkRooms.checkRoomKind.status) {
         if (
@@ -322,24 +349,61 @@ const R_rooms = createSlice({
           state.checkRooms.checkRoomAmount = true;
         } else {
           console.log("ko còn phòng trống");
+          state.checkRooms.checkRoomAmount = false;
         }
       }
-      // TODO: 7 - check date
-      // if (state.checkRooms.checkRoomKind.status) {
-      // }
 
-      //* Completed: Show notify Not Empty Room + notify booking success + Reset state of CheckRooms
-      if (
-        state.checkRooms.checkBranch.status !== true ||
-        state.checkRooms.checkRoomType.status !== true ||
-        state.checkRooms.checkRoomKind.status !== true ||
-        state.checkRooms.checkRoomAmount !== true
-      ) {
-        notify_NotEmptyRoom();
+      // TODO: 7 - check date
+      if (state.checkRooms.checkRoomAmount === false) {
+        state.booking.countRooms = 0;
+
+        state.booking.map((item, index) => {
+          if (
+            item.nameBranchVN === state.checkAvailable.branchValue &&
+            item.roomType === state.checkAvailable.roomType.type &&
+            item.typeR === state.checkAvailable.roomType.kind
+          ) {
+            if (
+              checkDate(
+                state.checkAvailable.time.arrive,
+                item.checkIn.slice(6, 16)
+              )
+            ) {
+              if (
+                checkDate(
+                  state.checkAvailable.time.depature,
+                  item.checkIn.slice(6, 16)
+                )
+              ) {
+                console.log("CON PHONG");
+                state.checkRooms.countRooms++;
+              } else {
+                console.log("HET PHONG");
+              }
+            } else {
+              if (
+                checkDate(
+                  state.checkAvailable.time.arrive,
+                  item.checkOut.slice(6, 16)
+                )
+              ) {
+                console.log("HET PHONG");
+              } else {
+                console.log("CON PHONG");
+                state.checkRooms.countRooms++;
+              }
+            }
+          }
+        });
       }
 
-      if (state.checkRooms.checkRoomAmount) {
-        notify_SuccessBooking();
+      //* Check final
+      if (state.booking.countRooms !== "") {
+        if (state.booking.countRooms >= state.checkAvailable.roomAmount) {
+          notify_SuccessBooking();
+        } else {
+          notify_NotEmptyRoom();
+        }
       }
 
       state.checkRooms = {
@@ -358,6 +422,7 @@ const R_rooms = createSlice({
           index: "",
         },
         checkRoomAmount: "",
+        countRooms: "",
       };
     },
   },

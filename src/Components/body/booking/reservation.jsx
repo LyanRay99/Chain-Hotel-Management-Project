@@ -28,7 +28,7 @@ export const Reservation = () => {
 
   //* Completed: Prevent User input negative number in Input (type: number)
   const blockInvalidChar = (e) => {
-    ["e", "E", "+", "-", "0"].includes(e.key) && e.preventDefault();
+    ["e", "E", "+", "-"].includes(e.key) && e.preventDefault();
   };
 
   //* Completed: Get info Room Amount in Input (type: number)
