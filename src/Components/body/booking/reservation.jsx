@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { CHECK_AVAILABLE, GET_INFO } from "../../../Store/reducers/R_rooms";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 //* Components UI
@@ -120,7 +120,8 @@ export const Reservation = () => {
       {/* Completed: Customer amount */}
       <div className="reservation__customer">
         <div>
-          <p>ROOMS</p>
+          <p>AVERAGE</p>
+          <p>PER ROOM</p>
         </div>
         <div>
           <p>ADULT</p>
@@ -137,7 +138,7 @@ export const Reservation = () => {
       <div className="reservation__check">
         <button
           onClick={() => {
-            dispatch(CHECK_AVAILABLE());
+            dispatch(CHECK_AVAILABLE(0));
             changeNotifyWarn();
           }}
         >
