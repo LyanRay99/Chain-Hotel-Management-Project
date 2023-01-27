@@ -61,9 +61,9 @@ const RoomsDetails = () => {
                 </div>
               </div>
 
-              <nav className="roomDetails__slider__navbar">
-                <Reservation />
-              </nav>
+              {/* <nav className="roomDetails__slider__navbar"> */}
+              {/* <Reservation /> */}
+              {/* </nav> */}
             </div>
 
             {/* Completed Room Info */}

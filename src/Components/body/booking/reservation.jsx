@@ -22,8 +22,12 @@ export const Reservation = () => {
   const roomTypes = useSelector(
     (state) => state.RS_rooms.Rooms[0].roomType[0].typeR
   );
-  const value = useSelector(
+  const amountRoom = useSelector(
     (state) => state.RS_rooms.checkAvailable.roomAmount
+  );
+
+  const phoneNumber = useSelector(
+    (state) => state.RS_rooms.checkAvailable.phoneNumber
   );
 
   //* Completed: Prevent User input negative number in Input (type: number)
@@ -31,18 +35,25 @@ export const Reservation = () => {
     ["e", "E", "+", "-"].includes(e.key) && e.preventDefault();
   };
 
-  //* Completed: Get info Room Amount in Input (type: number)
+  //* Completed: Get info Room Amount (type: number)
   const getAmountInfo = (e) => {
-    dispatch(GET_INFO(e.target.value));
+    dispatch(GET_INFO({ value: e.target.value, name: e.target.name }));
+    console.log(e.target.name);
+    console.log(e.target.value);
   };
 
-  //* Completed: Get info Date in Input (type: date)
+  //* Completed: Get info Date (type: date)
   const getDateInfo = (e) => {
     if (e.target.name === "arrive") {
       dispatch(GET_INFO({ value: e.target.value, name: e.target.name }));
     } else {
       dispatch(GET_INFO({ value: e.target.value, name: e.target.name }));
     }
+  };
+
+  //* Completed: Get info phone number (type: number)
+  const getPhoneNumber = (e) => {
+    dispatch(GET_INFO({ value: e.target.value, name: e.target.name }));
   };
 
   //* Completed: Notify when info not enough
@@ -109,9 +120,10 @@ export const Reservation = () => {
         <input
           type="number"
           placeholder="Room..."
+          name="amountRoom"
           className="reservation__roomsGuest__input"
           min={1}
-          value={value}
+          value={amountRoom}
           onKeyDown={blockInvalidChar}
           onChange={getAmountInfo}
         ></input>
@@ -133,6 +145,20 @@ export const Reservation = () => {
           {/* <Selects customer={true} /> */}
           <SelectChildAmount />
         </div>
+      </div>
+
+      {/* Completed: Phone Number */}
+      <div className="reservation__roomsGuest ">
+        <span>PHONE NUMBER</span>
+        <input
+          type="number"
+          placeholder="Phone Number..."
+          name="phoneNumber"
+          className="reservation__roomsGuest__input"
+          value={phoneNumber}
+          onKeyDown={blockInvalidChar}
+          onChange={getPhoneNumber}
+        ></input>
       </div>
 
       <div className="reservation__check">

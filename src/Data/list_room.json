@@ -64,7 +64,7 @@
             "name": "twin bed room",
             "roomTotal": 20,
             "emptyRooms": 0,
-            "price": "2050$",
+            "price": "2050",
             "dateCreated": "13h30 23-02-2022",
             "dateUpdated": "13h30 23-02-2022",
             "actived": true,
@@ -91,8 +91,8 @@
             "id": 3,
             "name": "double bed room",
             "roomTotal": 10,
-            "emptyRooms": 0,
-            "price": "3050$",
+            "emptyRooms": 20,
+            "price": "3050",
             "dateCreated": "13h30 23-02-2022",
             "dateUpdated": "13h30 23-02-2022",
             "actived": true,
@@ -132,7 +132,93 @@
         "roomTotal": 25,
         "dateCreated": "13h30 23-02-2022",
         "dateUpdated": "13h30 23-02-2022",
-        "actived": true
+        "actived": true,
+        "typeR": [
+          {
+            "id": 1,
+            "name": "single bed room",
+            "roomTotal": 30,
+            "emptyRooms": 10,
+            "price": "1050",
+            "dateCreated": "13h30 23-02-2022",
+            "dateUpdated": "13h30 23-02-2022",
+            "actived": true,
+            "numberOfRoom": [
+              {
+                "id": 1,
+                "numberRoom": 101,
+                "price": "1050",
+                "dateCreated": "13h30 23-02-2022",
+                "dateUpdated": "13h30 23-02-2022",
+                "actived": true
+              },
+              {
+                "id": 2,
+                "numberRoom": 102,
+                "price": "1050",
+                "dateCreated": "13h30 23-02-2022",
+                "dateUpdated": "13h30 23-02-2022",
+                "actived": true
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "name": "twin bed room",
+            "roomTotal": 20,
+            "emptyRooms": 0,
+            "price": "2050",
+            "dateCreated": "13h30 23-02-2022",
+            "dateUpdated": "13h30 23-02-2022",
+            "actived": true,
+            "numberOfRoom": [
+              {
+                "id": 1,
+                "numberRoom": 201,
+                "price": "2050",
+                "dateCreated": "13h30 23-02-2022",
+                "dateUpdated": "13h30 23-02-2022",
+                "actived": true
+              },
+              {
+                "id": 2,
+                "numberRoom": 202,
+                "price": "2050",
+                "dateCreated": "13h30 23-02-2022",
+                "dateUpdated": "13h30 23-02-2022",
+                "actived": true
+              }
+            ]
+          },
+          {
+            "id": 3,
+            "name": "double bed room",
+            "roomTotal": 10,
+            "emptyRooms": 20,
+            "price": "3050",
+            "dateCreated": "13h30 23-02-2022",
+            "dateUpdated": "13h30 23-02-2022",
+            "actived": true,
+            "numberOfRoom": [
+              {
+                "id": 1,
+                "numberRoom": 301,
+                "price": "3050",
+                "dateCreated": "13h30 23-02-2022",
+                "dateUpdated": "13h30 23-02-2022",
+                "actived": false
+              },
+              {
+                "id": 2,
+                "numberRoom": 302,
+                "price": "3050",
+                "dateCreated": "13h30 23-02-2022",
+                "dateUpdated": "13h30 23-02-2022",
+                "actived": true
+              }
+            ]
+          }
+        ]
       },
       {
         "id": 3,
@@ -149,7 +235,93 @@
         "roomTotal": 25,
         "dateCreated": "13h30 23-02-2022",
         "dateUpdated": "13h30 23-02-2022",
-        "actived": true
+        "actived": true,
+        "typeR": [
+          {
+            "id": 1,
+            "name": "single bed room",
+            "roomTotal": 30,
+            "emptyRooms": 10,
+            "price": "1050",
+            "dateCreated": "13h30 23-02-2022",
+            "dateUpdated": "13h30 23-02-2022",
+            "actived": true,
+            "numberOfRoom": [
+              {
+                "id": 1,
+                "numberRoom": 101,
+                "price": "1050",
+                "dateCreated": "13h30 23-02-2022",
+                "dateUpdated": "13h30 23-02-2022",
+                "actived": true
+              },
+              {
+                "id": 2,
+                "numberRoom": 102,
+                "price": "1050",
+                "dateCreated": "13h30 23-02-2022",
+                "dateUpdated": "13h30 23-02-2022",
+                "actived": true
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "name": "twin bed room",
+            "roomTotal": 20,
+            "emptyRooms": 0,
+            "price": "2050",
+            "dateCreated": "13h30 23-02-2022",
+            "dateUpdated": "13h30 23-02-2022",
+            "actived": true,
+            "numberOfRoom": [
+              {
+                "id": 1,
+                "numberRoom": 201,
+                "price": "2050",
+                "dateCreated": "13h30 23-02-2022",
+                "dateUpdated": "13h30 23-02-2022",
+                "actived": true
+              },
+              {
+                "id": 2,
+                "numberRoom": 202,
+                "price": "2050",
+                "dateCreated": "13h30 23-02-2022",
+                "dateUpdated": "13h30 23-02-2022",
+                "actived": true
+              }
+            ]
+          },
+          {
+            "id": 3,
+            "name": "double bed room",
+            "roomTotal": 10,
+            "emptyRooms": 20,
+            "price": "3050",
+            "dateCreated": "13h30 23-02-2022",
+            "dateUpdated": "13h30 23-02-2022",
+            "actived": true,
+            "numberOfRoom": [
+              {
+                "id": 1,
+                "numberRoom": 301,
+                "price": "3050",
+                "dateCreated": "13h30 23-02-2022",
+                "dateUpdated": "13h30 23-02-2022",
+                "actived": false
+              },
+              {
+                "id": 2,
+                "numberRoom": 302,
+                "price": "3050",
+                "dateCreated": "13h30 23-02-2022",
+                "dateUpdated": "13h30 23-02-2022",
+                "actived": true
+              }
+            ]
+          }
+        ]
       },
       {
         "id": 4,
@@ -166,7 +338,93 @@
         "roomTotal": 25,
         "dateCreated": "13h30 23-02-2022",
         "dateUpdated": "13h30 23-02-2022",
-        "actived": true
+        "actived": true,
+        "typeR": [
+          {
+            "id": 1,
+            "name": "single bed room",
+            "roomTotal": 30,
+            "emptyRooms": 10,
+            "price": "1050",
+            "dateCreated": "13h30 23-02-2022",
+            "dateUpdated": "13h30 23-02-2022",
+            "actived": true,
+            "numberOfRoom": [
+              {
+                "id": 1,
+                "numberRoom": 101,
+                "price": "1050",
+                "dateCreated": "13h30 23-02-2022",
+                "dateUpdated": "13h30 23-02-2022",
+                "actived": true
+              },
+              {
+                "id": 2,
+                "numberRoom": 102,
+                "price": "1050",
+                "dateCreated": "13h30 23-02-2022",
+                "dateUpdated": "13h30 23-02-2022",
+                "actived": true
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "name": "twin bed room",
+            "roomTotal": 20,
+            "emptyRooms": 0,
+            "price": "2050",
+            "dateCreated": "13h30 23-02-2022",
+            "dateUpdated": "13h30 23-02-2022",
+            "actived": true,
+            "numberOfRoom": [
+              {
+                "id": 1,
+                "numberRoom": 201,
+                "price": "2050",
+                "dateCreated": "13h30 23-02-2022",
+                "dateUpdated": "13h30 23-02-2022",
+                "actived": true
+              },
+              {
+                "id": 2,
+                "numberRoom": 202,
+                "price": "2050",
+                "dateCreated": "13h30 23-02-2022",
+                "dateUpdated": "13h30 23-02-2022",
+                "actived": true
+              }
+            ]
+          },
+          {
+            "id": 3,
+            "name": "double bed room",
+            "roomTotal": 10,
+            "emptyRooms": 20,
+            "price": "3050",
+            "dateCreated": "13h30 23-02-2022",
+            "dateUpdated": "13h30 23-02-2022",
+            "actived": true,
+            "numberOfRoom": [
+              {
+                "id": 1,
+                "numberRoom": 301,
+                "price": "3050",
+                "dateCreated": "13h30 23-02-2022",
+                "dateUpdated": "13h30 23-02-2022",
+                "actived": false
+              },
+              {
+                "id": 2,
+                "numberRoom": 302,
+                "price": "3050",
+                "dateCreated": "13h30 23-02-2022",
+                "dateUpdated": "13h30 23-02-2022",
+                "actived": true
+              }
+            ]
+          }
+        ]
       }
     ]
   },

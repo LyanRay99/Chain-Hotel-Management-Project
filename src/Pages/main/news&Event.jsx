@@ -4,7 +4,6 @@ import { Slide } from "react-awesome-reveal";
 
 //* Components UI
 import { SupSlider } from "../../Components/headers/supSlider";
-import { Reservation } from "../../Components/body/booking/reservation";
 import { NewsAndEventDeal } from "../../Components/body/new_event/navigation/newsEventDeal";
 import { NewsAndEventCategories } from "../../Components/body/new_event/navigation/newsEventCategories";
 import { NewsAndEventUpcoming } from "../../Components/body/new_event/navigation/newsEventUpcoming";
@@ -22,7 +21,6 @@ const NewsAndEvent = () => {
           <div className="newsEvent">
             {/* TODO: Navigation new&event */}
             <div className="newsEvent__navbar">
-              <Reservation />
               <NewsAndEventDeal />
               <NewsAndEventCategories />
               <NewsAndEventUpcoming />
