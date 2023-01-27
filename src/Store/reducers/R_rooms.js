@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import roomsData from "../../Data/list_room.json";
 import bookingData from "../../Data/list_booking.json";
 import { toast } from "react-toastify";
+import { goTop } from "../../Components/support/goTop";
 
 //*  Custom Notify
 const notify_InfoNotEnough = () =>
@@ -56,15 +57,37 @@ const notify_SuccessBooking = () =>
   });
 
 //* Function check date arrive & date depature (có hợp lệ ko)
-function checkDate(date1, date2) {
+const checkDate = (date1, date2) => {
   return date1 < date2;
-}
+};
+
+//* Function to convert VN => EN
+const toNonAccentVietnamese = (str) => {
+  str = str.replace(/A|Á|À|Ã|Ạ|Â|Ấ|Ầ|Ẫ|Ậ|Ă|Ắ|Ằ|Ẵ|Ặ/g, "A");
+  str = str.replace(/à|á|ạ|ả|ã|â|ầ|ấ|ậ|ẩ|ẫ|ă|ằ|ắ|ặ|ẳ|ẵ/g, "a");
+  str = str.replace(/E|É|È|Ẽ|Ẹ|Ê|Ế|Ề|Ễ|Ệ/, "E");
+  str = str.replace(/è|é|ẹ|ẻ|ẽ|ê|ề|ế|ệ|ể|ễ/g, "e");
+  str = str.replace(/I|Í|Ì|Ĩ|Ị/g, "I");
+  str = str.replace(/ì|í|ị|ỉ|ĩ/g, "i");
+  str = str.replace(/O|Ó|Ò|Õ|Ọ|Ô|Ố|Ồ|Ỗ|Ộ|Ơ|Ớ|Ờ|Ỡ|Ợ/g, "O");
+  str = str.replace(/ò|ó|ọ|ỏ|õ|ô|ồ|ố|ộ|ổ|ỗ|ơ|ờ|ớ|ợ|ở|ỡ/g, "o");
+  str = str.replace(/U|Ú|Ù|Ũ|Ụ|Ư|Ứ|Ừ|Ữ|Ự/g, "U");
+  str = str.replace(/ù|ú|ụ|ủ|ũ|ư|ừ|ứ|ự|ử|ữ/g, "u");
+  str = str.replace(/Y|Ý|Ỳ|Ỹ|Ỵ/g, "Y");
+  str = str.replace(/ỳ|ý|ỵ|ỷ|ỹ/g, "y");
+  str = str.replace(/Đ/g, "D");
+  str = str.replace(/đ/g, "d");
+  // Some system encode vietnamese combining accent as individual utf-8 characters
+  str = str.replace(/\u0300|\u0301|\u0303|\u0309|\u0323/g, ""); // Huyền sắc hỏi ngã nặng
+  str = str.replace(/\u02C6|\u0306|\u031B/g, ""); // Â, Ê, Ă, Ơ, Ư
+  return str;
+};
 
 const initialState = {
   //* List Rooms of hotel
   Rooms: roomsData,
 
-  //* Various used change state in UI
+  //* State used change state in UI Rooms Page
   roomDetail: {
     roomDetailInfo: 0,
     roomInfoStyle: {
@@ -73,6 +96,8 @@ const initialState = {
       Package: "",
     },
   },
+
+  //* State used change state in UI Booking Page
   bookingControl: {
     bookingStep: 0,
     bookingStyle: {
@@ -86,7 +111,7 @@ const initialState = {
   //* List customer book room
   booking: bookingData,
 
-  //* Various save value used to check booking
+  //* State save value used to check booking
   checkAvailable: {
     branchValue: "",
     time: {
@@ -102,9 +127,10 @@ const initialState = {
       adult: "",
       child: "",
     },
+    phoneNumber: "",
   },
 
-  // * Various to check condition booking
+  // * State to check condition booking
   checkRooms: {
     checkInfoEnough: "",
     checkInvalidData: "",
@@ -123,6 +149,15 @@ const initialState = {
     checkRoomAmount: "",
     countRooms: "",
   },
+
+  //* Show price in bill
+  roomPrice: {
+    perRoom: 0,
+    total: 0,
+  },
+
+  //* State used to change UI Confirm
+  changeUIConfirm: false,
 };
 
 const R_rooms = createSlice({
@@ -198,15 +233,6 @@ const R_rooms = createSlice({
             confirmation: "activeStyle",
           });
     },
-    CHANGESTEP: (state, actions) => {
-      actions.payload.type === "previous" && actions.payload.bookingStep > 0
-        ? (state.bookingControl.bookingStep =
-            state.bookingControl.bookingStep - 1)
-        : actions.payload.type === "next" && actions.payload.bookingStep < 3
-        ? (state.bookingControl.bookingStep =
-            state.bookingControl.bookingStep + 1)
-        : console.log("");
-    },
 
     //* Completed: Get data from Reservation to booking
     GET_INFO: (state, actions) => {
@@ -224,11 +250,14 @@ const R_rooms = createSlice({
         ? (state.checkAvailable.time.arrive = actions.payload.value)
         : actions.payload.name === "depature"
         ? (state.checkAvailable.time.depature = actions.payload.value)
-        : (state.checkAvailable.roomAmount = actions.payload);
+        : actions.payload.name === "amountRoom"
+        ? (state.checkAvailable.roomAmount = actions.payload.value)
+        : (state.checkAvailable.phoneNumber = actions.payload.value);
     },
 
     //* Completed: Check Available to booking
     CHECK_AVAILABLE: (state, actions) => {
+      //* Completed: Check info
       //* I - Check đủ thông tin và các thông tin đều hợp lệ
       //* Completed: 1 - check info enough ?
       if (
@@ -322,21 +351,6 @@ const R_rooms = createSlice({
         });
       }
 
-      //* Completed: Show notify Not Empty Room + notify booking success + Reset state of CheckRooms
-      if (state.checkRooms.checkInvalidData) {
-        if (
-          state.checkRooms.checkBranch.status === "" ||
-          state.checkRooms.checkRoomType.status === "" ||
-          state.checkRooms.checkRoomKind.status === ""
-        ) {
-          notify_NotEmptyRoom();
-        }
-      }
-
-      if (state.checkRooms.checkRoomAmount) {
-        notify_SuccessBooking();
-      }
-
       //* Completed: 6 - check room amount (đủ ?)
       if (state.checkRooms.checkRoomKind.status) {
         if (
@@ -353,9 +367,20 @@ const R_rooms = createSlice({
         }
       }
 
-      // TODO: 7 - check date
+      //* Completed: Show notify P1: Not Empty Room (Run khi còn Branch, roomType, roomKind not actived)
+      if (state.checkRooms.checkInvalidData) {
+        if (
+          state.checkRooms.checkBranch.status === "" ||
+          state.checkRooms.checkRoomType.status === "" ||
+          state.checkRooms.checkRoomKind.status === ""
+        ) {
+          notify_NotEmptyRoom();
+        }
+      }
+
+      //*  Completed: 7 - check date
       if (state.checkRooms.checkRoomAmount === false) {
-        state.booking.countRooms = 0;
+        state.checkRooms.countRooms = 0;
 
         state.booking.map((item, index) => {
           if (
@@ -397,15 +422,106 @@ const R_rooms = createSlice({
         });
       }
 
-      //* Check final
-      if (state.booking.countRooms !== "") {
-        if (state.booking.countRooms >= state.checkAvailable.roomAmount) {
-          notify_SuccessBooking();
+      //* Completed Show notify P2: Not Empty Room + notify booking success (khi check date ko bị trùng với list đã book)
+      if (
+        state.checkRooms.countRooms !== "" ||
+        state.checkRooms.checkRoomAmount
+      ) {
+        if (
+          state.checkRooms.countRooms >= state.checkAvailable.roomAmount ||
+          state.checkRooms.checkRoomAmount
+        ) {
+          state.bookingControl.bookingStep = 1;
+          state.bookingControl.bookingStyle = {
+            chooseDate: "",
+            chooseRoom: "activeStyle",
+            reservation: "",
+            confirmation: "",
+          };
+
+          goTop();
         } else {
           notify_NotEmptyRoom();
+          console.log("not empty room 2");
         }
       }
+    },
 
+    //* Completed: Get room price
+    GET_PRICE: (state, actions) => {
+      state.Rooms.map((info) => {
+        if (info.nameBranchVN === state.checkAvailable.branchValue) {
+          info.roomType.map((roomType) => {
+            if (roomType.type === state.checkAvailable.roomType.type) {
+              roomType.typeR.map((roomKind) => {
+                if (roomKind.name === state.checkAvailable.roomType.kind) {
+                  console.log(roomKind.price);
+
+                  state.roomPrice = {
+                    perRoom: roomKind.price,
+                    total: roomKind.price * state.checkAvailable.roomAmount,
+                  };
+                }
+              });
+            }
+          });
+        }
+      });
+    },
+
+    //* Completed: Change UI after Confirm
+    CHANGE_UICONFIRM: (state, actions) => {
+      //* 1 - Set state to show UI Confirmed + Show notify book success
+      state.changeUIConfirm = true;
+      notify_SuccessBooking();
+
+      // TODO: Create Object (customer info)
+      //* 2 - Set up Date
+      var today = new Date();
+      var day = String(today.getDate()).padStart(2, "0");
+      var month = String(today.getMonth() + 1).padStart(2, "0"); //January is 0!
+      var year = today.getFullYear();
+      var hour = today.getHours();
+      var minutes = today.getMinutes();
+      today = `${hour}h${minutes} ${day}-${month}-${year}`;
+
+      //* 3 - Create Object
+      const customerInfo = {
+        id: state.booking.length + 1,
+        fullname: "USER",
+        Date: "",
+        sex: "",
+        avatar: "",
+        identityCard: "",
+        nationality: "",
+        phone: state.checkAvailable.phoneNumber,
+        email: "",
+        address: "",
+        dateCreated: today,
+        dateUpdated: today,
+        nameBranchEN: toNonAccentVietnamese(state.checkAvailable.branchValue),
+        nameBranchVN: state.checkAvailable.branchValue,
+        roomType: state.checkAvailable.roomType.type,
+        typeR: state.checkAvailable.roomType.kind,
+        numberRoom: "",
+        checkIn: `13h30 ${state.checkAvailable.time.arrive}`,
+        checkOut: `13h30 ${state.checkAvailable.time.depature}`,
+        comfirm: false,
+        paied: false,
+        cancel: false,
+      };
+
+      //* 4 - Push into list_booking
+      // console.log(state.booking);
+      state.booking.push(customerInfo);
+      // console.log(state.booking);
+
+      //* Set lại số EmptyRoom sau khi đã book
+      state.Rooms[state.checkRooms.checkBranch.index].roomType[
+        state.checkRooms.checkRoomType.index
+      ].typeR[state.checkRooms.checkRoomKind.index].emptyRooms--;
+
+      //* 5 - Reset state checkRooms after confirm
       state.checkRooms = {
         checkInfoEnough: "",
         checkInvalidData: "",
@@ -424,6 +540,25 @@ const R_rooms = createSlice({
         checkRoomAmount: "",
         countRooms: "",
       };
+
+      //* 6 - Reset state checkAvailable after confirm
+      state.checkAvailable = {
+        branchValue: "",
+        time: {
+          arrive: "",
+          depature: "",
+        },
+        roomType: {
+          type: "",
+          kind: "",
+        },
+        roomAmount: "",
+        customer: {
+          adult: "",
+          child: "",
+        },
+        phoneNumber: "",
+      };
     },
   },
 });
@@ -433,9 +568,10 @@ export const {
   CHANGESTYLEINFO,
   CHANGEBOOKINGSTEP,
   CHANGEBOOKINGSTYLE,
-  CHANGESTEP,
   GET_INFO,
   CHECK_AVAILABLE,
+  GET_PRICE,
+  CHANGE_UICONFIRM,
 } = R_rooms.actions;
 
 export default R_rooms.reducer;

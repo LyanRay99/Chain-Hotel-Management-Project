@@ -23,7 +23,7 @@
 
         &:hover {
           color: $colorPrimary;
-          cursor: pointer;
+          // cursor: pointer;
         }
 
         .icon {
@@ -38,7 +38,7 @@
           background-color: $colorPrimary;
           z-index: 99;
           position: absolute;
-          bottom: -16.8px;
+          bottom: -12px;
           left: 0px;
           animation: LeftToRight1 0.3s ease-out;
         }
@@ -278,12 +278,6 @@
         }
       }
     }
-
-    p {
-      text-decoration: underline;
-      font-size: 0.9em;
-      cursor: pointer;
-    }
   }
 
   &__selected {
@@ -307,21 +301,29 @@
     padding-bottom: 0px;
     display: flex;
     align-items: center;
+    justify-content: space-between;
 
-    p:first-child {
-      @include size(30%, auto);
-      font-weight: bold;
-    }
+    // p:first-child {
+    //   @include size(30%, auto);
+    //   font-weight: bold;
+    // }
 
-    p {
-      @include size(70%, auto);
-      margin: 0px;
+    // p {
+    //   @include size(70%, auto);
+    //   margin: 0px;
+    //   font-size: 0.8em;
+    //   color: grey;
+    // }
+
+    button {
+      @include Btn;
+      margin-top: 0px;
       font-size: 0.8em;
-      color: grey;
     }
 
     &__total {
       font-size: 1.1em !important;
+      font-weight: bold;
     }
 
     &__price {
@@ -512,4 +514,9 @@
   button {
     @include Btn;
   }
+}
+
+.selectRoomTotal {
+  padding: 15px 0px 0px 0px;
+  border-top: 2px solid $colorPrimary;
 }

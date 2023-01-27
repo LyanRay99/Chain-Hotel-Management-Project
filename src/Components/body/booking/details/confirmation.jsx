@@ -3,6 +3,7 @@ import { SelectRoom } from "../selectRoom";
 import { AllRoomSelected } from "./allRoomSelected";
 
 export const Confirmation = () => {
+  
   return (
     <React.Fragment>
       <nav className="booking__body__navbar">
