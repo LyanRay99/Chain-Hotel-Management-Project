@@ -135,6 +135,7 @@ export const SelectRoom = (props) => {
                   dispatch(CHANGEBOOKINGSTEP(0));
                   dispatch(CHANGEBOOKINGSTYLE(0));
                   goTop();
+                  // console.log(chooseRoomInfo.checkAvailable.branchValue);
                 }}
               >
                 Previous
