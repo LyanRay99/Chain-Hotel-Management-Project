@@ -38,8 +38,8 @@ export const Reservation = () => {
   //* Completed: Get info Room Amount (type: number)
   const getAmountInfo = (e) => {
     dispatch(GET_INFO({ value: e.target.value, name: e.target.name }));
-    console.log(e.target.name);
-    console.log(e.target.value);
+    // console.log(e.target.name);
+    // console.log(e.target.value);
   };
 
   //* Completed: Get info Date (type: date)
@@ -63,7 +63,7 @@ export const Reservation = () => {
     setInfoNotEnough(true);
   };
 
-  // TODO: Check state available
+  //* Test: Check state available
   // const check = useSelector((state) => state.RS_rooms.checkAvailable);
   // useEffect(() => {
   //   console.log(check);
@@ -164,7 +164,8 @@ export const Reservation = () => {
       <div className="reservation__check">
         <button
           onClick={() => {
-            dispatch(CHECK_AVAILABLE(0));
+            // dispatch(CHECK_AVAILABLE(0));
+            dispatch(CHECK_AVAILABLE());
             changeNotifyWarn();
           }}
         >

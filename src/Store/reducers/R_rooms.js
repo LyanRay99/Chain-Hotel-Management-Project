@@ -148,6 +148,7 @@ const initialState = {
     },
     checkRoomAmount: "",
     countRooms: "",
+    roomNumber: "",
   },
 
   //* Show price in bill
@@ -440,6 +441,8 @@ const R_rooms = createSlice({
           };
 
           goTop();
+
+          // console.log(state.checkAvailable.branchValue);
         } else {
           notify_NotEmptyRoom();
           console.log("not empty room 2");
@@ -447,7 +450,7 @@ const R_rooms = createSlice({
       }
     },
 
-    //* Completed: Get room price
+    //* Completed: Get Room price + Room number
     GET_PRICE: (state, actions) => {
       state.Rooms.map((info) => {
         if (info.nameBranchVN === state.checkAvailable.branchValue) {
@@ -455,12 +458,23 @@ const R_rooms = createSlice({
             if (roomType.type === state.checkAvailable.roomType.type) {
               roomType.typeR.map((roomKind) => {
                 if (roomKind.name === state.checkAvailable.roomType.kind) {
-                  console.log(roomKind.price);
+                  // console.log(roomKind.price);
 
+                  //* Get Room price data
                   state.roomPrice = {
                     perRoom: roomKind.price,
                     total: roomKind.price * state.checkAvailable.roomAmount,
                   };
+
+                  var breakS = true;
+                  roomKind.numberOfRoom.map((room) => {
+                    if (room.actived && breakS) {
+                      //* Get Room number data + gán active false (thể hiện phòng ko còn khả dụng)
+                      state.checkRooms.roomNumber = room.numberRoom;
+                      room.actived = false;
+                      breakS = false;
+                    }
+                  });
                 }
               });
             }
@@ -475,7 +489,7 @@ const R_rooms = createSlice({
       state.changeUIConfirm = true;
       notify_SuccessBooking();
 
-      // TODO: Create Object (customer info)
+      //* Completed: Create Object (customer info)
       //* 2 - Set up Date
       var today = new Date();
       var day = String(today.getDate()).padStart(2, "0");
@@ -503,7 +517,7 @@ const R_rooms = createSlice({
         nameBranchVN: state.checkAvailable.branchValue,
         roomType: state.checkAvailable.roomType.type,
         typeR: state.checkAvailable.roomType.kind,
-        numberRoom: "",
+        numberRoom: state.checkRooms.roomNumber,
         checkIn: `13h30 ${state.checkAvailable.time.arrive}`,
         checkOut: `13h30 ${state.checkAvailable.time.depature}`,
         comfirm: false,
@@ -539,6 +553,7 @@ const R_rooms = createSlice({
         },
         checkRoomAmount: "",
         countRooms: "",
+        roomNumber: "",
       };
 
       //* 6 - Reset state checkAvailable after confirm

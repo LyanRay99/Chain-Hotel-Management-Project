@@ -1,0 +1,143 @@
+[33mcommit 9028c757c714ff54a05b94113c9dc7728d7c539c[m[33m ([m[1;36mHEAD -> [m[1;32mfifth[m[33m)[m
+Author: Tai Marce <mttai161099@gmail.com>
+Date:   Fri Jan 27 19:48:46 2023 +0700
+
+    completed 100% feature booking
+
+[33mcommit 79c1e06c6141613f797a690046352ee36136c07f[m
+Author: Tai Marce <mttai161099@gmail.com>
+Date:   Fri Jan 27 18:19:53 2023 +0700
+
+    completed booking in UI
+
+[33mcommit 0f026811472298e2adba7aa0dadf67f2a73eac60[m
+Author: Tai Marce <mttai161099@gmail.com>
+Date:   Thu Jan 26 20:50:42 2023 +0700
+
+    next
+
+[33mcommit c85dd325254e6edc3ecda97d86732b0b6dac2e2e[m
+Author: Tai Marce <mttai161099@gmail.com>
+Date:   Thu Jan 26 20:38:03 2023 +0700
+
+    completed check condition booking
+
+[33mcommit dee6d9c3a21ac97c60e7795aef5e65f6f2874760[m
+Author: Tai Marce <mttai161099@gmail.com>
+Date:   Wed Jan 25 23:04:11 2023 +0700
+
+    check available & show notify
+
+[33mcommit 3eac8d455f6805d8c4309d1195c0cdf663efc3ea[m
+Author: Tai Marce <mttai161099@gmail.com>
+Date:   Tue Jan 24 22:48:52 2023 +0700
+
+    getted info from input reservation
+
+[33mcommit 64f0b3f0bc136dea3ab3c2948fcb80cf529e0260[m[33m ([m[1;32mfourth[m[33m)[m
+Author: Tai Marce <mttai161099@gmail.com>
+Date:   Tue Jan 24 14:31:12 2023 +0700
+
+    completed responsive
+
+[33mcommit a6382d0bddb712828de6e53e3b39a4d4b62766ea[m
+Author: Tai Marce <mttai161099@gmail.com>
+Date:   Mon Jan 23 21:53:17 2023 +0700
+
+    responsive continue 2
+
+[33mcommit 7089bfa32775433b6ab1abac8b363c81fae243b7[m
+Author: Tai Marce <mttai161099@gmail.com>
+Date:   Mon Jan 23 17:18:15 2023 +0700
+
+    responsive continue
+
+[33mcommit 486bf38f1e4cc79d18e969c34b2f0e9b89918659[m
+Author: Tai Marce <mttai161099@gmail.com>
+Date:   Sun Jan 22 23:16:19 2023 +0700
+
+    responsive home page
+
+[33mcommit 33e293107174e26b64a4bc5feea969f7ca8089df[m
+Author: Tai Marce <mttai161099@gmail.com>
+Date:   Sat Jan 21 21:46:36 2023 +0700
+
+    add react toastify and custom style it
+
+[33mcommit f53bd67b4194c7ea04cf331361b57cdb67c79759[m[33m ([m[1;32mmaster[m[33m)[m
+Merge: 69f7cfe 6c49e49
+Author: Tai Marce <108654123+LyanRay99@users.noreply.github.com>
+Date:   Sat Jan 21 15:46:08 2023 +0700
+
+    Merge pull request #2 from LyanRay99/third
+    
+    Third
+
+[33mcommit 6c49e4962f1470c5a5f7bbf53692a8ff90365cc4[m
+Author: Tai Marce <mttai161099@gmail.com>
+Date:   Sat Jan 21 15:43:09 2023 +0700
+
+    update data
+
+[33mcommit 0c5d60c3bba5981c5b52aa085ab0a98d8ca44848[m
+Author: Tai Marce <mttai161099@gmail.com>
+Date:   Sat Jan 21 15:37:49 2023 +0700
+
+    test vercel part 2
+
+[33mcommit ccd032cc0175415b049a3ea72076b02d27b67fa1[m
+Author: Tai Marce <mttai161099@gmail.com>
+Date:   Sat Jan 21 15:33:50 2023 +0700
+
+    test update project in vercel
+
+[33mcommit 69f7cfe97e6135e36946d829f5941967c691c020[m
+Merge: 9bda09c 370f03c
+Author: Tai Marce <108654123+LyanRay99@users.noreply.github.com>
+Date:   Fri Jan 20 22:43:09 2023 +0700
+
+    Merge pull request #1 from LyanRay99/third
+    
+    OK!
+
+[33mcommit 370f03ce1650ba38da8d4a8ffaa8590abe6f6f6f[m
+Author: Tai Marce <mttai161099@gmail.com>
+Date:   Fri Jan 20 22:35:25 2023 +0700
+
+    add lazy load
+
+[33mcommit 8dca23566acc47dbfce33a2bb988f79434bb5620[m
+Author: Tai Marce <mttai161099@gmail.com>
+Date:   Fri Jan 20 22:09:14 2023 +0700
+
+    add animation when components redered
+
+[33mcommit caf4af6d96956e728bbbcbd3007bd4fd5282473a[m
+Author: Tai Marce <mttai161099@gmail.com>
+Date:   Fri Jan 20 20:12:13 2023 +0700
+
+    add page term, faqs, careers, custom calendar,...
+
+[33mcommit c8e88e0d4e8f2581ee8524c47aa34621c52e740e[m
+Author: Tai Marce <mttai161099@gmail.com>
+Date:   Wed Jan 18 16:58:40 2023 +0700
+
+    add booking now, custom slider, change color navbar when scrolling,...
+
+[33mcommit 9add9d87ca41fdf929849ec229c5dff160f03ad9[m[33m ([m[1;32mfirst[m[33m)[m
+Author: Tai Marce <mttai161099@gmail.com>
+Date:   Tue Jan 17 21:15:50 2023 +0700
+
+    completed 90% UI
+
+[33mcommit 9bda09c317c378f657319def5c6b7ba805b7d2c8[m
+Author: Tai Marce <mttai161099@gmail.com>
+Date:   Thu Jan 5 23:16:10 2023 +0700
+
+    initial commit
+
+[33mcommit 2e463fa2da65f758b0e293f9d273d6ad823a5f0b[m
+Author: Tai Marce <mttai161099@gmail.com>
+Date:   Thu Dec 8 16:25:49 2022 +0700
+
+    Initialize project using Create React App

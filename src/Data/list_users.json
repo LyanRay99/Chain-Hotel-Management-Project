@@ -13,6 +13,8 @@
     "dateCreated": "13h30 23-02-2022",
     "dateUpdated": "13h30 23-02-2022",
     "actived": true,
+    "userName": "nguyena123",
+    "password": "nguyena123",
     "role": [
       {
         "id": 1,
@@ -24,7 +26,7 @@
     ]
   },
   {
-    "id": 1,
+    "id": 2,
     "fullname": "Nguyen B",
     "Date": "01-10-1991",
     "sex": "male",
@@ -37,6 +39,34 @@
     "dateCreated": "13h30 23-02-2022",
     "dateUpdated": "13h30 23-02-2022",
     "actived": true,
+    "userName": "nguyenb123",
+    "password": "nguyenb123",
+    "role": [
+      {
+        "id": 1,
+        "position": "Admin",
+        "branch": "Nha Trang",
+        "dateCreated": "13h30 23-02-2022",
+        "dateUpdated": "13h30 23-02-2022"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "fullname": "Nguyen C",
+    "Date": "01-10-1991",
+    "sex": "male",
+    "avatar": "URL",
+    "identityCard": "201793356",
+    "nationality": "Viet Nam",
+    "phone": "0905.234.234",
+    "email": "nvb@gmail.com",
+    "address": "abc strees",
+    "dateCreated": "13h30 23-02-2022",
+    "dateUpdated": "13h30 23-02-2022",
+    "actived": true,
+    "userName": "nguyenc123",
+    "password": "nguyenc123",
     "role": [
       {
         "id": 1,
