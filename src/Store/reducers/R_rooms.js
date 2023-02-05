@@ -157,7 +157,13 @@ const initialState = {
     total: 0,
   },
 
-  //* State used to change UI Confirm
+  //* State used to change UI RoomDetail at Step 3
+  roomDetailStep3: {
+    index: "",
+    item: "",
+  },
+
+  //* State used to change UI Confirm at Step 4
   changeUIConfirm: false,
 };
 
@@ -450,12 +456,18 @@ const R_rooms = createSlice({
       }
     },
 
-    //* Completed: Get Room price + Room number
+    //* Completed: Get Room price + Room number + Set state to show roomDetail at Step 3
     GET_PRICE: (state, actions) => {
       state.Rooms.map((info) => {
         if (info.nameBranchVN === state.checkAvailable.branchValue) {
-          info.roomType.map((roomType) => {
+          info.roomType.map((roomType, index) => {
             if (roomType.type === state.checkAvailable.roomType.type) {
+              //* Set state to show roomDetail selected at Step 3
+              state.roomDetailStep3 = {
+                index: index,
+                item: roomType,
+              };
+
               roomType.typeR.map((roomKind) => {
                 if (roomKind.name === state.checkAvailable.roomType.kind) {
                   // console.log(roomKind.price);
@@ -483,7 +495,7 @@ const R_rooms = createSlice({
       });
     },
 
-    //* Completed: Change UI after Confirm
+    //* Completed: Change UI after Confirm (step 4)
     CHANGE_UICONFIRM: (state, actions) => {
       //* 1 - Set state to show UI Confirmed + Show notify book success
       state.changeUIConfirm = true;
@@ -573,6 +585,12 @@ const R_rooms = createSlice({
           child: "",
         },
         phoneNumber: "",
+      };
+
+      //* 7 - Reset state roomDetailStep3
+      state.roomDetailStep3 = {
+        index: "",
+        item: "",
       };
     },
   },

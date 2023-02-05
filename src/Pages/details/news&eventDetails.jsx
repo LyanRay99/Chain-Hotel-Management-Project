@@ -26,7 +26,7 @@ const NewsAndEventDetails = () => {
           <div className="newsEvent">
             {/* TODO: Navigation new&event */}
             <div className="newsEvent__navbar">
-              <Reservation />
+              {/* <Reservation /> */}
               <NewsAndEventDeal />
               <NewsAndEventCategories />
               <NewsAndEventUpcoming />

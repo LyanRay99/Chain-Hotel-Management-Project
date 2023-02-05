@@ -2,7 +2,7 @@
 @import "../settings/reset.scss";
 @import "../settings/variable.scss";
 
-//* TODO: Responsive 1200px
+//* TODO: Responsive 1000px
 @media screen and (max-width: 1000px) {
   //* Completed: News&Events - Navigation
   .newsEvent__navbar {
@@ -24,9 +24,7 @@
     }
 
     .roomDetails__slider__navbar {
-      @include size(600px, auto);
-      margin: auto;
-      padding: 0px;
+      display: none;
     }
   }
 

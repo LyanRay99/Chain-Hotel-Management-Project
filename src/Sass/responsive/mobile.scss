@@ -17,6 +17,20 @@
 
 //* TODO: Responsive 370px
 @media screen and (max-width: 370px) {
+  //* Completed: Top line
+  .header__topline__container__left span:last-child {
+    padding-left: 10px;
+  }
+
+  .header__topline__container__right span:last-child {
+    padding-left: 10px;
+  }
+
+  //* Completed: Navbar
+  .nav-link {
+    font-size: 0.8em !important;
+  }
+
   //* Completed: Slider
   .carousel-inner {
     .carousel-caption {

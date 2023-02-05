@@ -3,9 +3,10 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 
-//* React + React-router
+//* React + React-router (Library)
 import React, { useState } from "react";
 import { NavLink, Outlet } from "react-router-dom";
+import Clock from "react-live-clock";
 
 //* Component UI + Support
 import { Footer } from "../footer/Footer";
@@ -53,7 +54,12 @@ const Navbars = () => {
             </span>
             <span>
               <FontAwesomeIcon icon={faClock} />{" "}
-              {`${day}/${month}/${year} - ${hour}:${minute}:${seconds}`}
+              {/* {`${day}/${month}/${year} - ${hour}:${minute}:${seconds}`} */}
+              <Clock
+                format="DD/MM/YYYY - HH:mm:ss"
+                interval={1000}
+                ticking={true}
+              />
             </span>
           </div>
 

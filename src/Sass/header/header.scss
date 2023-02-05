@@ -2,7 +2,7 @@
 @import "../settings/reset.scss";
 @import "../settings/variable.scss";
 
-//TODO: Custom Logo on Navbar
+//* Completed: Custom Logo on Navbar
 .logoHotel {
   @include size(60px, auto);
 }
@@ -82,7 +82,7 @@
 //   background-color: red !important;
 // }
 
-//TODO: Slider
+//* Completed: Slider
 .carousel-control-prev-icon {
   width: 3rem !important;
   height: 3rem !important;
@@ -139,7 +139,7 @@
   }
 }
 
-//TODO: Header Topline
+//* Completed: Header Topline
 .header__topline {
   @include size(100%, auto);
   background-color: rgba(138, 137, 137, 0.8);
@@ -182,7 +182,7 @@
         }
 
         &:first-child {
-          padding: 0px 0px 0px 20px;
+          padding: 0px 0px 0px 10px;
         }
       }
     }
