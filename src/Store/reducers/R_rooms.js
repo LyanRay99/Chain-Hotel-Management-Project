@@ -128,6 +128,7 @@ const initialState = {
       child: "",
     },
     phoneNumber: "",
+    email: "",
   },
 
   // * State to check condition booking
@@ -259,7 +260,9 @@ const R_rooms = createSlice({
         ? (state.checkAvailable.time.depature = actions.payload.value)
         : actions.payload.name === "amountRoom"
         ? (state.checkAvailable.roomAmount = actions.payload.value)
-        : (state.checkAvailable.phoneNumber = actions.payload.value);
+        : actions.payload.name === "phoneNumber"
+        ? (state.checkAvailable.phoneNumber = actions.payload.value)
+        : (state.checkAvailable.email = actions.payload.value);
     },
 
     //* Completed: Check Available to booking
@@ -276,7 +279,9 @@ const R_rooms = createSlice({
         state.checkAvailable.roomAmount === "" ||
         state.checkAvailable.roomAmount == false ||
         state.checkAvailable.customer.adult === "" ||
-        state.checkAvailable.customer.child === ""
+        state.checkAvailable.customer.child === "" ||
+        state.checkAvailable.phoneNumber === "" ||
+        state.checkAvailable.email === ""
       ) {
         notify_InfoNotEnough();
         state.checkRooms.checkInfoEnough = "";
@@ -447,8 +452,6 @@ const R_rooms = createSlice({
           };
 
           goTop();
-
-          // console.log(state.checkAvailable.branchValue);
         } else {
           notify_NotEmptyRoom();
           console.log("not empty room 2");
@@ -493,10 +496,13 @@ const R_rooms = createSlice({
           });
         }
       });
+
+      //* Tiện thể Reset state changeUIConfirm
+      state.changeUIConfirm = false;
     },
 
     //* Completed: Change UI after Confirm (step 4)
-    CHANGE_UICONFIRM: (state, actions) => {
+    CHANGE_UI_CONFIRM: (state, actions) => {
       //* 1 - Set state to show UI Confirmed + Show notify book success
       state.changeUIConfirm = true;
       notify_SuccessBooking();
@@ -521,7 +527,7 @@ const R_rooms = createSlice({
         identityCard: "",
         nationality: "",
         phone: state.checkAvailable.phoneNumber,
-        email: "",
+        email: state.checkAvailable.email,
         address: "",
         dateCreated: today,
         dateUpdated: today,
@@ -585,6 +591,7 @@ const R_rooms = createSlice({
           child: "",
         },
         phoneNumber: "",
+        email: "",
       };
 
       //* 7 - Reset state roomDetailStep3
@@ -604,7 +611,7 @@ export const {
   GET_INFO,
   CHECK_AVAILABLE,
   GET_PRICE,
-  CHANGE_UICONFIRM,
+  CHANGE_UI_CONFIRM,
 } = R_rooms.actions;
 
 export default R_rooms.reducer;

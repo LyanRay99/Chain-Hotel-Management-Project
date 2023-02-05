@@ -22,12 +22,8 @@ export const Reservation = () => {
   const roomTypes = useSelector(
     (state) => state.RS_rooms.Rooms[0].roomType[0].typeR
   );
-  const amountRoom = useSelector(
+  const CheckAvailable = useSelector(
     (state) => state.RS_rooms.checkAvailable.roomAmount
-  );
-
-  const phoneNumber = useSelector(
-    (state) => state.RS_rooms.checkAvailable.phoneNumber
   );
 
   //* Completed: Prevent User input negative number in Input (type: number)
@@ -36,24 +32,10 @@ export const Reservation = () => {
   };
 
   //* Completed: Get info Room Amount (type: number)
-  const getAmountInfo = (e) => {
+  const getInfo = (e) => {
     dispatch(GET_INFO({ value: e.target.value, name: e.target.name }));
     // console.log(e.target.name);
     // console.log(e.target.value);
-  };
-
-  //* Completed: Get info Date (type: date)
-  const getDateInfo = (e) => {
-    if (e.target.name === "arrive") {
-      dispatch(GET_INFO({ value: e.target.value, name: e.target.name }));
-    } else {
-      dispatch(GET_INFO({ value: e.target.value, name: e.target.name }));
-    }
-  };
-
-  //* Completed: Get info phone number (type: number)
-  const getPhoneNumber = (e) => {
-    dispatch(GET_INFO({ value: e.target.value, name: e.target.name }));
   };
 
   //* Completed: Notify when info not enough
@@ -89,7 +71,7 @@ export const Reservation = () => {
           type="date"
           name="arrive"
           placeholder="Arrive date..."
-          onChange={getDateInfo}
+          onChange={getInfo}
         ></input>
 
         <p>DEPATURE</p>
@@ -98,7 +80,7 @@ export const Reservation = () => {
           type="date"
           name="depature"
           placeholder="Depature date..."
-          onChange={getDateInfo}
+          onChange={getInfo}
         ></input>
       </div>
 
@@ -123,9 +105,9 @@ export const Reservation = () => {
           name="amountRoom"
           className="reservation__roomsGuest__input"
           min={1}
-          value={amountRoom}
+          value={CheckAvailable.amountRoom}
           onKeyDown={blockInvalidChar}
-          onChange={getAmountInfo}
+          onChange={getInfo}
         ></input>
       </div>
 
@@ -155,16 +137,27 @@ export const Reservation = () => {
           placeholder="Phone Number..."
           name="phoneNumber"
           className="reservation__roomsGuest__input"
-          value={phoneNumber}
+          value={CheckAvailable.phoneNumber}
           onKeyDown={blockInvalidChar}
-          onChange={getPhoneNumber}
+          onChange={getInfo}
+        ></input>
+      </div>
+
+      <div className="reservation__roomsGuest ">
+        <span>EMAIL</span>
+        <input
+          type="text"
+          placeholder="Email..."
+          name="email"
+          className="reservation__roomsGuest__input"
+          value={CheckAvailable.email}
+          onChange={getInfo}
         ></input>
       </div>
 
       <div className="reservation__check">
         <button
           onClick={() => {
-            // dispatch(CHECK_AVAILABLE(0));
             dispatch(CHECK_AVAILABLE());
             changeNotifyWarn();
           }}

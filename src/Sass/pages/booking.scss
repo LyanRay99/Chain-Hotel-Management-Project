@@ -288,6 +288,7 @@
 
     h6 {
       font-weight: bold;
+      font-size: 1em;
     }
 
     p {
@@ -336,6 +337,10 @@
 
   .Confirmation {
     border-top: 1.5px solid rgba(0, 0, 0, 0.2);
+  }
+
+  #selectRoom__roomInfo {
+    padding: 15px 0px;
   }
 }
 
@@ -523,4 +528,10 @@
 
 .section #roomDetailStep3 {
   width: 100%;
+  padding: 0px;
+  padding: 0px 3%;
+}
+
+#confirmBooking {
+  color: $colorPrimary;
 }

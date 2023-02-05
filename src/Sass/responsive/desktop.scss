@@ -73,6 +73,11 @@
       width: 100%;
     }
   }
+
+  //* Completed: Booking
+  .selectRoom__total__rooms div p {
+    font-size: 0.85em;
+  }
 }
 
 @media screen and (max-width: 1000px) and (min-width: 801px) {
