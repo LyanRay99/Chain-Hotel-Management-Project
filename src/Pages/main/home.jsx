@@ -1,10 +1,10 @@
 //* Library
-import React, { useEffect, useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import React from "react";
+import { useDispatch } from "react-redux";
 import { WELCOME_NOTIFY } from "../../Store/reducers/R_others";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-// import LazyLoad from "react-lazy-load";
+import LazyLoad from "react-lazy-load";
 import { Slide, Zoom } from "react-awesome-reveal";
 
 //* Components UI
@@ -34,9 +34,11 @@ const Home = () => {
 
       {/* Completed: Our Rooms */}
       <section className="section">
-        <Slide direction="left" triggerOnce={true}>
-          <OurRooms />
-        </Slide>
+        <LazyLoad once={true}>
+          <Slide direction="left" triggerOnce={true}>
+            <OurRooms />
+          </Slide>
+        </LazyLoad>
 
         {/* Completed: About Us */}
         <Slide direction="right" triggerOnce={true}>
@@ -45,9 +47,11 @@ const Home = () => {
       </section>
 
       {/* Completed: Customer Comment */}
-      <Zoom triggerOnce={true}>
-        <CustomerCmt />
-      </Zoom>
+      <LazyLoad once={true}>
+        <Zoom triggerOnce={true}>
+          <CustomerCmt />
+        </Zoom>
+      </LazyLoad>
 
       {/* Completed: Our Events */}
       <section className="section">
@@ -56,15 +60,14 @@ const Home = () => {
         </Slide>
 
         {/* Completed: Our News */}
-        {/* <LazyLoad> */}
-        <Slide direction="right" triggerOnce={true}>
-          <OurNews />
-        </Slide>
-        {/* </LazyLoad> */}
+        <LazyLoad once={true}>
+          <Slide direction="right" triggerOnce={true}>
+            <OurNews />
+          </Slide>
+        </LazyLoad>
       </section>
 
       {/* Completed: React Toastify */}
-      {/* <ToastCheck /> */}
       <div>
         <ToastContainer
           position="bottom-right"

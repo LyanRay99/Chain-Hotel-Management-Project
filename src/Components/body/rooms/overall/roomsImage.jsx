@@ -1,12 +1,15 @@
 import React from "react";
+import LazyLoad from "react-lazy-load";
 
 export const RoomsImage = (props) => {
   return (
     <div className="rooms__image">
-      <img
-        src={require(`../../../../Assets/${props.item.image}`)}
-        alt="abc"
-      ></img>
+      <LazyLoad once={true}>
+        <img
+          src={require(`../../../../Assets/${props.item.image}`)}
+          alt="abc"
+        ></img>
+      </LazyLoad>
     </div>
   );
 };

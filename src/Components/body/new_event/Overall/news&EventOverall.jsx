@@ -9,6 +9,7 @@ import {
   faFolderBlank,
   faNewspaper,
 } from "@fortawesome/free-solid-svg-icons";
+import LazyLoad from "react-lazy-load";
 
 export const NewsAndEventOverall = () => {
   const Blogs = useSelector(
@@ -19,12 +20,14 @@ export const NewsAndEventOverall = () => {
     <React.Fragment>
       {Blogs.map((item, index) => (
         <div className="box" key={index}>
-          <div className="box__image">
-            <img
-              src={require(`../../../../Assets/${item.imageMain}`)}
-              alt="abc"
-            ></img>
-          </div>
+          <LazyLoad once={true}>
+            <div className="box__image">
+              <img
+                src={require(`../../../../Assets/${item.imageMain}`)}
+                alt="abc"
+              ></img>
+            </div>
+          </LazyLoad>
 
           <div className="box__info">
             <Link
