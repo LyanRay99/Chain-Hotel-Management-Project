@@ -1,10 +1,33 @@
-import React from "react";
-import { useSelector } from "react-redux";
+//* Library
+import React, { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import Avatar from "react-avatar";
+import {
+  GET_INFO_COMMENT,
+  REPLY_COMMENT,
+} from "../../../../Store/reducers/R_newsEvent";
 
-export const NewsAndEventComment = () => {
+//* React Boostrap
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
+import Modal from "react-bootstrap/Modal";
+
+export const NewsAndEventComment = (props) => {
   const comment = useSelector(
     (state) => state.RS_newsEvent.newsEvent.news_recent[0].comment
   );
+
+  const dispatch = useDispatch();
+
+  //* State to show/hide Modal
+  const modalReply = useSelector((state) => state.RS_newsEvent.modalReply);
+  const [show, setShow] = useState(modalReply);
+
+  const [indexReply, setIndexReply] = useState();
+
+  const getIndexReply = (index) => {
+    setIndexReply(index);
+  };
 
   return (
     <div className="details__comment">
@@ -14,10 +37,15 @@ export const NewsAndEventComment = () => {
         {comment.map((item, index) => (
           <div className="details__comment__container__box" key={index}>
             <div className="box__image">
-              <img
-                src={require(`../../../../Assets/${item.avatar}`)}
-                alt={item.name}
-              ></img>
+              {item.avatar !== "" ? (
+                <img
+                  src={require(`../../../../Assets/${item.avatar}`)}
+                  alt={item.name}
+                  id="image"
+                ></img>
+              ) : (
+                <Avatar facebookId="100008343750912" unstyled={true}></Avatar>
+              )}
             </div>
 
             <div className="box__body">
@@ -29,10 +57,17 @@ export const NewsAndEventComment = () => {
                   <span>{item.name} </span>-<span> {item.time}</span>
                 </div>
 
-                <button>Reply</button>
+                <button
+                  onClick={() => {
+                    setShow(true);
+                    getIndexReply(index);
+                  }}
+                >
+                  Reply
+                </button>
               </div>
 
-              {/* TODO: Reply commemmt */}
+              {/* Completed: Reply commemmt */}
               {item.reply.length !== 0 ? (
                 item.reply.map((itemReply, index) => (
                   <div
@@ -40,10 +75,17 @@ export const NewsAndEventComment = () => {
                     key={index}
                   >
                     <div className="box__image">
-                      <img
-                        src={require(`../../../../Assets/${itemReply.avatar}`)}
-                        alt={itemReply.name}
-                      ></img>
+                      {itemReply.avatar !== "" ? (
+                        <img
+                          src={require(`../../../../Assets/${itemReply.avatar}`)}
+                          alt={itemReply.name}
+                        ></img>
+                      ) : (
+                        <Avatar
+                          facebookId="100008343750912"
+                          unstyled={true}
+                        ></Avatar>
+                      )}
                     </div>
 
                     <div className="box__body">
@@ -56,7 +98,7 @@ export const NewsAndEventComment = () => {
                           <span> {itemReply.time}</span>
                         </div>
 
-                        <button>Reply</button>
+                        {/* <button onClick={() => setShow(true)}>Reply</button> */}
                       </div>
                     </div>
                   </div>
@@ -68,6 +110,108 @@ export const NewsAndEventComment = () => {
           </div>
         ))}
       </div>
+
+      <Modal show={show} size="lg">
+        <Modal.Header closeButton>
+          <Modal.Title>Reply Comment of "USER"</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <Form>
+            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+              <Form.Label>Name</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Your name..."
+                autoFocus
+                name="name"
+                value={comment.name}
+                onChange={(e) =>
+                  dispatch(
+                    GET_INFO_COMMENT({
+                      value: e.target.value,
+                      name: e.target.name,
+                    })
+                  )
+                }
+              />
+            </Form.Group>
+
+            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+              <Form.Label>Email</Form.Label>
+              <Form.Control
+                type="email"
+                placeholder="Email..."
+                autoFocus
+                value={comment.email}
+                name="email"
+                onChange={(e) =>
+                  dispatch(
+                    GET_INFO_COMMENT({
+                      value: e.target.value,
+                      name: e.target.name,
+                    })
+                  )
+                }
+              />
+            </Form.Group>
+
+            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+              <Form.Label>Title</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Title..."
+                autoFocus
+                value={comment.title}
+                name="title"
+                onChange={(e) =>
+                  dispatch(
+                    GET_INFO_COMMENT({
+                      value: e.target.value,
+                      name: e.target.name,
+                    })
+                  )
+                }
+              />
+            </Form.Group>
+
+            <Form.Group
+              className="mb-3"
+              controlId="exampleForm.ControlTextarea1"
+            >
+              <Form.Label>Content</Form.Label>
+              <Form.Control
+                as="textarea"
+                rows={3}
+                value={comment.content}
+                name="content"
+                onChange={(e) =>
+                  dispatch(
+                    GET_INFO_COMMENT({
+                      value: e.target.value,
+                      name: e.target.name,
+                    })
+                  )
+                }
+              />
+            </Form.Group>
+          </Form>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={() => setShow(false)}>
+            Close
+          </Button>
+          <Button
+            variant="primary"
+            onClick={() => {
+              dispatch(
+                REPLY_COMMENT({ index: props.index, indexComment: indexReply })
+              );
+            }}
+          >
+            Save Changes
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </div>
   );
 };
