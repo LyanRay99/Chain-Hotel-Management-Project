@@ -26,6 +26,13 @@ const initialState = {
     welcomeNotify: false,
     welcomeNotify2: false,
   },
+
+  userContact: {
+    name: "",
+    email: "",
+    title: "",
+    content: "",
+  },
 };
 
 const R_others = createSlice({
@@ -44,9 +51,31 @@ const R_others = createSlice({
         }
       }
     },
+
+    //* Completed: Get info Contact
+    GET_INFO_CONTACT: (state, actions) => {
+      actions.payload.name === "name"
+        ? (state.userContact.name = actions.payload.value)
+        : actions.payload.name === "email"
+        ? (state.userContact.email = actions.payload.value)
+        : actions.payload.name === "title"
+        ? (state.userContact.title = actions.payload.value)
+        : (state.userContact.content = actions.payload.value);
+    },
+
+    //* Completed: Reset state userContact
+    RESET_CONTACT: (state, actions) => {
+      state.userContact = {
+        name: "",
+        email: "",
+        title: "",
+        content: "",
+      };
+    },
   },
 });
 
-export const { WELCOME_NOTIFY } = R_others.actions;
+export const { WELCOME_NOTIFY, GET_INFO_CONTACT, RESET_CONTACT } =
+  R_others.actions;
 
 export default R_others.reducer;
