@@ -14,6 +14,14 @@ const initialState = {
   },
 
   modalReply: false,
+
+  //* State Invalid
+  invalid: {
+    name: false,
+    email: false,
+    title: false,
+    content: false,
+  },
 };
 
 const R_newsEvent = createSlice({
@@ -31,6 +39,15 @@ const R_newsEvent = createSlice({
         : (state.comment.content = actions.payload.value);
     },
 
+    //* Completed: Show/Hide Modal
+    HANDLE_MODAL: (state, actions) => {
+      if (actions.payload.handle === "open") {
+        state.modalReply = true;
+      } else {
+        state.modalReply = false;
+      }
+    },
+
     //* Completed: Add Comment
     COMMENT: (state, actions) => {
       //* Check state.comment rỗng
@@ -38,7 +55,7 @@ const R_newsEvent = createSlice({
       for (const key in state.comment) {
         if (state.comment[key] === "") {
           checkEmpty = false;
-          console.log(false);
+          // console.log(false);
         }
       }
 
@@ -71,14 +88,12 @@ const R_newsEvent = createSlice({
         //* Reset state Comment
         state.comment = {
           name: "",
-          // avatar: "",
           email: "",
           title: "",
           content: "",
-          // time: "",
         };
       } else {
-        //* TODO: Show notify warn
+        alert("Vui lòng nhập đủ thông tin");
       }
     },
 
@@ -89,7 +104,6 @@ const R_newsEvent = createSlice({
       for (const key in state.comment) {
         if (state.comment[key] === "") {
           checkEmpty = false;
-          console.log(false);
         }
       }
 
@@ -121,7 +135,10 @@ const R_newsEvent = createSlice({
         ].reply.push(objComment);
 
         //* Close Modal
-        state.modalReply = true;
+        state.modalReply = false;
+
+        //* Reset state checkEmpty
+        checkEmpty = true;
 
         //* Reset state Comment
         state.comment = {
@@ -130,10 +147,61 @@ const R_newsEvent = createSlice({
           title: "",
           content: "",
         };
+
+        //* Reset Invalid
+        state.invalid = {
+          name: false,
+          email: false,
+          title: false,
+          content: false,
+        };
+      } else {
+        //* Reset Invalid
+        state.invalid = {
+          name: false,
+          email: false,
+          title: false,
+          content: false,
+        };
+
+        //* Check invalid for Reply comment
+        for (const key in state.comment) {
+          if (state.comment[key] === "") {
+            state.invalid[key] = true;
+          }
+        }
+
+        //* Reset state checkEmpty
+        checkEmpty = true;
       }
+    },
+
+    //* Reset Comment state after click Close Modal
+    RESET_COMMENT: (state, actions) => {
+      //* Reset state Comment
+      state.comment = {
+        name: "",
+        email: "",
+        title: "",
+        content: "",
+      };
+
+      //* Reset Invalid
+      state.invalid = {
+        name: false,
+        email: false,
+        title: false,
+        content: false,
+      };
     },
   },
 });
 
-export const { GET_INFO_COMMENT, COMMENT, REPLY_COMMENT } = R_newsEvent.actions;
+export const {
+  GET_INFO_COMMENT,
+  COMMENT,
+  REPLY_COMMENT,
+  RESET_COMMENT,
+  HANDLE_MODAL,
+} = R_newsEvent.actions;
 export default R_newsEvent.reducer;

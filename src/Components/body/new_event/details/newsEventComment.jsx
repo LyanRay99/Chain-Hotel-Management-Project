@@ -5,29 +5,36 @@ import Avatar from "react-avatar";
 import {
   GET_INFO_COMMENT,
   REPLY_COMMENT,
+  RESET_COMMENT,
+  HANDLE_MODAL,
 } from "../../../../Store/reducers/R_newsEvent";
 
 //* React Boostrap
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 
 export const NewsAndEventComment = (props) => {
+  //* Binding data comment
   const comment = useSelector(
-    (state) => state.RS_newsEvent.newsEvent.news_recent[0].comment
+    (state) => state.RS_newsEvent.newsEvent.news_recent[props.index].comment
   );
-
   const dispatch = useDispatch();
 
   //* State to show/hide Modal
   const modalReply = useSelector((state) => state.RS_newsEvent.modalReply);
-  const [show, setShow] = useState(modalReply);
 
+  //* Get + Set Index for reply comment
   const [indexReply, setIndexReply] = useState();
 
   const getIndexReply = (index) => {
     setIndexReply(index);
   };
+
+  //* Get + setState invalid
+  const invalid = useSelector((state) => state.RS_newsEvent.invalid);
 
   return (
     <div className="details__comment">
@@ -59,7 +66,7 @@ export const NewsAndEventComment = (props) => {
 
                 <button
                   onClick={() => {
-                    setShow(true);
+                    dispatch(HANDLE_MODAL({ handle: "open" }));
                     getIndexReply(index);
                   }}
                 >
@@ -97,8 +104,6 @@ export const NewsAndEventComment = (props) => {
                           <span>{itemReply.name} </span>-
                           <span> {itemReply.time}</span>
                         </div>
-
-                        {/* <button onClick={() => setShow(true)}>Reply</button> */}
                       </div>
                     </div>
                   </div>
@@ -111,56 +116,64 @@ export const NewsAndEventComment = (props) => {
         ))}
       </div>
 
-      <Modal show={show} size="lg">
+      <Modal show={modalReply} size="lg">
         <Modal.Header closeButton>
           <Modal.Title>Reply Comment of "USER"</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form>
-            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-              <Form.Label>Name</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Your name..."
-                autoFocus
-                name="name"
-                value={comment.name}
-                onChange={(e) =>
-                  dispatch(
-                    GET_INFO_COMMENT({
-                      value: e.target.value,
-                      name: e.target.name,
-                    })
-                  )
-                }
-              />
-            </Form.Group>
+            <Row className="mb-3">
+              <Form.Group as={Col} controlId="formGridEmail">
+                <Form.Label>Name</Form.Label>
+                <Form.Control
+                  type="text"
+                  placeholder="Your name..."
+                  isInvalid={invalid.name}
+                  name="name"
+                  value={comment.name}
+                  onChange={(e) =>
+                    dispatch(
+                      GET_INFO_COMMENT({
+                        value: e.target.value,
+                        name: e.target.name,
+                      })
+                    )
+                  }
+                />
+                <Form.Control.Feedback type="invalid">
+                  Please choose a username.
+                </Form.Control.Feedback>
+              </Form.Group>
 
-            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-              <Form.Label>Email</Form.Label>
-              <Form.Control
-                type="email"
-                placeholder="Email..."
-                autoFocus
-                value={comment.email}
-                name="email"
-                onChange={(e) =>
-                  dispatch(
-                    GET_INFO_COMMENT({
-                      value: e.target.value,
-                      name: e.target.name,
-                    })
-                  )
-                }
-              />
-            </Form.Group>
+              <Form.Group as={Col} controlId="formGridEmail">
+                <Form.Label>Email</Form.Label>
+                <Form.Control
+                  type="email"
+                  placeholder="Email..."
+                  isInvalid={invalid.email}
+                  value={comment.email}
+                  name="email"
+                  onChange={(e) =>
+                    dispatch(
+                      GET_INFO_COMMENT({
+                        value: e.target.value,
+                        name: e.target.name,
+                      })
+                    )
+                  }
+                />
+                <Form.Control.Feedback type="invalid">
+                  Please enter your email.
+                </Form.Control.Feedback>
+              </Form.Group>
+            </Row>
 
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
               <Form.Label>Title</Form.Label>
               <Form.Control
                 type="text"
                 placeholder="Title..."
-                autoFocus
+                isInvalid={invalid.title}
                 value={comment.title}
                 name="title"
                 onChange={(e) =>
@@ -172,6 +185,9 @@ export const NewsAndEventComment = (props) => {
                   )
                 }
               />
+              <Form.Control.Feedback type="invalid">
+                Please enter title.
+              </Form.Control.Feedback>
             </Form.Group>
 
             <Form.Group
@@ -181,7 +197,12 @@ export const NewsAndEventComment = (props) => {
               <Form.Label>Content</Form.Label>
               <Form.Control
                 as="textarea"
+                style={{
+                  maxHeight: "200px",
+                  minHeight: "200px",
+                }}
                 rows={3}
+                isInvalid={invalid.content}
                 value={comment.content}
                 name="content"
                 onChange={(e) =>
@@ -193,11 +214,20 @@ export const NewsAndEventComment = (props) => {
                   )
                 }
               />
+              <Form.Control.Feedback type="invalid">
+                Please write content.
+              </Form.Control.Feedback>
             </Form.Group>
           </Form>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={() => setShow(false)}>
+          <Button
+            variant="secondary"
+            onClick={() => {
+              dispatch(HANDLE_MODAL({ handle: "close" }));
+              dispatch(RESET_COMMENT());
+            }}
+          >
             Close
           </Button>
           <Button
