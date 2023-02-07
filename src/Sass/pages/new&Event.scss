@@ -424,6 +424,7 @@
 
             &__share {
               @include size(50%, auto);
+              text-align: right;
 
               span {
                 margin: 0px 3%;

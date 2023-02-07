@@ -4,6 +4,7 @@ import {
   CHANGEBOOKINGSTEP,
   CHANGEBOOKINGSTYLE,
   GET_PRICE,
+  CHANGE_UI_CONFIRM,
 } from "../../../Store/reducers/R_rooms";
 import { goTop } from "../../../Components/support/goTop";
 import { ToastContainer } from "react-toastify";
@@ -20,6 +21,9 @@ export const SelectRoom = (props) => {
   const changeUIConfirm = useSelector(
     (state) => state.RS_rooms.changeUIConfirm
   );
+
+  //* State to show/hide button after book success
+  const confirm = useSelector((state) => state.RS_rooms.changeUIConfirm);
 
   return (
     <div className="reservation selectRoom">
@@ -76,21 +80,36 @@ export const SelectRoom = (props) => {
                   </p>
                 </div>
 
-                <div className="selectRoom__roomInfo">
-                  <button
-                    onClick={() => {
-                      dispatch(CHANGEBOOKINGSTEP(2));
-                      dispatch(CHANGEBOOKINGSTYLE(2));
-                      goTop();
-                    }}
+                {confirm ? (
+                  <i></i>
+                ) : (
+                  <div
+                    className="selectRoom__roomInfo"
+                    id="selectRoom__roomInfo"
                   >
-                    Previous
-                  </button>
-                </div>
+                    <button
+                      onClick={() => {
+                        dispatch(CHANGEBOOKINGSTEP(2));
+                        dispatch(CHANGEBOOKINGSTYLE(2));
+                        goTop();
+                      }}
+                    >
+                      Previous
+                    </button>
+
+                    <button
+                      onClick={() => {
+                        dispatch(CHANGE_UI_CONFIRM());
+                      }}
+                    >
+                      CONFIRM
+                    </button>
+                  </div>
+                )}
               </React.Fragment>
             ) : (
               <React.Fragment>
-                <div className="selectRoom__roomInfo">
+                <div className="selectRoom__roomInfo" id="selectRoom__roomInfo">
                   <button
                     onClick={() => {
                       dispatch(CHANGEBOOKINGSTEP(1));
@@ -135,7 +154,6 @@ export const SelectRoom = (props) => {
                   dispatch(CHANGEBOOKINGSTEP(0));
                   dispatch(CHANGEBOOKINGSTYLE(0));
                   goTop();
-                  // console.log(chooseRoomInfo.checkAvailable.branchValue);
                 }}
               >
                 Previous

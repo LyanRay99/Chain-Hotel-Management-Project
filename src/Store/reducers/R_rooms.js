@@ -1,7 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { toast } from "react-toastify";
+import emailjs from "@emailjs/browser";
 import roomsData from "../../Data/list_room.json";
 import bookingData from "../../Data/list_booking.json";
-import { toast } from "react-toastify";
 import { goTop } from "../../Components/support/goTop";
 
 //*  Custom Notify
@@ -128,6 +129,7 @@ const initialState = {
       child: "",
     },
     phoneNumber: "",
+    email: "",
   },
 
   // * State to check condition booking
@@ -157,7 +159,13 @@ const initialState = {
     total: 0,
   },
 
-  //* State used to change UI Confirm
+  //* State used to change UI RoomDetail at Step 3
+  roomDetailStep3: {
+    index: "",
+    item: "",
+  },
+
+  //* State used to change UI Confirm at Step 4
   changeUIConfirm: false,
 };
 
@@ -253,7 +261,9 @@ const R_rooms = createSlice({
         ? (state.checkAvailable.time.depature = actions.payload.value)
         : actions.payload.name === "amountRoom"
         ? (state.checkAvailable.roomAmount = actions.payload.value)
-        : (state.checkAvailable.phoneNumber = actions.payload.value);
+        : actions.payload.name === "phoneNumber"
+        ? (state.checkAvailable.phoneNumber = actions.payload.value)
+        : (state.checkAvailable.email = actions.payload.value);
     },
 
     //* Completed: Check Available to booking
@@ -270,7 +280,9 @@ const R_rooms = createSlice({
         state.checkAvailable.roomAmount === "" ||
         state.checkAvailable.roomAmount == false ||
         state.checkAvailable.customer.adult === "" ||
-        state.checkAvailable.customer.child === ""
+        state.checkAvailable.customer.child === "" ||
+        state.checkAvailable.phoneNumber === "" ||
+        state.checkAvailable.email === ""
       ) {
         notify_InfoNotEnough();
         state.checkRooms.checkInfoEnough = "";
@@ -441,8 +453,6 @@ const R_rooms = createSlice({
           };
 
           goTop();
-
-          // console.log(state.checkAvailable.branchValue);
         } else {
           notify_NotEmptyRoom();
           console.log("not empty room 2");
@@ -450,12 +460,18 @@ const R_rooms = createSlice({
       }
     },
 
-    //* Completed: Get Room price + Room number
+    //* Completed: Get Room price + Room number + Set state to show roomDetail at Step 3
     GET_PRICE: (state, actions) => {
       state.Rooms.map((info) => {
         if (info.nameBranchVN === state.checkAvailable.branchValue) {
-          info.roomType.map((roomType) => {
+          info.roomType.map((roomType, index) => {
             if (roomType.type === state.checkAvailable.roomType.type) {
+              //* Set state to show roomDetail selected at Step 3
+              state.roomDetailStep3 = {
+                index: index,
+                item: roomType,
+              };
+
               roomType.typeR.map((roomKind) => {
                 if (roomKind.name === state.checkAvailable.roomType.kind) {
                   // console.log(roomKind.price);
@@ -481,16 +497,42 @@ const R_rooms = createSlice({
           });
         }
       });
+
+      //* Tiện thể Reset state changeUIConfirm
+      state.changeUIConfirm = false;
     },
 
-    //* Completed: Change UI after Confirm
-    CHANGE_UICONFIRM: (state, actions) => {
+    //* Completed: Change UI after Confirm (step 4)
+    CHANGE_UI_CONFIRM: (state, actions) => {
       //* 1 - Set state to show UI Confirmed + Show notify book success
       state.changeUIConfirm = true;
       notify_SuccessBooking();
 
-      //* Completed: Create Object (customer info)
-      //* 2 - Set up Date
+      //* 2 - Send email notify book success
+      var infoUser = {
+        email: state.checkAvailable.email,
+        branch: state.checkAvailable.branchValue,
+        roomType: `${state.checkAvailable.roomType.type} - ${state.checkAvailable.roomType.kind}`,
+        numberRoom: state.checkRooms.roomNumber,
+      };
+
+      emailjs
+        .send(
+          "service_vmwvpht",
+          "template_q0sji0n",
+          infoUser,
+          "2-XjEt7WMje811dRp"
+        )
+        .then(
+          (result) => {
+            console.log(result.text);
+          },
+          (error) => {
+            console.log(error.text);
+          }
+        );
+
+      //* 3 - Set up Date
       var today = new Date();
       var day = String(today.getDate()).padStart(2, "0");
       var month = String(today.getMonth() + 1).padStart(2, "0"); //January is 0!
@@ -499,7 +541,7 @@ const R_rooms = createSlice({
       var minutes = today.getMinutes();
       today = `${hour}h${minutes} ${day}-${month}-${year}`;
 
-      //* 3 - Create Object
+      //* 4 - Create Object
       const customerInfo = {
         id: state.booking.length + 1,
         fullname: "USER",
@@ -509,7 +551,7 @@ const R_rooms = createSlice({
         identityCard: "",
         nationality: "",
         phone: state.checkAvailable.phoneNumber,
-        email: "",
+        email: state.checkAvailable.email,
         address: "",
         dateCreated: today,
         dateUpdated: today,
@@ -525,17 +567,18 @@ const R_rooms = createSlice({
         cancel: false,
       };
 
-      //* 4 - Push into list_booking
+      //* 5 - Push into list_booking
       // console.log(state.booking);
       state.booking.push(customerInfo);
       // console.log(state.booking);
 
+      //* 6 - Reset State
       //* Set lại số EmptyRoom sau khi đã book
       state.Rooms[state.checkRooms.checkBranch.index].roomType[
         state.checkRooms.checkRoomType.index
       ].typeR[state.checkRooms.checkRoomKind.index].emptyRooms--;
 
-      //* 5 - Reset state checkRooms after confirm
+      //* Reset state checkRooms after confirm
       state.checkRooms = {
         checkInfoEnough: "",
         checkInvalidData: "",
@@ -556,7 +599,7 @@ const R_rooms = createSlice({
         roomNumber: "",
       };
 
-      //* 6 - Reset state checkAvailable after confirm
+      //* Reset state checkAvailable after confirm
       state.checkAvailable = {
         branchValue: "",
         time: {
@@ -573,6 +616,13 @@ const R_rooms = createSlice({
           child: "",
         },
         phoneNumber: "",
+        email: "",
+      };
+
+      //* Reset state roomDetailStep3
+      state.roomDetailStep3 = {
+        index: "",
+        item: "",
       };
     },
   },
@@ -586,7 +636,7 @@ export const {
   GET_INFO,
   CHECK_AVAILABLE,
   GET_PRICE,
-  CHANGE_UICONFIRM,
+  CHANGE_UI_CONFIRM,
 } = R_rooms.actions;
 
 export default R_rooms.reducer;

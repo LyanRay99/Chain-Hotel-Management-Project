@@ -131,9 +131,9 @@ export const NewsAndEventContent = (props) => {
           </div>
 
           {/* TODO: comment */}
-          <NewsAndEventComment />
+          <NewsAndEventComment index={params} />
           {/* TODO: Leave a comment */}
-          <ContactFeedback title="leave_a_Comment" />
+          <ContactFeedback title="leave_a_Comment" index={params} />
         </div>
       </div>
     </div>

@@ -1,10 +1,14 @@
+//* Library
 import React from "react";
 import { useSelector } from "react-redux";
+import { Zoom } from "react-awesome-reveal";
+import LazyLoad from "react-lazy-load";
+
+//* Component UI
 import { SupSlider } from "../../Components/headers/supSlider";
 import { AboutInfo } from "../../Components/body/about/aboutInfo";
 import { AboutStatistic } from "../../Components/body/about/aboutStatistic";
 import { AboutTeam } from "../../Components/body/about/aboutTeam";
-import { Zoom } from "react-awesome-reveal";
 
 const About = () => {
   const aboutUsInfo = useSelector(
@@ -54,7 +58,9 @@ const About = () => {
         </section>
       </Zoom>
 
-      <AboutStatistic />
+      <LazyLoad once={true}>
+        <AboutStatistic />
+      </LazyLoad>
 
       <Zoom triggerOnce={true}>
         <section className="section">

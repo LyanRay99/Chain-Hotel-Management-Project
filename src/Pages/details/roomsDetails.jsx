@@ -11,6 +11,8 @@ import { CHANGEROOMINFO, CHANGESTYLEINFO } from "../../Store/reducers/R_rooms";
 //* Components UI
 import { SupSlider } from "../../Components/headers/supSlider";
 import { Reservation } from "../../Components/body/booking/reservation";
+import { NewsAndEventRecent } from "../../Components/body/new_event/navigation/newsEventRecent";
+import { NewsAndEventUpcoming } from "../../Components/body/new_event/navigation/newsEventUpcoming";
 import { Overview } from "../../Components/body/rooms/details/overview";
 import { Amenities } from "../../Components/body/rooms/details/amenities";
 import { Package } from "../../Components/body/rooms/details/package";
@@ -61,9 +63,11 @@ const RoomsDetails = () => {
                 </div>
               </div>
 
-              {/* <nav className="roomDetails__slider__navbar"> */}
-              {/* <Reservation /> */}
-              {/* </nav> */}
+              <nav className="roomDetails__slider__navbar">
+                {/* <Reservation /> */}
+                <NewsAndEventUpcoming />
+                <NewsAndEventRecent />
+              </nav>
             </div>
 
             {/* Completed Room Info */}

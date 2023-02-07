@@ -1,6 +1,6 @@
 import React from "react";
 import { SelectRoom } from "../selectRoom";
-import { RoomInfo } from "../roomInfo";
+import { RoomDetailSelect } from "../roomDetailSelected";
 
 export const MakeAReservation = () => {
   return (
@@ -10,7 +10,7 @@ export const MakeAReservation = () => {
       </nav>
 
       <div className="booking__body__content">
-        <RoomInfo />
+        <RoomDetailSelect />
       </div>
     </React.Fragment>
   );
