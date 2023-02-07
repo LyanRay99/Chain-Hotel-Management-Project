@@ -33,7 +33,7 @@ export const ContactFeedback = (props) => {
       emailjs
         .send(
           "service_vmwvpht",
-          "template_q0sji0n",
+          "template_jzv475v",
           contact,
           "2-XjEt7WMje811dRp"
         )
@@ -177,9 +177,7 @@ export const ContactFeedback = (props) => {
         ) : (
           <button
             className="contact__feedback__send"
-            onClick={() => {
-              sendEmail();
-            }}
+            onClick={() => sendEmail()}
           >
             SEND
           </button>

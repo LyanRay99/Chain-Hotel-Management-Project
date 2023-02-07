@@ -1,7 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { toast } from "react-toastify";
+import emailjs from "@emailjs/browser";
 import roomsData from "../../Data/list_room.json";
 import bookingData from "../../Data/list_booking.json";
-import { toast } from "react-toastify";
 import { goTop } from "../../Components/support/goTop";
 
 //*  Custom Notify
@@ -507,8 +508,31 @@ const R_rooms = createSlice({
       state.changeUIConfirm = true;
       notify_SuccessBooking();
 
-      //* Completed: Create Object (customer info)
-      //* 2 - Set up Date
+      //* 2 - Send email notify book success
+      var infoUser = {
+        email: state.checkAvailable.email,
+        branch: state.checkAvailable.branchValue,
+        roomType: `${state.checkAvailable.roomType.type} - ${state.checkAvailable.roomType.kind}`,
+        numberRoom: state.checkRooms.roomNumber,
+      };
+
+      emailjs
+        .send(
+          "service_vmwvpht",
+          "template_q0sji0n",
+          infoUser,
+          "2-XjEt7WMje811dRp"
+        )
+        .then(
+          (result) => {
+            console.log(result.text);
+          },
+          (error) => {
+            console.log(error.text);
+          }
+        );
+
+      //* 3 - Set up Date
       var today = new Date();
       var day = String(today.getDate()).padStart(2, "0");
       var month = String(today.getMonth() + 1).padStart(2, "0"); //January is 0!
@@ -517,7 +541,7 @@ const R_rooms = createSlice({
       var minutes = today.getMinutes();
       today = `${hour}h${minutes} ${day}-${month}-${year}`;
 
-      //* 3 - Create Object
+      //* 4 - Create Object
       const customerInfo = {
         id: state.booking.length + 1,
         fullname: "USER",
@@ -543,17 +567,18 @@ const R_rooms = createSlice({
         cancel: false,
       };
 
-      //* 4 - Push into list_booking
+      //* 5 - Push into list_booking
       // console.log(state.booking);
       state.booking.push(customerInfo);
       // console.log(state.booking);
 
+      //* 6 - Reset State
       //* Set lại số EmptyRoom sau khi đã book
       state.Rooms[state.checkRooms.checkBranch.index].roomType[
         state.checkRooms.checkRoomType.index
       ].typeR[state.checkRooms.checkRoomKind.index].emptyRooms--;
 
-      //* 5 - Reset state checkRooms after confirm
+      //* Reset state checkRooms after confirm
       state.checkRooms = {
         checkInfoEnough: "",
         checkInvalidData: "",
@@ -574,7 +599,7 @@ const R_rooms = createSlice({
         roomNumber: "",
       };
 
-      //* 6 - Reset state checkAvailable after confirm
+      //* Reset state checkAvailable after confirm
       state.checkAvailable = {
         branchValue: "",
         time: {
@@ -594,7 +619,7 @@ const R_rooms = createSlice({
         email: "",
       };
 
-      //* 7 - Reset state roomDetailStep3
+      //* Reset state roomDetailStep3
       state.roomDetailStep3 = {
         index: "",
         item: "",

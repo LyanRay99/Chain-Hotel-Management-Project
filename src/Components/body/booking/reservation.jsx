@@ -146,7 +146,7 @@ export const Reservation = () => {
       <div className="reservation__roomsGuest ">
         <span>EMAIL</span>
         <input
-          type="text"
+          type="email"
           placeholder="Email..."
           name="email"
           className="reservation__roomsGuest__input"
