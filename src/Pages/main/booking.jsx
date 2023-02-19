@@ -20,7 +20,12 @@ import { Confirmation } from "../../Components/body/booking/details/confirmation
 // import { faCaretLeft, faCaretRight } from "@fortawesome/free-solid-svg-icons";
 import { useDispatch, useSelector } from "react-redux";
 
+//* Title
+import { Title_Booking } from "../../Store/title";
+
 const Booking = () => {
+  document.title = Title_Booking;
+
   const bookingStep = useSelector(
     (state) => state.RS_rooms.bookingControl.bookingStep
   );

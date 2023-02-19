@@ -10,7 +10,12 @@ import { AboutInfo } from "../../Components/body/about/aboutInfo";
 import { AboutStatistic } from "../../Components/body/about/aboutStatistic";
 import { AboutTeam } from "../../Components/body/about/aboutTeam";
 
+//* Title
+import { Title_About } from "../../Store/title";
+
 const About = () => {
+  document.title = Title_About;
+
   const aboutUsInfo = useSelector(
     (state) => state.RS_aboutUs.aboutUs.aboutUs_Page
   );

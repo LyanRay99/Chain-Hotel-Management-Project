@@ -26,7 +26,12 @@ import { faBed, faEye, faPerson } from "@fortawesome/free-solid-svg-icons";
 //* Image
 import Logo from "../../Assets/Logo.png";
 
+//* Title
+import { Title_Room_Detail } from "../../Store/title";
+
 const RoomsDetails = () => {
+  document.title = Title_Room_Detail;
+
   const params = useParams().id;
   const roomDetails = useSelector(
     (state) => state.RS_rooms.Rooms[0].roomType[params]

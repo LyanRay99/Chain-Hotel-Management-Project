@@ -7,7 +7,12 @@ import { SupSlider } from "../../Components/headers/supSlider";
 import { ContactBody } from "../../Components/body/contact/contactBody";
 import { ContactMap } from "../../Components/body/contact/contactMap";
 
+//* Title
+import { Title_Contact } from "../../Store/title";
+
 const Contact = () => {
+  document.title = Title_Contact;
+
   return (
     <>
       {/* TODO: Slider phụ của mỗi page, supSlider truyền vào để component SupSlider biết được title hiện tại*/}

@@ -8,7 +8,12 @@ import { Zoom } from "react-awesome-reveal";
 //* Components UI
 import { SupSlider } from "../../Components/headers/supSlider";
 
+//* Title
+import { Title_FAQs } from "../../Store/title";
+
 const Faqs = () => {
+  document.title = Title_FAQs;
+
   const faqs = useSelector((state) => state.RS_faqs.faqs);
 
   return (

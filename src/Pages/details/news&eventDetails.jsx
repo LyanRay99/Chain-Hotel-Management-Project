@@ -16,7 +16,12 @@ import { NewsAndEventTagsSocial } from "../../Components/body/new_event/navigati
 //* Body of News & Event page
 import { NewsAndEventContent } from "../../Components/body/new_event/details/newsEventContent";
 
+//* Title
+import { Title_NewsAndEvents_Detail } from "../../Store/title";
+
 const NewsAndEventDetails = () => {
+  document.title = Title_NewsAndEvents_Detail;
+
   return (
     <>
       <SupSlider supSlider="NEW & EVENT" />

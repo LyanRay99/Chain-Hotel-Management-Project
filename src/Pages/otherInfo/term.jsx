@@ -2,7 +2,12 @@ import { useSelector } from "react-redux";
 import { Zoom } from "react-awesome-reveal";
 import { SupSlider } from "../../Components/headers/supSlider";
 
+//* Title
+import { Title_Terms } from "../../Store/title";
+
 const Term = () => {
+  document.title = Title_Terms;
+
   const term = useSelector((state) => state.RS_terms.term);
 
   return (
