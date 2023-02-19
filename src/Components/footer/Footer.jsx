@@ -67,9 +67,9 @@ export const Footer = () => {
         <div className="footer__others__info">
           <div className="box">
             <ul>
-              <NavLink to="/gallery" onClick={goTop}>
-                <li>Photo & Video</li>
-              </NavLink>
+              {/* <NavLink to="/gallery" onClick={goTop}> */}
+              <li>Photo & Video</li>
+              {/* </NavLink> */}
               <NavLink to="/careers" onClick={goTop}>
                 <li>Carrer</li>
               </NavLink>
