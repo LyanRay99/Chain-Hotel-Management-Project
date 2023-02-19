@@ -1,0 +1,11 @@
+export const Title_Home = "Panorama";
+export const Title_Room = "Panorama | Room";
+export const Title_Room_Detail = "Panorama | Room Detail";
+export const Title_Booking = "Panorama | Booking";
+export const Title_NewsAndEvents = "Panorama | News & Events";
+export const Title_NewsAndEvents_Detail = "Panorama | News & Events Details";
+export const Title_About = "Panorama | About";
+export const Title_Contact = "Panorama | Contact";
+export const Title_Carrer = "Panorama | Carrer";
+export const Title_FAQs = "Panorama | FAQs";
+export const Title_Terms = "Panorama | Terms";

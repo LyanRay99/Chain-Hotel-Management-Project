@@ -8,7 +8,12 @@ import { SupSlider } from "../../Components/headers/supSlider";
 import { RoomsImage } from "../../Components/body/rooms/overall/roomsImage";
 import { RoomsDescription } from "../../Components/body/rooms/overall/roomsDescription";
 
+//* Title
+import { Title_Room } from "../../Store/title";
+
 const Rooms = () => {
+  document.title = Title_Room;
+
   const roomTypes = useSelector((state) => state.RS_rooms.Rooms[0].roomType);
 
   return (

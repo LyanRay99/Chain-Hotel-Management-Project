@@ -15,7 +15,12 @@ import { CustomerCmt } from "../../Components/body/home/customerCmt";
 import { OurEvent } from "../../Components/body/home/ourEvent";
 import { OurNews } from "../../Components/body/home/ourNews";
 
+//* Title
+import { Title_Home } from "../../Store/title";
+
 const Home = () => {
+  document.title = Title_Home;
+
   const dispatch = useDispatch();
 
   const welcomeNotify = () => {

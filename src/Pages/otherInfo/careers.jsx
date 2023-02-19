@@ -7,7 +7,12 @@ import { Zoom } from "react-awesome-reveal";
 import { SupSlider } from "../../Components/headers/supSlider";
 import { ListBranch } from "../../Components/body/contact/listBranch";
 
+//* Title
+import { Title_Carrer } from "../../Store/title";
+
 const Careers = () => {
+  document.title = Title_Carrer;
+
   const careers = useSelector((state) => state.RS_careers.careers);
   const listBranch = useSelector((state) => state.RS_rooms.Rooms);
 
